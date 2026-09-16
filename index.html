@@ -75,6 +75,7 @@ p{margin:0}
 
 /* ——— Sélecteur de pays ——— */
 .flags{position:relative;margin-left:auto}
+.flags--static{margin-left:auto;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-size:20px;line-height:1;background:var(--surface);box-shadow:inset 0 0 0 1px var(--line),var(--shadow-soft)}
 .top .btn{margin-left:10px}
 .flags summary{list-style:none;cursor:pointer;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;
   font-size:20px;line-height:1;background:var(--surface);box-shadow:inset 0 0 0 1px var(--line),var(--shadow-soft);transition:transform .2s,box-shadow .2s}
@@ -88,7 +89,6 @@ p{margin:0}
 .flags a[aria-current="true"]{color:var(--blue-deep)}
 .flags a svg{width:17px;height:17px;margin-left:auto;color:var(--blue)}
 .flags__flag{font-size:19px;line-height:1}
-@media (max-width:980px){.flags{margin-left:auto}}
 
 /* ——— Pays pris en charge (FAQ) ——— */
 .countries{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
@@ -825,6 +825,107 @@ kbd{font-family:var(--font);font-size:13px;min-width:28px;text-align:center;back
   </div>
 </section>
 
+
+<!-- CALENDRIER — [[ASSET_SCREEN_CALENDAR]] -->
+<section class="sec" id="calendrier" style="padding-top:0">
+  <div class="wrap split split--rev">
+    <div class="split__media reveal">
+      <div class="shot" style="aspect-ratio:4/5;max-width:460px;margin-inline:auto"><img src="assets/demo-iphone-trajets.webp" width="760" height="1030" loading="lazy" alt="iPhone affichant l’écran Trajets de KmPro avec le bouton Importer via vos calendriers (données de démonstration)"></div>
+    </div>
+    <div class="split__copy">
+      <p class="borne">Filet de sécurité</p>
+      <h2>Et pour les trajets que vous avez oublié de saisir ?</h2>
+      <p class="hero__lead">Votre calendrier devient votre filet de sécurité.</p>
+      <p class="aha"><svg class="ic" aria-hidden="true"><use href="#i-sparkle"/></svg><span>Vos trajets sont peut-être déjà dans votre agenda : vous n’avez pas besoin de tous les saisir à la main.</span></p>
+      <p style="color:var(--ink-2)">KmPro peut analyser les rendez-vous présents dans les calendriers configurés sur votre appareil et vous proposer les déplacements correspondants, avec la date et l’adresse déjà remplies.</p>
+      <p class="cadence"><span><b>Vous vérifiez.</b></span> <span><b>Vous ajoutez.</b></span> <span><b>C’est fait.</b></span></p>
+      <p class="muted">Pratique pour retrouver un rendez-vous client ou un déplacement professionnel passé, sans fouiller manuellement toute votre année.</p>
+      <p class="privacy-note"><i><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg></i>Le contenu de votre calendrier reste sur votre appareil.</p>
+    </div>
+  </div>
+</section>
+
+<!-- iPHONE + MAC — [[ASSET_SCREEN_HOME_IOS]] [[ASSET_SCREEN_ANNUAL_MAC]] -->
+<section class="sec" id="iphone-mac" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec__head">
+      <p class="borne">iPhone + Mac</p>
+      <h2>Sur l’iPhone quand vous roulez. Sur le Mac quand vous faites vos comptes.</h2>
+    </div>
+    <div class="sync reveal">
+      <div class="shot shot--phone"><img src="assets/demo-iphone-accueil.webp" width="760" height="1030" loading="lazy" alt="iPhone affichant l’accueil de KmPro (données de démonstration)"></div>
+      <div class="sync__link" aria-hidden="true"><span class="sync__dots"></span><i><svg class="ic"><use href="#i-cloud"/></svg></i><span>iCloud privé</span><span class="sync__dots"></span></div>
+      <div class="shot shot--mac"><img src="assets/demo-mac-iphone.webp" width="941" height="759" loading="lazy" alt="MacBook et iPhone affichant les mêmes données KmPro, synchronisées par iCloud (données de démonstration)"></div>
+    </div>
+    <div class="sync__text">
+      <p><b>L’iPhone vous accompagne au quotidien.</b>Ajoutez rapidement un trajet, retrouvez vos favoris et consultez votre mois.</p>
+      <p><b>Le Mac vous donne la vision d’ensemble.</b>Retrouvez votre année, vos mois, vos kilomètres et le détail de tous vos déplacements.</p>
+      <p><b>Commencez sur l’iPhone, retrouvez tout sur le Mac.</b>Vos données se retrouvent sur vos appareils grâce à votre espace iCloud privé.</p>
+    </div>
+    <p class="pull sync__pull">Vous saisissez là où c’est pratique. <b>Vous gérez votre année là où c’est confortable.</b></p>
+  </div>
+</section>
+
+<!-- iPHONE TERRAIN + VISUELS RÉGIONAUX — [[ASSET_REGIONAL_COVERS]] -->
+<section class="sec" id="iphone" style="padding-top:0">
+  <div class="wrap split">
+    <div class="split__copy">
+      <p class="borne">Sur l’iPhone</p>
+      <h2>Votre quotidien, à portée de main.</h2>
+      <p class="lead">Et un visuel régional choisi selon l’adresse de votre société.</p>
+      <ul class="feat-list">
+        <li><svg class="ic" aria-hidden="true"><use href="#i-gauge"/></svg>Votre mois en un coup d’œil</li>
+        <li><svg class="ic" aria-hidden="true"><use href="#i-route"/></svg>Vos derniers trajets</li>
+        <li><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg>Vos habitudes en un geste</li>
+        <li><svg class="ic" aria-hidden="true"><use href="#i-bolt"/></svg>Un trajet en quelques secondes</li>
+      </ul>
+    </div>
+    <div class="carousel reveal" id="regions" aria-roledescription="carrousel" aria-label="Visuels régionaux KmPro">
+      <div class="carousel__track" id="regions-track" tabindex="0">
+        <figure role="group" aria-label="1 sur 16"><img src="assets/regions/haute-savoie.webp" width="1100" height="619" alt="Visuel régional KmPro : Haute-Savoie"><figcaption><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg>Haute-Savoie</figcaption></figure>
+        <figure role="group" aria-label="2 sur 16"><img src="assets/regions/paris.webp" width="1100" height="619" loading="lazy" alt="Visuel régional KmPro : Paris"><figcaption><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg>Paris</figcaption></figure>
+        <figure role="group" aria-label="3 sur 16"><img src="assets/regions/bordeaux.webp" width="1100" height="619" loading="lazy" alt="Visuel régional KmPro : Bordeaux"><figcaption><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg>Bordeaux</figcaption></figure>
+        <figure role="group" aria-label="4 sur 16"><img src="assets/regions/marseille.webp" width="1100" height="619" loading="lazy" alt="Visuel régional KmPro : Marseille"><figcaption><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg>Marseille</figcaption></figure>
+        <figure role="group" aria-label="5 sur 16"><img src="assets/regions/bretagne.webp" width="1100" height="619" loading="lazy" alt="Visuel régional KmPro : Bretagne"><figcaption><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg>Bretagne</figcaption></figure>
+        <figure role="group" aria-label="6 sur 16"><img src="assets/regions/geneve-champery.webp" width="1100" height="619" loading="lazy" alt="Visuel régional KmPro : Genève – Champéry"><figcaption><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg>Genève – Champéry</figcaption></figure>
+        <figure role="group" aria-label="7 sur 16"><img src="assets/regions/normandie.webp" width="1100" height="619" loading="lazy" alt="Visuel régional KmPro : Normandie"><figcaption><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg>Normandie</figcaption></figure>
+        <figure role="group" aria-label="8 sur 16"><img src="assets/regions/saint-tropez.webp" width="1100" height="619" loading="lazy" alt="Visuel régional KmPro : Saint-Tropez"><figcaption><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg>Saint-Tropez</figcaption></figure>
+        <figure role="group" aria-label="9 sur 16"><img src="assets/regions/colmar.webp" width="1100" height="619" loading="lazy" alt="Visuel régional KmPro : Colmar"><figcaption><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg>Colmar</figcaption></figure>
+        <figure role="group" aria-label="10 sur 16"><img src="assets/regions/ardeche.webp" width="1100" height="619" loading="lazy" alt="Visuel régional KmPro : Ardèche"><figcaption><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg>Ardèche</figcaption></figure>
+        <figure role="group" aria-label="11 sur 16"><img src="assets/regions/avignon.webp" width="1100" height="619" loading="lazy" alt="Visuel régional KmPro : Avignon"><figcaption><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg>Avignon</figcaption></figure>
+        <figure role="group" aria-label="12 sur 16"><img src="assets/regions/clermont-ferrand.webp" width="1100" height="619" loading="lazy" alt="Visuel régional KmPro : Clermont-Ferrand"><figcaption><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg>Clermont-Ferrand</figcaption></figure>
+        <figure role="group" aria-label="13 sur 16"><img src="assets/regions/toulouse.webp" width="1100" height="619" loading="lazy" alt="Visuel régional KmPro : Toulouse"><figcaption><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg>Toulouse</figcaption></figure>
+        <figure role="group" aria-label="14 sur 16"><img src="assets/regions/briancon.webp" width="1100" height="619" loading="lazy" alt="Visuel régional KmPro : Briançon"><figcaption><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg>Briançon</figcaption></figure>
+        <figure role="group" aria-label="15 sur 16"><img src="assets/regions/grenoble.webp" width="1100" height="619" loading="lazy" alt="Visuel régional KmPro : Grenoble"><figcaption><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg>Grenoble</figcaption></figure>
+        <figure role="group" aria-label="16 sur 16"><img src="assets/regions/les-gets.webp" width="1100" height="619" loading="lazy" alt="Visuel régional KmPro : Les Gets"><figcaption><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg>Les Gets</figcaption></figure>
+      </div>
+      <div class="carousel__ui">
+        <div class="carousel__dots" id="regions-dots"></div>
+        <button class="carousel__nav" type="button" id="regions-prev" aria-label="Visuel précédent"><svg class="ic" aria-hidden="true"><use href="#i-left"/></svg></button>
+        <button class="carousel__nav" type="button" id="regions-next" aria-label="Visuel suivant"><svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAC — [[ASSET_SCREEN_ANNUAL_MAC]] -->
+<section class="sec" id="mac" style="padding-top:0">
+  <div class="wrap mac-wide">
+    <div class="shot reveal"><img src="assets/demo-mac-annee.webp" width="941" height="759" loading="lazy" alt="MacBook affichant le récapitulatif annuel de KmPro, mois par mois (données de démonstration)"></div>
+    <div class="split__copy">
+      <p class="borne">Sur le Mac</p>
+      <h2>Toute votre année, d’un seul regard.</h2>
+      <ul class="feat-list" style="grid-template-columns:1fr">
+        <li><svg class="ic" aria-hidden="true"><use href="#i-cal"/></svg>Votre année, mois par mois</li>
+        <li><svg class="ic" aria-hidden="true"><use href="#i-gauge"/></svg>Une jauge pour suivre votre volume</li>
+        <li><svg class="ic" aria-hidden="true"><use href="#i-table"/></svg>Le détail de chaque déplacement</li>
+        <li><svg class="ic" aria-hidden="true"><use href="#i-map"/></svg>La carte et les itinéraires possibles</li>
+      </ul>
+      <p class="kbd-row"><kbd>⌘</kbd><kbd>N</kbd><span>Raccourcis clavier et menus natifs du Mac.</span></p>
+    </div>
+  </div>
+</section>
+
 <!-- EXPORTS — [[ASSET_SCREEN_EXPORT]] -->
 <section class="sec" id="exports" style="padding-top:0">
   <div class="wrap">
@@ -1011,6 +1112,7 @@ kbd{font-family:var(--font);font-size:13px;min-width:28px;text-align:center;back
 <section class="wrap" id="telecharger">
   <div class="final">
     <img class="final__bg" src="assets/route-annecy-lyon.webp" width="1600" height="900" loading="lazy" alt="Illustration KmPro : une route relie Annecy et son lac à Lyon, un conducteur consulte son iPhone près de sa voiture">
+
     <div class="final__copy">
       <p class="borne">Télécharger KmPro</p>
       <h2>Commencez à suivre vos trajets avant d’avoir à les retrouver.</h2>
