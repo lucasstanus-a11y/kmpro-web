@@ -90,6 +90,44 @@ p{margin:0}
 .flags a svg{width:17px;height:17px;margin-left:auto;color:var(--blue)}
 .flags__flag{font-size:19px;line-height:1}
 
+/* ——— À qui s'adresse KmPro ——— */
+.audience__photos{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:640px;margin:clamp(20px,2.5vw,28px) auto 0}
+.audience__photo{position:relative;border-radius:var(--r-l);overflow:hidden;aspect-ratio:4/3;box-shadow:var(--shadow-soft)}
+.audience__photo img{width:100%;height:100%;object-fit:cover;object-position:50% 18%}
+.audience__photo figcaption{position:absolute;left:10px;bottom:10px;display:inline-flex;align-items:center;gap:7px;white-space:nowrap;
+  background:rgba(255,255,255,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:999px;
+  padding:5px 12px 5px 8px;font-size:12.5px;font-weight:650;color:var(--ink);box-shadow:var(--shadow-soft)}
+.audience__photo figcaption svg{width:15px;height:15px;color:var(--blue);flex:none}
+
+.audience{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:clamp(20px,2.5vw,28px)}
+.audience article{background:var(--surface);border-radius:var(--r-m);padding:16px 18px;display:grid;gap:8px;align-content:start}
+.audience article>i{display:grid;place-items:center;width:32px;height:32px;border-radius:10px;background:var(--sky);color:var(--blue)}
+.audience article>i>svg{width:17px;height:17px}
+.audience h3{font-size:.98rem}
+.audience p{font-size:14px;line-height:1.45;color:var(--ink-2)}
+.audience__more{margin-top:18px;font-size:14.5px;color:var(--ink-2)}
+.audience__more b{color:var(--ink)}
+@media (max-width:900px){.audience{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){
+  .audience{grid-template-columns:1fr}
+  .audience__photos{grid-template-columns:1fr;gap:12px}
+  .audience__photo{aspect-ratio:5/4}
+}
+
+/* ——— Menu des sections (petits écrans) ——— */
+.menu{display:none;position:relative}
+.menu summary{list-style:none;cursor:pointer;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;
+  background:var(--surface);box-shadow:inset 0 0 0 1px var(--line),var(--shadow-soft);color:var(--ink)}
+.menu summary::-webkit-details-marker{display:none}
+.menu[open] summary{box-shadow:inset 0 0 0 2px var(--blue),var(--shadow-soft);color:var(--blue-deep)}
+.menu summary svg{width:19px;height:19px}
+.menu ul{position:absolute;right:0;top:46px;margin:0;padding:6px;list-style:none;min-width:228px;background:var(--surface);
+  border-radius:16px;box-shadow:var(--shadow);display:grid;gap:2px;z-index:70}
+.menu a{display:block;padding:10px 12px;border-radius:11px;text-decoration:none;color:var(--ink);font-size:15px;font-weight:600}
+.menu a:hover,.menu a:focus-visible{background:var(--surface-2)}
+@media (max-width:980px){.menu{display:block;margin-left:6px}.flags{margin-left:auto}.top .btn{margin-left:6px}}
+@media (max-width:420px){.top .btn{padding:8px 12px;font-size:13.5px}.brand span{font-size:17px}}
+
 /* ——— Pays pris en charge (FAQ) ——— */
 .countries{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
 .countries span{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border-radius:999px;padding:8px 14px;font-weight:650;font-size:14.5px;box-shadow:var(--shadow-soft)}
@@ -136,8 +174,15 @@ p{margin:0}
 /* ——— Paragraphes justifiés (lignes de même longueur), coupure des mots en français ——— */
 .lead,.hero__detail p,.muted,.split__copy>p:not([class]),.problem__copy>p,.journey__more p,
 .how__step p,.card p,.format p,.sync__text p,.backups p,.after>p:not([class]),.faq details p,.itin__cap{
-  text-align:justify;text-align-last:left;-webkit-hyphens:auto;hyphens:auto;hyphenate-limit-chars:7 3 3;text-wrap:wrap}
+  text-align:justify;text-align-last:left;-webkit-hyphens:none;hyphens:none;text-wrap:wrap}
 .problem__copy>.borne{text-align:left}
+
+@media (max-width:620px){
+  /* Colonnes étroites : on autorise la coupure, mais uniquement des mots longs */
+  .lead,.hero__detail p,.muted,.split__copy>p:not([class]),.problem__copy>p,.journey__more p,
+  .how__step p,.card p,.format p,.sync__text p,.backups p,.after>p:not([class]),.faq details p,.itin__cap{
+    -webkit-hyphens:auto;hyphens:auto;hyphenate-limit-chars:10 5 4}
+}
 
 /* ——— Header ——— */
 .top{position:sticky;top:0;z-index:50;background:rgba(244,247,251,.78);backdrop-filter:saturate(1.6) blur(18px);-webkit-backdrop-filter:saturate(1.6) blur(18px);border-bottom:1px solid transparent;transition:border-color .3s}
@@ -596,6 +641,12 @@ kbd{font-family:var(--font);font-size:13px;min-width:28px;text-align:center;back
   <symbol id="i-sync" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 1-13.7 5.7M4 12a8 8 0 0 1 13.7-5.7M18 3v4h-4M6 21v-4h4"/></symbol>
   <symbol id="i-image" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="14" rx="2.5"/><path d="M3.5 16l5-5 4 4 3-3 5 5"/><circle cx="15.5" cy="9" r="1.5"/></symbol>
   <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M11 3l1.7 4.8L17.5 9.5l-4.8 1.7L11 16l-1.7-4.8L4.5 9.5l4.8-1.7z"/><path d="M18.5 14.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></symbol>
+  <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="7.5" width="18" height="12.5" rx="2.5"/><path d="M9 7.5V6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v1.5M3 13h18"/></symbol>
+  <symbol id="i-care" viewBox="0 0 24 24"><path d="M12 20.5s-7-4.5-7-9a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11.5c0 4.5-7 9-7 9z"/></symbol>
+  <symbol id="i-tools" viewBox="0 0 24 24"><path d="M14.5 5.5a3.5 3.5 0 0 0 4.6 4.6L21 12l-9 9-3-3 9-9-1.9-1.9a3.5 3.5 0 0 0-1.6-1.6z"/><path d="M6 14l4 4-2.5 2.5a2.1 2.1 0 0 1-3-3z"/></symbol>
+  <symbol id="i-car" viewBox="0 0 24 24"><path d="M4.5 16v2a1 1 0 0 0 1 1h1.5a1 1 0 0 0 1-1v-2M15 16v2a1 1 0 0 0 1 1h1.5a1 1 0 0 0 1-1v-2"/><path d="M3.5 16v-4l2-5a1.5 1.5 0 0 1 1.4-1h10.2a1.5 1.5 0 0 1 1.4 1l2 5v4z"/><path d="M6.5 12.5h.01M17.5 12.5h.01"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16.5 5.6a3.2 3.2 0 0 1 0 6.3M17 14.5a6 6 0 0 1 4 5.5"/></symbol>
+  <symbol id="i-building" viewBox="0 0 24 24"><rect x="4" y="3.5" width="12" height="17" rx="2"/><path d="M16 9h3.5a1.5 1.5 0 0 1 1.5 1.5v10M7.5 7.5h1.5M11 7.5h1.5M7.5 11h1.5M11 11h1.5M7.5 14.5h1.5M11 14.5h1.5"/></symbol>
   <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
 </svg>
 
@@ -616,6 +667,20 @@ kbd{font-family:var(--font);font-size:13px;min-width:28px;text-align:center;back
       <a href="#faq">FAQ</a>
     </nav>
     <details class="flags"><summary aria-label="Pays : France. Changer de pays"><span aria-hidden="true">🇫🇷</span></summary><ul><li><a href="https://kmpro.app/?pays=fr" hreflang="fr-FR" aria-current="true"><span class="flags__flag" aria-hidden="true">🇫🇷</span>France<svg class="ic" aria-hidden="true"><use href="#i-check"/></svg></a></li><li><a href="https://kmpro.ch/?pays=ch" hreflang="fr-CH"><span class="flags__flag" aria-hidden="true">🇨🇭</span>Suisse</a></li></ul></details>
+    <details class="menu" id="menu">
+      <summary aria-label="Menu des sections"><svg class="ic" aria-hidden="true"><use href="#i-menu"/></svg></summary>
+      <ul>
+        <li><a href="#fonctionnalites">Ajouter un trajet</a></li>
+        <li><a href="#calendrier">Import du calendrier</a></li>
+        <li><a href="#comment">Comment ça marche</a></li>
+        <li><a href="#iphone-mac">iPhone + Mac</a></li>
+        <li><a href="#exports">Exports</a></li>
+        <li><a href="#confidentialite">Confidentialité</a></li>
+        <li><a href="#tarif">Tarif</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#pour-qui">À qui ça s’adresse</a></li>
+      </ul>
+    </details>
     <a class="btn btn--blue" href="#telecharger">Télécharger</a>
   </div>
 </header>
@@ -673,6 +738,30 @@ kbd{font-family:var(--font);font-size:13px;min-width:28px;text-align:center;back
         <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Plusieurs itinéraires proposés pour calculer au plus juste</li>
       </ul>
       <p class="note"><i><svg class="ic" aria-hidden="true"><use href="#i-repeat"/></svg></i>Dupliquez vos trajets en un clic.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CALENDRIER : IMPORT AUTOMATIQUE -->
+<section class="sec" id="calendrier" style="padding-top:0">
+  <div class="wrap split split--rev">
+    <div class="split__media duo reveal">
+      <div class="shot shot--phone"><img src="assets/demo-calendrier-iphone.webp" width="760" height="1652" loading="lazy" alt="Écran de KmPro expliquant comment l’app retrouve vos trajets à partir du titre de vos rendez-vous"></div>
+      <div class="shot shot--mac"><img src="assets/demo-calendrier-mac.webp" width="941" height="626" loading="lazy" alt="KmPro sur Mac : vos trajets sont peut-être déjà dans votre agenda, avec les calendriers à connecter"></div>
+    </div>
+    <div class="split__copy">
+      <p class="borne">Import du calendrier</p>
+      <h2>Une année entière de trajets, en une fois.</h2>
+      <p class="aha"><svg class="ic" aria-hidden="true"><use href="#i-sparkle"/></svg><span>Vos trajets sont peut-être déjà dans votre agenda : vous n’avez pas besoin de tous les saisir à la main.</span></p>
+      <p class="hero__lead">Connectez les calendriers de l’app Calendrier de votre iPhone ou de votre Mac — iCloud, Google, Outlook — et KmPro y retrouve vos déplacements professionnels.</p>
+      <p style="color:var(--ink-2)">Choisissez un mois, ou l’année complète. KmPro repère les rendez-vous qui correspondent à un déplacement, remplit la date et l’adresse, calcule la distance et le montant. Vous relisez, vous validez : votre année est faite.</p>
+      <ul class="checks">
+        <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Un mois entier, ou toute l’année, en une analyse</li>
+        <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Date, adresse et distance déjà remplies</li>
+        <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Rien n’est enregistré sans votre validation</li>
+      </ul>
+      <p class="pull">C’est là que tout change : <b>ce qui demandait une soirée de recherches se règle en quelques minutes.</b></p>
+      <p class="privacy-note"><i><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg></i>Le contenu de votre calendrier reste sur votre appareil.</p>
     </div>
   </div>
 </section>
@@ -763,9 +852,9 @@ kbd{font-family:var(--font);font-size:13px;min-width:28px;text-align:center;back
   <div class="wrap">
     <div class="split">
       <div class="split__copy">
-        <p class="borne">Plusieurs destinations</p>
-        <h2>Une journée peut avoir plusieurs destinations.</h2>
-        <p class="lead">Client A, client B, retour au bureau : chaque segment est calculé, puis additionné.</p>
+        <p class="borne">Trajets à étapes</p>
+        <h2>Entrez toute votre tournée en une seule fois.</h2>
+        <p class="lead">Composez votre trajet en plusieurs étapes, puis ajoutez-le en une fois : client A, client B, retour au bureau. KmPro calcule chaque segment et les additionne. Idéal pour vos tournées.</p>
         <ol class="itin" aria-label="Exemple de trajet à étapes">
           <li><span><b>Bureau</b><small>Départ</small></span><span></span></li>
           <li><span><b>Client A</b><small>Étape 1</small></span><span class="km tnum">18 km</span></li>
@@ -837,25 +926,6 @@ kbd{font-family:var(--font);font-size:13px;min-width:28px;text-align:center;back
 </section>
 
 
-
-<!-- CALENDRIER — [[ASSET_SCREEN_CALENDAR]] -->
-<section class="sec" id="calendrier" style="padding-top:0">
-  <div class="wrap split split--rev">
-    <div class="split__media reveal">
-      <div class="shot" style="aspect-ratio:4/5;max-width:460px;margin-inline:auto"><img src="assets/demo-iphone-trajets.webp" width="760" height="1030" loading="lazy" alt="iPhone affichant l’écran Trajets de KmPro avec le bouton Importer via vos calendriers (données de démonstration)"></div>
-    </div>
-    <div class="split__copy">
-      <p class="borne">Filet de sécurité</p>
-      <h2>Et pour les trajets que vous avez oublié de saisir ?</h2>
-      <p class="hero__lead">Votre calendrier devient votre filet de sécurité.</p>
-      <p class="aha"><svg class="ic" aria-hidden="true"><use href="#i-sparkle"/></svg><span>Vos trajets sont peut-être déjà dans votre agenda : vous n’avez pas besoin de tous les saisir à la main.</span></p>
-      <p style="color:var(--ink-2)">KmPro peut analyser les rendez-vous présents dans les calendriers configurés sur votre appareil et vous proposer les déplacements correspondants, avec la date et l’adresse déjà remplies.</p>
-      <p class="cadence"><span><b>Vous vérifiez.</b></span> <span><b>Vous ajoutez.</b></span> <span><b>C’est fait.</b></span></p>
-      <p class="muted">Pratique pour retrouver un rendez-vous client ou un déplacement professionnel passé, sans fouiller manuellement toute votre année.</p>
-      <p class="privacy-note"><i><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg></i>Le contenu de votre calendrier reste sur votre appareil.</p>
-    </div>
-  </div>
-</section>
 
 <!-- iPHONE + MAC — [[ASSET_SCREEN_HOME_IOS]] [[ASSET_SCREEN_ANNUAL_MAC]] -->
 <section class="sec" id="iphone-mac" style="padding-top:0">
@@ -933,7 +1003,6 @@ kbd{font-family:var(--font);font-size:13px;min-width:28px;text-align:center;back
         <li><svg class="ic" aria-hidden="true"><use href="#i-table"/></svg>Le détail de chaque déplacement</li>
         <li><svg class="ic" aria-hidden="true"><use href="#i-map"/></svg>La carte et les itinéraires possibles</li>
       </ul>
-      <p class="kbd-row"><kbd>⌘</kbd><kbd>N</kbd><span>Raccourcis clavier et menus natifs du Mac.</span></p>
     </div>
   </div>
 </section>
@@ -1041,28 +1110,6 @@ kbd{font-family:var(--font);font-size:13px;min-width:28px;text-align:center;back
   </div>
 </section>
 
-<!-- CE QUE KMPRO CHANGE -->
-<section class="sec" id="change" style="padding-top:0">
-  <div class="wrap">
-    <div class="change reveal">
-      <div class="sec__head" style="margin:0;max-width:900px">
-        <p class="borne">Ce que KmPro change</p>
-        <h2>KmPro, c’est moins de temps passé à retrouver ce que vous avez déjà fait.</h2>
-      </div>
-      <div class="change__grid">
-        <ul class="change__already">
-          <li>Vous avez déjà roulé.</li>
-          <li>Vous avez déjà été chez votre client.</li>
-          <li>Vous avez déjà inscrit le rendez-vous dans votre agenda.</li>
-          <li>Vous ne devriez pas avoir à refaire tout ce travail pour votre comptabilité.</li>
-        </ul>
-        <p class="lead">KmPro rassemble vos trajets au fur et à mesure, calcule les distances et les indemnités kilométriques, et prépare les exports dont vous aurez besoin.</p>
-      </div>
-      <p class="signature">Vous travaillez.<br><span>KmPro garde la trace.</span></p>
-    </div>
-  </div>
-</section>
-
 <!-- TARIF -->
 <section class="sec" id="tarif" style="padding-top:0">
   <div class="wrap">
@@ -1143,6 +1190,59 @@ kbd{font-family:var(--font);font-size:13px;min-width:28px;text-align:center;back
   </div>
 </section>
 
+<!-- À QUI S'ADRESSE KMPRO -->
+<section class="sec" id="pour-qui" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec__head">
+      <p class="borne">À qui s’adresse KmPro</p>
+      <h2 style="font-size:clamp(1.6rem,3vw,2.2rem)">Si vous roulez pour votre travail, c’est pour vous.</h2>
+      <p class="lead">Peu importe le métier : dès qu’il faut justifier des kilomètres à la fin du mois ou de l’année, KmPro fait le suivi à votre place.</p>
+    </div>
+    <div class="audience__photos">
+      <figure class="audience__photo">
+        <img src="assets/photo-terrain-commerciale.webp" width="900" height="1125" loading="lazy" alt="Une commerciale note son déplacement sur son iPhone, devant sa voiture">
+      </figure>
+      <figure class="audience__photo">
+        <img src="assets/photo-terrain-chantier.webp" width="900" height="1125" loading="lazy" alt="Un artisan enregistre son trajet sur son iPhone en quittant un chantier">
+      </figure>
+    </div>
+
+    <div class="audience">
+      <article class="reveal">
+        <i><svg class="ic" aria-hidden="true"><use href="#i-briefcase"/></svg></i>
+        <h3>Indépendants et freelances</h3>
+        <p>Consultants, formateurs, photographes, vidéastes, développeurs : vos déplacements chez les clients deviennent des frais justifiés, sans y penser.</p>
+      </article>
+      <article class="reveal">
+        <i><svg class="ic" aria-hidden="true"><use href="#i-care"/></svg></i>
+        <h3>Professions de santé à domicile</h3>
+        <p>Infirmières et infirmiers libéraux, kinés, sages-femmes, aides à domicile : des dizaines de visites par semaine, toutes tracées sans ressaisie.</p>
+      </article>
+      <article class="reveal">
+        <i><svg class="ic" aria-hidden="true"><use href="#i-car"/></svg></i>
+        <h3>Salariés qui roulent avec leur voiture</h3>
+        <p>Vous avancez vos kilomètres et devez les transmettre à votre employeur : sortez un tableau clair, mois par mois, sans reconstituer votre agenda.</p>
+      </article>
+      <article class="reveal">
+        <i><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></i>
+        <h3>Commerciaux et technico-commerciaux</h3>
+        <p>Des tournées toute la semaine, plusieurs clients par jour : les trajets à étapes sont calculés segment par segment.</p>
+      </article>
+      <article class="reveal">
+        <i><svg class="ic" aria-hidden="true"><use href="#i-tools"/></svg></i>
+        <h3>Artisans et métiers du chantier</h3>
+        <p>Chantiers, fournisseurs, devis à domicile : les trajets qui reviennent se créent une fois pour toutes.</p>
+      </article>
+      <article class="reveal">
+        <i><svg class="ic" aria-hidden="true"><use href="#i-building"/></svg></i>
+        <h3>Gérants et chefs d’entreprise</h3>
+        <p>Rendez-vous, banque, administration, déplacements pro : un historique propre à remettre à votre comptable, et des exports prêts pour le bilan.</p>
+      </article>
+    </div>
+    <p class="audience__more">Et aussi : agents immobiliers, coachs sportifs, éducateurs, techniciens en intervention, professions libérales du droit et du chiffre, associations… <b>Si vous utilisez votre véhicule personnel pour travailler, KmPro vous concerne.</b></p>
+  </div>
+</section>
+
 </main>
 
 <footer class="foot" lang="fr">
@@ -1168,6 +1268,13 @@ kbd{font-family:var(--font);font-size:13px;min-width:28px;text-align:center;back
 <script>
 (() => {
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Menu des sections : se referme après un clic
+  const menu = document.getElementById('menu');
+  if (menu) {
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { menu.open = false; }));
+    document.addEventListener('click', e => { if (!menu.contains(e.target)) menu.open = false; });
+  }
 
   // Header : filet au défilement
   const top = document.getElementById('top');
