@@ -31,7 +31,7 @@ if(p){localStorage.setItem(k,p);return;}
 if(localStorage.getItem(k))return;
 var tz=(Intl.DateTimeFormat().resolvedOptions().timeZone||'');
 var l=(navigator.languages||[navigator.language||'']).join(',');
-if(tz==='Europe/Zurich'||/[-_]CH/i.test(l)){location.replace('https://kmpro.ch/?pays=ch');}
+if(tz==='Europe/Zurich'||/[-_]CH\b/i.test(l)){location.replace('https://kmpro.ch/?pays=ch');}
 }catch(e){}})();</script>
 <title>KmPro — Frais kilométriques et suivi des trajets professionnels</title>
 <style>
@@ -204,8 +204,19 @@ p{margin:0}
 .chip--export{left:44%;bottom:-1%}
 .chip--export i{background:#E1F1E7;color:var(--excel)}
 @media (max-width:900px){
-  .hero__grid{grid-template-columns:1fr}
-  .hero__visual{justify-self:center;max-width:520px}
+  /* Sur iPhone : titre, puis visuel, puis la phrase courte et le bouton.
+     Le paragraphe long et le dépliant passent en dessous. */
+  .hero__grid{grid-template-columns:1fr;gap:20px}
+  .hero__copy{display:contents}
+  .hero .borne{order:1}
+  .hero h1{order:2}
+  .hero__visual{order:3;justify-self:center;max-width:520px;margin-block:18px 12px}
+  .hero .cadence{order:4;font-size:1.12rem}
+  .hero .btn--xl{order:5;justify-self:start}
+  .hero .cta-sub{order:6}
+  .hero .stores{order:7}
+  .hero__lead{order:8;font-size:1.04rem;font-weight:550;color:var(--ink-2)}
+  .hero .more{order:9}
   .chip--ar{right:0}
 }
 @media (max-width:480px){.chip{font-size:12px;padding:7px 10px 7px 8px}.chip i{width:24px;height:24px}.chip small{display:none}.chip--cal{left:0}.chip--export{left:30%}.store{min-width:0;flex:1 1 150px;padding-inline:10px 12px;gap:8px}.store svg{width:22px;height:22px}.store strong{font-size:15px;white-space:nowrap}}
@@ -269,7 +280,7 @@ p{margin:0}
 .split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,80px);align-items:center}
 .split--rev .split__media{order:2}
 .split__copy{display:grid;gap:20px;align-content:start}
-@media (max-width:900px){.split{grid-template-columns:1fr}.split--rev .split__media{order:0}}
+@media (max-width:900px){.split{grid-template-columns:1fr}.split__copy{order:-1}.split--rev .split__media{order:0}}
 .shot{border-radius:var(--r-l);overflow:hidden;box-shadow:var(--shadow);background:#c7b294;position:relative}
 .shot img{width:100%;height:100%;object-fit:cover}
 .checks{list-style:none;margin:0;padding:0;display:grid;gap:12px}
@@ -449,7 +460,7 @@ svg.ic{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;strok
 .mac-wide .shot img{object-position:50% 56%}
 .kbd-row{display:flex;flex-wrap:wrap;gap:6px;align-items:center;color:var(--muted);font-size:14px}
 kbd{font-family:var(--font);font-size:13px;min-width:28px;text-align:center;background:var(--surface);border-radius:7px;padding:3px 8px;box-shadow:inset 0 -2px 0 #D3DBE6,0 0 0 1px #DCE3EC;color:var(--ink)}
-@media (max-width:900px){.mac-wide{grid-template-columns:1fr}}
+@media (max-width:900px){.mac-wide{grid-template-columns:1fr}.mac-wide .split__copy{order:-1}}
 
 /* ——— Sauvegardes ——— */
 .backups{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
@@ -628,19 +639,40 @@ kbd{font-family:var(--font);font-size:13px;min-width:28px;text-align:center;back
         </div>
       </details>
       <a class="btn btn--blue btn--xl" href="https://apps.apple.com/app/kmpro" target="_blank" rel="noopener">Essayer KmPro pendant 14 jours</a>
-      <p class="cta-sub">Sans carte bancaire · Aucun prélèvement automatique · iPhone + Mac</p>
+      <p class="cta-sub">Sans carte bancaire · Aucun prélèvement ni renouvellement automatiques · iPhone + Mac</p>
       <div class="stores">
         <a class="store" href="https://apps.apple.com/app/kmpro" target="_blank" rel="noopener" aria-label="Télécharger KmPro pour iPhone dans l’App Store"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.63c-.03-2.7 2.2-4 2.3-4.06-1.25-1.83-3.2-2.08-3.9-2.11-1.66-.17-3.24.98-4.08.98-.85 0-2.14-.96-3.52-.93-1.81.03-3.48 1.05-4.41 2.67-1.88 3.26-.48 8.08 1.35 10.73.9 1.29 1.96 2.75 3.36 2.7 1.35-.05 1.86-.87 3.49-.87 1.63 0 2.09.87 3.51.84 1.45-.03 2.37-1.32 3.26-2.62 1.03-1.5 1.45-2.95 1.47-3.03-.03-.01-2.82-1.08-2.85-4.3zM13.7 4.7c.74-.9 1.24-2.15 1.1-3.4-1.07.04-2.36.71-3.13 1.61-.69.8-1.29 2.07-1.13 3.3 1.19.09 2.41-.61 3.16-1.51z"/></svg><span><small>Télécharger dans l’</small><strong>App Store</strong><em>iPhone</em></span></a>
         <a class="store" href="https://apps.apple.com/app/kmpro" target="_blank" rel="noopener" aria-label="Télécharger KmPro pour Mac sur le Mac App Store"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.63c-.03-2.7 2.2-4 2.3-4.06-1.25-1.83-3.2-2.08-3.9-2.11-1.66-.17-3.24.98-4.08.98-.85 0-2.14-.96-3.52-.93-1.81.03-3.48 1.05-4.41 2.67-1.88 3.26-.48 8.08 1.35 10.73.9 1.29 1.96 2.75 3.36 2.7 1.35-.05 1.86-.87 3.49-.87 1.63 0 2.09.87 3.51.84 1.45-.03 2.37-1.32 3.26-2.62 1.03-1.5 1.45-2.95 1.47-3.03-.03-.01-2.82-1.08-2.85-4.3zM13.7 4.7c.74-.9 1.24-2.15 1.1-3.4-1.07.04-2.36.71-3.13 1.61-.69.8-1.29 2.07-1.13 3.3 1.19.09 2.41-.61 3.16-1.51z"/></svg><span><small>Télécharger sur le</small><strong>Mac App Store</strong><em>Mac</em></span></a>
       </div>
-    </div>
+      </div>
     <div class="hero__visual">
       <figure class="hv-phone" style="margin:0"><img src="assets/demo-iphone-accueil.webp" width="760" height="1030" alt="iPhone posé sur une table en bois affichant l’accueil de KmPro : nouveau trajet, trajets favoris et totaux du mois (données de démonstration)" fetchpriority="high"></figure>
       <figure class="hv-mac" style="margin:0"><img src="assets/demo-mac-annee.webp" width="941" height="759" alt="MacBook affichant la vue annuelle de KmPro avec les kilomètres et montants mois par mois (données de démonstration)"></figure>
       <div class="chip chip--cal" aria-hidden="true"><i><svg class="ic"><use href="#i-cal"/></svg></i><span>Trajet ajouté<small>Chantier · Annecy, 08:30</small></span></div>
       <div class="chip chip--ar" aria-hidden="true"><i><svg class="ic"><use href="#i-repeat"/></svg></i><span>Aller-retour · 84 km<small>calculé automatiquement</small></span></div>
-      <div class="chip chip--rate" aria-hidden="true"><i><svg class="ic"><use href="#i-gauge"/></svg></i><span>5 CV · barème 2026<small>taux appliqué</small></span></div>
-      <div class="chip chip--export" aria-hidden="true"><i><svg class="ic"><use href="#i-table"/></svg></i><span>Mars.xlsx · Mars.pdf<small>prêts à envoyer</small></span></div>
+      <div class="chip chip--rate" aria-hidden="true"><i><svg class="ic"><use href="#i-gauge"/></svg></i><span>Barème fiscal<small>calculé automatiquement</small></span></div>
+      <div class="chip chip--export" aria-hidden="true"><i><svg class="ic"><use href="#i-table"/></svg></i><span>Exports PDF et Excel<small>prêts à envoyer</small></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SAISIE — [[ASSET_SCREEN_TRIP_IOS]] -->
+<section class="sec" id="fonctionnalites" style="padding-top:0">
+  <div class="wrap split">
+    <div class="split__media duo reveal">
+      <div class="shot shot--phone"><img src="assets/demo-iphone-trajet.webp" width="760" height="1030" loading="lazy" alt="iPhone affichant l’écran Nouveau trajet de KmPro : carte, itinéraires proposés et option aller-retour (données de démonstration)"></div>
+      <div class="shot shot--mac"><img src="assets/demo-mac-mois.webp" width="941" height="759" loading="lazy" alt="MacBook affichant le détail des trajets d’un mois dans KmPro (données de démonstration)"></div>
+    </div>
+    <div class="split__copy">
+      <p class="borne">Ajouter un trajet</p>
+      <h2>Un trajet, quelques secondes.</h2>
+      <p class="lead">Choisissez votre destination : KmPro calcule la distance avec les cartes d’Apple, et le montant selon votre véhicule.</p>
+      <ul class="checks">
+        <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Aller-retour et kilomètres en plus, en un geste</li>
+        <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Client, projet et objet du déplacement, si besoin</li>
+        <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Plusieurs itinéraires proposés pour calculer au plus juste</li>
+      </ul>
+      <p class="note"><i><svg class="ic" aria-hidden="true"><use href="#i-repeat"/></svg></i>Dupliquez vos trajets en un clic.</p>
     </div>
   </div>
 </section>
@@ -726,27 +758,6 @@ kbd{font-family:var(--font);font-size:13px;min-width:28px;text-align:center;back
   </div>
 </section>
 
-<!-- SAISIE — [[ASSET_SCREEN_TRIP_IOS]] -->
-<section class="sec" id="fonctionnalites" style="padding-top:0">
-  <div class="wrap split">
-    <div class="split__media duo reveal">
-      <div class="shot shot--phone"><img src="assets/demo-iphone-trajet.webp" width="760" height="1030" loading="lazy" alt="iPhone affichant l’écran Nouveau trajet de KmPro : carte, itinéraires proposés et option aller-retour (données de démonstration)"></div>
-      <div class="shot shot--mac"><img src="assets/demo-mac-mois.webp" width="941" height="759" loading="lazy" alt="MacBook affichant le détail des trajets d’un mois dans KmPro (données de démonstration)"></div>
-    </div>
-    <div class="split__copy">
-      <p class="borne">Ajouter un trajet</p>
-      <h2>Un trajet, quelques secondes.</h2>
-      <p class="lead">Choisissez votre destination : KmPro calcule la distance avec les cartes d’Apple, et le montant selon votre véhicule.</p>
-      <ul class="checks">
-        <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Aller-retour et kilomètres en plus, en un geste</li>
-        <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Client, projet et objet du déplacement, si besoin</li>
-        <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Le bon itinéraire, parmi ceux proposés</li>
-      </ul>
-      <p class="note"><i><svg class="ic" aria-hidden="true"><use href="#i-repeat"/></svg></i>Refaire un trajet passé en un geste.</p>
-    </div>
-  </div>
-</section>
-
 <!-- ÉTAPES, FAVORIS, RÉCURRENTS — [[ASSET_MULTI_STOP]] -->
 <section class="sec" id="etapes" style="padding-top:0">
   <div class="wrap">
@@ -824,6 +835,7 @@ kbd{font-family:var(--font);font-size:13px;min-width:28px;text-align:center;back
     </div>
   </div>
 </section>
+
 
 
 <!-- CALENDRIER — [[ASSET_SCREEN_CALENDAR]] -->
@@ -1071,7 +1083,7 @@ kbd{font-family:var(--font);font-size:13px;min-width:28px;text-align:center;back
         </ul>
         <div class="price__trial">
           <b>14 jours d’essai de l’abonnement, sans carte bancaire.</b>
-          <span>Aucun prélèvement automatique à la fin. Vous ne payez que si vous choisissez de vous abonner.</span>
+          <span>Aucun prélèvement ni renouvellement automatiques : vous ne payez que si vous choisissez de vous abonner, et l’abonnement ne se reconduit pas tout seul.</span>
         </div>
         <a class="btn btn--blue" href="https://apps.apple.com/app/kmpro" target="_blank" rel="noopener">Essayer KmPro pendant 14 jours</a>
         <p class="price__fine">Pendant l’essai, vous saisissez les trajets des mois couverts par les 14 jours. Les exports Excel et PDF sont ouverts à tous, abonné ou non.</p>
@@ -1118,12 +1130,12 @@ kbd{font-family:var(--font);font-size:13px;min-width:28px;text-align:center;back
       <h2>Commencez à suivre vos trajets avant d’avoir à les retrouver.</h2>
       <p class="lead" style="color:var(--ink-2)">KmPro vous accompagne au fil de l’année pour transformer vos déplacements professionnels en un historique clair, prêt à être exporté lorsque vous en avez besoin.</p>
       <a class="btn btn--blue btn--xl" href="https://apps.apple.com/app/kmpro" target="_blank" rel="noopener">Essayer KmPro pendant 14 jours</a>
-      <p class="cta-sub">Sans carte bancaire. Aucun prélèvement automatique à la fin. Un seul abonnement pour iPhone et Mac.</p>
+      <p class="cta-sub">Sans carte bancaire. Aucun prélèvement ni renouvellement automatiques. Un seul abonnement pour iPhone et Mac.</p>
       <div class="stores">
         <a class="store" href="https://apps.apple.com/app/kmpro" target="_blank" rel="noopener" aria-label="Télécharger KmPro pour iPhone dans l’App Store"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.63c-.03-2.7 2.2-4 2.3-4.06-1.25-1.83-3.2-2.08-3.9-2.11-1.66-.17-3.24.98-4.08.98-.85 0-2.14-.96-3.52-.93-1.81.03-3.48 1.05-4.41 2.67-1.88 3.26-.48 8.08 1.35 10.73.9 1.29 1.96 2.75 3.36 2.7 1.35-.05 1.86-.87 3.49-.87 1.63 0 2.09.87 3.51.84 1.45-.03 2.37-1.32 3.26-2.62 1.03-1.5 1.45-2.95 1.47-3.03-.03-.01-2.82-1.08-2.85-4.3zM13.7 4.7c.74-.9 1.24-2.15 1.1-3.4-1.07.04-2.36.71-3.13 1.61-.69.8-1.29 2.07-1.13 3.3 1.19.09 2.41-.61 3.16-1.51z"/></svg><span><small>Télécharger dans l’</small><strong>App Store</strong><em>iPhone</em></span></a>
         <a class="store" href="https://apps.apple.com/app/kmpro" target="_blank" rel="noopener" aria-label="Télécharger KmPro pour Mac sur le Mac App Store"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.63c-.03-2.7 2.2-4 2.3-4.06-1.25-1.83-3.2-2.08-3.9-2.11-1.66-.17-3.24.98-4.08.98-.85 0-2.14-.96-3.52-.93-1.81.03-3.48 1.05-4.41 2.67-1.88 3.26-.48 8.08 1.35 10.73.9 1.29 1.96 2.75 3.36 2.7 1.35-.05 1.86-.87 3.49-.87 1.63 0 2.09.87 3.51.84 1.45-.03 2.37-1.32 3.26-2.62 1.03-1.5 1.45-2.95 1.47-3.03-.03-.01-2.82-1.08-2.85-4.3zM13.7 4.7c.74-.9 1.24-2.15 1.1-3.4-1.07.04-2.36.71-3.13 1.61-.69.8-1.29 2.07-1.13 3.3 1.19.09 2.41-.61 3.16-1.51z"/></svg><span><small>Télécharger sur le</small><strong>Mac App Store</strong><em>Mac</em></span></a>
       </div>
-    </div>
+      </div>
     <div class="final__devices">
       <div class="shot shot--mac"><img src="assets/demo-mac-export.webp" width="941" height="759" loading="lazy" alt="MacBook affichant la fenêtre d’export Excel et PDF de KmPro (données de démonstration)"></div>
       <div class="shot shot--phone"><img src="assets/demo-iphone-export.webp" width="760" height="1030" loading="lazy" alt="iPhone affichant l’écran Exporter de KmPro : Excel ou PDF, par mois ou par année (données de démonstration)"></div>
@@ -1153,7 +1165,6 @@ kbd{font-family:var(--font);font-size:13px;min-width:28px;text-align:center;back
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "KmPro", "applicationCategory": "BusinessApplication", "operatingSystem": "iOS, macOS", "description": "Suivez vos déplacements professionnels, calculez vos indemnités kilométriques et exportez votre comptabilité en Excel ou PDF avec KmPro sur iPhone et Mac.", "inLanguage": "fr", "offers": {"@type": "Offer", "price": "29.99", "priceCurrency": "EUR", "description": "Abonnement annuel iPhone + Mac, 14 jours d’essai de l’abonnement"}, "author": {"@type": "Person", "name": "Lucas Stanus"}, "downloadUrl": "https://apps.apple.com/app/kmpro"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "KmPro est-il disponible dans mon pays ?", "acceptedAnswer": {"@type": "Answer", "text": "KmPro se télécharge dans tous les pays de l’App Store. Les calculs sont adaptés à la France (barème kilométrique fiscal) et à la Suisse (taux de référence fédéral). D’autres pays sont à l’étude."}}, {"@type": "Question", "name": "KmPro fonctionne-t-il sur iPhone et Mac ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Un seul abonnement couvre les deux."}}, {"@type": "Question", "name": "Y a-t-il un essai ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui : 14 jours d’essai de l’abonnement, sans carte bancaire, pour saisir les trajets des mois qu’ils couvrent. Aucun abonnement ne démarre automatiquement ensuite."}}, {"@type": "Question", "name": "Puis-je utiliser KmPro sans iCloud ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Seule la synchronisation entre appareils est alors indisponible."}}, {"@type": "Question", "name": "KmPro collecte-t-il mes déplacements ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. L’éditeur ne collecte aucune donnée. Vos données restent dans votre iCloud privé."}}, {"@type": "Question", "name": "Mon calendrier est-il envoyé sur un serveur ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. L’analyse est faite sur l’appareil."}}, {"@type": "Question", "name": "Puis-je exporter mes trajets ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, en Excel et PDF, par mois ou par année. Les exports sont ouverts à tous, abonné ou non."}}, {"@type": "Question", "name": "Si j’arrête mon abonnement, je perds mes données ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. Trajets, sauvegardes et exports Excel et PDF restent accessibles. Seule la saisie de nouveaux trajets se ferme."}}]}</script>
-
 <script>
 (() => {
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
