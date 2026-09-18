@@ -91,19 +91,25 @@ p{margin:0}
 .flags__flag{font-size:19px;line-height:1}
 
 /* ——— À qui s'adresse KmPro ——— */
-.audience{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:clamp(22px,3vw,32px)}
-.audience article{background:var(--surface);border-radius:var(--r-m);padding:18px 20px;display:grid;gap:8px;align-content:start}
-.audience article>i{display:grid;place-items:center;width:32px;height:32px;border-radius:10px;background:var(--sky);color:var(--blue)}
-.audience article>i>svg{width:17px;height:17px}
-.audience h3{font-size:.98rem}
-.audience p{font-size:14px;line-height:1.45;color:var(--ink-2)}
-.audience figure{margin:0;border-radius:var(--r-m);overflow:hidden;min-height:190px;box-shadow:var(--shadow-soft)}
-.audience figure img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;display:block}
-.audience .audience__more{background:linear-gradient(140deg,#E7F0FF,#EAF7FD);border-radius:var(--r-m);padding:18px 20px;
-  margin:0;font-size:14px;line-height:1.5;color:var(--ink-2);display:grid;align-content:center}
-.audience .audience__more b{color:var(--ink)}
-@media (max-width:900px){.audience{grid-template-columns:1fr 1fr}.audience figure{min-height:210px}}
-@media (max-width:620px){.audience{grid-template-columns:1fr}.audience figure{min-height:0;aspect-ratio:5/4}}
+.audience-band{display:grid;grid-template-columns:minmax(190px,1fr) 2.3fr minmax(190px,1fr);gap:clamp(14px,2vw,20px);
+  margin-top:clamp(22px,3vw,32px);align-items:stretch}
+.audience-band figure{margin:0;border-radius:var(--r-l);overflow:hidden;box-shadow:var(--shadow-soft);min-height:100%}
+.audience-band figure img{width:100%;height:100%;object-fit:cover;object-position:50% 22%;display:block}
+.audience{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-content:start}
+.audience article{background:var(--surface);border-radius:var(--r-m);padding:16px 18px;display:grid;gap:7px;align-content:start}
+.audience article>i{display:grid;place-items:center;width:30px;height:30px;border-radius:9px;background:var(--sky);color:var(--blue)}
+.audience article>i>svg{width:16px;height:16px}
+.audience h3{font-size:.95rem}
+.audience p{font-size:13.5px;line-height:1.45;color:var(--ink-2)}
+.audience__more{margin-top:clamp(14px,2vw,18px);background:linear-gradient(140deg,#E7F0FF,#EAF7FD);border-radius:var(--r-m);
+  padding:16px 20px;font-size:14.5px;line-height:1.5;color:var(--ink-2)}
+.audience__more b{color:var(--ink)}
+@media (max-width:1000px){
+  .audience-band{grid-template-columns:1fr 1fr;gap:12px}
+  .audience{grid-column:1/-1;order:-1}
+  .audience-band figure{min-height:0;aspect-ratio:4/3}
+}
+@media (max-width:620px){.audience{grid-template-columns:1fr}.audience-band{grid-template-columns:1fr}.audience-band figure{aspect-ratio:5/4}}
 
 /* ——— Menu des sections (petits écrans) ——— */
 .menu{display:none;position:relative}
@@ -1189,45 +1195,47 @@ kbd{font-family:var(--font);font-size:13px;min-width:28px;text-align:center;back
       <h2 style="font-size:clamp(1.6rem,3vw,2.2rem)">Si vous roulez pour votre travail, c’est pour vous.</h2>
       <p class="lead">Peu importe le métier : dès qu’il faut justifier des kilomètres à la fin du mois ou de l’année, KmPro fait le suivi à votre place.</p>
     </div>
-    <div class="audience">
-      <article class="reveal">
+    <div class="audience-band">
+      <figure class="audience__photo">
+        <img src="assets/photo-terrain-commerciale.webp" width="900" height="1125" loading="lazy" alt="Une commerciale note son déplacement sur son iPhone, devant sa voiture">
+      </figure>
+      <div class="audience">
+        <article class="reveal">
         <i><svg class="ic" aria-hidden="true"><use href="#i-briefcase"/></svg></i>
         <h3>Indépendants et freelances</h3>
         <p>Consultants, formateurs, photographes, vidéastes, développeurs : vos déplacements chez les clients deviennent des frais justifiés, sans y penser.</p>
       </article>
-      <article class="reveal">
+        <article class="reveal">
         <i><svg class="ic" aria-hidden="true"><use href="#i-care"/></svg></i>
         <h3>Professions de santé à domicile</h3>
         <p>Infirmières et infirmiers libéraux, kinés, sages-femmes, aides à domicile : des dizaines de visites par semaine, toutes tracées sans ressaisie.</p>
       </article>
-      <figure class="audience__photo">
-        <img src="assets/photo-terrain-commerciale.webp" width="900" height="1125" loading="lazy" alt="Une commerciale note son déplacement sur son iPhone, devant sa voiture">
-      </figure>
-      <article class="reveal">
+        <article class="reveal">
         <i><svg class="ic" aria-hidden="true"><use href="#i-car"/></svg></i>
         <h3>Salariés qui roulent avec leur voiture</h3>
         <p>Vous avancez vos kilomètres et devez les transmettre à votre employeur : sortez un tableau clair, mois par mois, sans reconstituer votre agenda.</p>
       </article>
-      <article class="reveal">
+        <article class="reveal">
         <i><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></i>
         <h3>Commerciaux et technico-commerciaux</h3>
         <p>Des tournées toute la semaine, plusieurs clients par jour : les trajets à étapes sont calculés segment par segment.</p>
       </article>
-      <figure class="audience__photo">
-        <img src="assets/photo-terrain-chantier.webp" width="900" height="1125" loading="lazy" alt="Un artisan enregistre son trajet sur son iPhone en quittant un chantier">
-      </figure>
-      <article class="reveal">
+        <article class="reveal">
         <i><svg class="ic" aria-hidden="true"><use href="#i-tools"/></svg></i>
         <h3>Artisans et métiers du chantier</h3>
         <p>Chantiers, fournisseurs, devis à domicile : les trajets qui reviennent se créent une fois pour toutes.</p>
       </article>
-      <article class="reveal">
+        <article class="reveal">
         <i><svg class="ic" aria-hidden="true"><use href="#i-building"/></svg></i>
         <h3>Gérants et chefs d’entreprise</h3>
         <p>Rendez-vous, banque, administration, déplacements pro : un historique propre à remettre à votre comptable, et des exports prêts pour le bilan.</p>
       </article>
-      <p class="audience__more">Et aussi : agents immobiliers, coachs sportifs, éducateurs, techniciens en intervention, avocats, formateurs, associations… <b>Si vous utilisez votre véhicule personnel pour travailler, KmPro vous concerne.</b></p>
+      </div>
+      <figure class="audience__photo">
+        <img src="assets/photo-terrain-chantier.webp" width="900" height="1125" loading="lazy" alt="Un artisan enregistre son trajet sur son iPhone en quittant un chantier">
+      </figure>
     </div>
+    <p class="audience__more">Et aussi : agents immobiliers, coachs sportifs, éducateurs, techniciens en intervention, avocats, formateurs, associations… <b>Si vous utilisez votre véhicule personnel pour travailler, KmPro vous concerne.</b></p>
   </div>
 </section>
 
