@@ -246,19 +246,18 @@ p{margin:0}
 .chip--export{left:44%;bottom:-1%}
 .chip--export i{background:#E1F1E7;color:var(--excel)}
 @media (max-width:900px){
-  /* Sur iPhone : titre, puis visuel, puis la phrase courte et le bouton.
-     Le paragraphe long et le dépliant passent en dessous. */
+  /* Sur iPhone : titre, la phrase de présentation, puis le visuel et le bouton.
+     Le dépliant passe en dessous. */
   .hero__grid{grid-template-columns:1fr;gap:20px}
   .hero__copy{display:contents}
   .hero .borne{order:1}
   .hero h1{order:2}
-  .hero__visual{order:3;justify-self:center;max-width:520px;margin-block:18px 12px}
-  .hero .cadence{order:4;font-size:1.12rem}
+  .hero .cadence{order:3;font-size:1.12rem}
+  .hero__visual{order:4;justify-self:center;max-width:520px;margin-block:18px 12px}
   .hero .btn--xl{order:5;justify-self:start}
   .hero .cta-sub{order:6}
   .hero .stores{order:7}
-  .hero__lead{order:8;font-size:1.04rem;font-weight:550;color:var(--ink-2)}
-  .hero .more{order:9}
+  .hero .more{order:8}
   .chip--ar{right:0}
 }
 @media (max-width:480px){.chip{font-size:12px;padding:7px 10px 7px 8px}.chip i{width:24px;height:24px}.chip small{display:none}.chip--cal{left:0}.chip--export{left:30%}.store{min-width:0;flex:1 1 150px;padding-inline:10px 12px;gap:8px}.store svg{width:22px;height:22px}.store strong{font-size:15px;white-space:nowrap}}
