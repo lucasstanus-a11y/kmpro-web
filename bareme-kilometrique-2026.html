@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="fr-FR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Barème kilométrique 2026 : tableau officiel et calcul</title>
+<meta name="description" content="Barème kilométrique 2026 pour les voitures : tableau officiel par puissance fiscale et tranche de kilométrage, majoration de 20 % pour les véhicules électriques, et calcul en ligne.">
+<link rel="canonical" href="https://kmpro.app/bareme-kilometrique-2026.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="KmPro">
+<meta property="og:title" content="Barème kilométrique 2026 : tableau officiel et calcul">
+<meta property="og:description" content="Le tableau officiel du barème kilométrique 2026 par puissance fiscale et tranche de kilométrage, et le calcul de vos indemnités kilométriques.">
+<meta property="og:url" content="https://kmpro.app/bareme-kilometrique-2026.html">
+<meta property="og:image" content="https://kmpro.app/assets/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<style>
+  :root{--ground:#F4F7FB;--surface:#FFFFFF;--surface-2:#EEF3F9;--ink:#0B1A2E;--ink-2:#34445B;--muted:#627289;--line:#DAE3EE;--blue:#1F6BEB;--blue-deep:#1552C9;--sky:#DCE9FF;--green:#1E7F4F;--r-m:16px;--r-l:20px;--shadow-soft:0 12px 32px rgba(11,26,46,.08);--mono:ui-monospace,SFMono-Regular,Menlo,monospace;color-scheme:light}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--ground);color:var(--ink);font:17px/1.62 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:var(--blue-deep)}
+  :focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+  .wrap{max-width:860px;margin-inline:auto;padding-inline:clamp(16px,4vw,32px)}
+  header{padding-block:22px}
+  .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:750;font-size:19px;letter-spacing:-.02em}
+  .brand img{width:34px;height:34px;border-radius:9px}
+  .brand b{color:var(--blue);font-weight:750}
+  main{padding-block:8px 56px}
+  h1{font-size:clamp(2rem,5vw,2.9rem);line-height:1.06;letter-spacing:-.04em;margin:18px 0 10px}
+  h2{font-size:clamp(1.3rem,2.6vw,1.75rem);letter-spacing:-.025em;line-height:1.15;margin:44px 0 12px}
+  h3{font-size:1.05rem;margin:26px 0 8px}
+  p{margin:0 0 14px;color:var(--ink-2);text-wrap:pretty}
+  .chapo{font-size:clamp(1.05rem,2vw,1.2rem);color:var(--ink-2)}
+  .maj{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-deep)}
+  .card{background:var(--surface);border-radius:var(--r-l);padding:clamp(18px,3vw,26px);box-shadow:var(--shadow-soft);margin:18px 0}
+  .tbl{width:100%;overflow-x:auto}
+  table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;min-width:520px}
+  caption{text-align:left;font-weight:700;color:var(--ink);padding-bottom:10px}
+  th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:right;font-size:15.5px}
+  th:first-child,td:first-child{text-align:left}
+  thead th{color:var(--muted);font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
+  tbody tr:last-child td{border-bottom:0}
+  td.n{font-family:var(--mono)}
+  .note{background:var(--surface-2);border-radius:var(--r-m);padding:16px 18px;color:var(--ink-2);font-size:15.5px;margin:16px 0}
+  .calc{display:grid;gap:14px}
+  .calc__row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  label{display:grid;gap:6px;font-size:14px;font-weight:650;color:var(--ink)}
+  select,input{font:inherit;font-size:16px;padding:11px 12px;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);width:100%}
+  .check{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:600}
+  .check input{width:auto}
+  .out{background:linear-gradient(120deg,#E6F0FF,#E3F7FD);border-radius:var(--r-m);padding:18px 20px;display:grid;gap:4px}
+  .out b{font-size:clamp(1.8rem,4vw,2.4rem);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+  .out small{color:var(--ink-2);font-size:14px}
+  .cta{display:block;background:var(--blue);color:#fff;text-decoration:none;font-weight:700;padding:16px 22px;border-radius:999px;text-align:center;margin:10px 0}
+  .cta:hover{background:var(--blue-deep)}
+  .src{font-size:14px;color:var(--muted)}
+  footer{padding-block:0 48px;color:var(--muted);font-size:14px}
+  @media (max-width:560px){.calc__row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <a class="brand" href="./"><img src="assets/kmpro-icon.webp" alt="" width="34" height="34"><span>Km<b>Pro</b></span></a>
+</header>
+
+<main class="wrap">
+  <p class="maj">Barème fiscal</p>
+  <h1>Barème kilométrique 2026</h1>
+  <p class="chapo">Le barème kilométrique sert à calculer les indemnités kilométriques d’un véhicule personnel utilisé pour le travail. Pour 2026, il est reconduit à l’identique de 2025 : les montants ci-dessous sont ceux à appliquer.</p>
+
+  <div class="note">Cette page concerne les <b>voitures</b>. Le montant dépend de deux choses : la <b>puissance fiscale</b> du véhicule (case P.6 de la carte grise) et le <b>nombre de kilomètres parcourus dans l’année</b> à titre professionnel.</div>
+
+  <h2>Tranche 1 — jusqu’à 5 000 km par an</h2>
+  <div class="card"><div class="tbl"><table>
+    <caption>Montant en euros par kilomètre parcouru</caption>
+    <thead><tr><th>Puissance fiscale</th><th>Thermique / hybride</th><th>100 % électrique</th></tr></thead>
+    <tbody>
+      <tr><td>3 CV et moins</td><td class="n">0,529 €</td><td class="n">0,635 €</td></tr>
+      <tr><td>4 CV</td><td class="n">0,606 €</td><td class="n">0,727 €</td></tr>
+      <tr><td>5 CV</td><td class="n">0,636 €</td><td class="n">0,763 €</td></tr>
+      <tr><td>6 CV</td><td class="n">0,665 €</td><td class="n">0,798 €</td></tr>
+      <tr><td>7 CV et plus</td><td class="n">0,697 €</td><td class="n">0,836 €</td></tr>
+    </tbody>
+  </table></div></div>
+  <p>Exemple : 3 000 km parcourus avec une 5 CV thermique donnent 3 000 × 0,636 = <b>1 908 €</b>.</p>
+
+  <h2>Tranche 2 — de 5 001 à 20 000 km par an</h2>
+  <p>Dans cette tranche, le calcul n’est pas un simple taux au kilomètre : on multiplie la distance par un coefficient, puis on ajoute un montant fixe. <span class="src">(<i>d</i> = distance parcourue dans l’année)</span></p>
+  <div class="card"><div class="tbl"><table>
+    <caption>Formule de calcul du montant annuel</caption>
+    <thead><tr><th>Puissance fiscale</th><th>Thermique / hybride</th><th>100 % électrique</th></tr></thead>
+    <tbody>
+      <tr><td>3 CV et moins</td><td class="n">(d × 0,316) + 1 065</td><td class="n">(d × 0,379) + 1 278</td></tr>
+      <tr><td>4 CV</td><td class="n">(d × 0,340) + 1 330</td><td class="n">(d × 0,408) + 1 596</td></tr>
+      <tr><td>5 CV</td><td class="n">(d × 0,357) + 1 395</td><td class="n">(d × 0,428) + 1 674</td></tr>
+      <tr><td>6 CV</td><td class="n">(d × 0,374) + 1 457</td><td class="n">(d × 0,449) + 1 748</td></tr>
+      <tr><td>7 CV et plus</td><td class="n">(d × 0,394) + 1 515</td><td class="n">(d × 0,473) + 1 818</td></tr>
+    </tbody>
+  </table></div></div>
+  <p>Exemple : 12 000 km avec une 5 CV thermique donnent (12 000 × 0,357) + 1 395 = <b>5 679 €</b>.</p>
+
+  <h2>Tranche 3 — au-delà de 20 000 km par an</h2>
+  <div class="card"><div class="tbl"><table>
+    <caption>Montant en euros par kilomètre parcouru</caption>
+    <thead><tr><th>Puissance fiscale</th><th>Thermique / hybride</th><th>100 % électrique</th></tr></thead>
+    <tbody>
+      <tr><td>3 CV et moins</td><td class="n">0,370 €</td><td class="n">0,444 €</td></tr>
+      <tr><td>4 CV</td><td class="n">0,407 €</td><td class="n">0,488 €</td></tr>
+      <tr><td>5 CV</td><td class="n">0,427 €</td><td class="n">0,512 €</td></tr>
+      <tr><td>6 CV</td><td class="n">0,447 €</td><td class="n">0,536 €</td></tr>
+      <tr><td>7 CV et plus</td><td class="n">0,470 €</td><td class="n">0,564 €</td></tr>
+    </tbody>
+  </table></div></div>
+
+  <h2>Véhicules électriques : majoration de 20 %</h2>
+  <p>Pour un véhicule 100 % électrique, le montant obtenu est majoré de 20 %. Les colonnes « 100 % électrique » des tableaux ci-dessus appliquent déjà cette majoration.</p>
+
+  <h2>Calculez votre montant</h2>
+  <div class="card">
+    <form class="calc" id="calc" novalidate>
+      <div class="calc__row">
+        <label>Puissance fiscale
+          <select id="cv">
+            <option value="0">3 CV et moins</option>
+            <option value="1">4 CV</option>
+            <option value="2" selected>5 CV</option>
+            <option value="3">6 CV</option>
+            <option value="4">7 CV et plus</option>
+          </select>
+        </label>
+        <label>Kilomètres professionnels dans l’année
+          <input id="km" type="number" inputmode="numeric" min="0" step="100" value="8000">
+        </label>
+      </div>
+      <label class="check"><input id="elec" type="checkbox"> Véhicule 100 % électrique</label>
+    </form>
+    <div class="out" role="status" aria-live="polite">
+      <b id="res">—</b>
+      <small id="det"></small>
+    </div>
+  </div>
+
+  <h2>Qui peut utiliser ce barème ?</h2>
+  <p>Il s’applique aux personnes qui utilisent leur véhicule personnel pour leur activité professionnelle : indépendants et professions libérales au régime réel, salariés qui optent pour les frais réels, dirigeants remboursés par leur société, et salariés indemnisés par leur employeur.</p>
+  <p>Dans tous les cas, les kilomètres doivent pouvoir être justifiés : date du déplacement, destination, motif professionnel et distance parcourue.</p>
+
+  <h2>Justifier ses kilomètres sans y passer des soirées</h2>
+  <p>C’est précisément le travail que fait KmPro : l’application enregistre chaque déplacement, calcule la distance et applique ce barème selon votre véhicule, puis exporte le tout en Excel ou en PDF pour votre comptable. Elle peut aussi retrouver vos déplacements dans votre calendrier et remplir une année entière d’un coup.</p>
+  <a class="cta" href="https://apps.apple.com/app/id6802150703" target="_blank" rel="noopener">Découvrir KmPro sur iPhone et Mac</a>
+  <p class="src">Source du barème : <a href="https://www.urssaf.fr/accueil/outils-documentation/taux-baremes/indemnites-kilometriques.html" rel="noopener" target="_blank">barème des indemnités kilométriques publié par l’URSSAF</a>. Page mise à jour le 27 septembre 2026. Ces informations sont données à titre indicatif et ne remplacent pas l’avis d’un professionnel de la comptabilité.</p>
+</main>
+
+<footer class="wrap">
+  <p>© 2026 KmPro · <a href="./">Accueil</a> · <a href="mentions-legales.html">Mentions légales</a></p>
+</footer>
+
+<script>
+(function(){
+  var T1=[0.529,0.606,0.636,0.665,0.697], T1E=[0.635,0.727,0.763,0.798,0.836];
+  var T2=[[0.316,1065],[0.340,1330],[0.357,1395],[0.374,1457],[0.394,1515]];
+  var T2E=[[0.379,1278],[0.408,1596],[0.428,1674],[0.449,1748],[0.473,1818]];
+  var T3=[0.370,0.407,0.427,0.447,0.470], T3E=[0.444,0.488,0.512,0.536,0.564];
+  var cv=document.getElementById('cv'), km=document.getElementById('km'), el=document.getElementById('elec');
+  var res=document.getElementById('res'), det=document.getElementById('det');
+  var eur=new Intl.NumberFormat('fr-FR',{style:'currency',currency:'EUR',maximumFractionDigits:2});
+  function calc(){
+    var i=+cv.value, d=Math.max(0, Math.round(+km.value||0)), e=el.checked, m, txt;
+    if(d<=5000){ var t=(e?T1E:T1)[i]; m=d*t; txt=d.toLocaleString('fr-FR')+' km × '+t.toFixed(3).replace('.',',')+' €'; }
+    else if(d<=20000){ var f=(e?T2E:T2)[i]; m=d*f[0]+f[1]; txt='('+d.toLocaleString('fr-FR')+' × '+f[0].toFixed(3).replace('.',',')+') + '+f[1].toLocaleString('fr-FR')+' €'; }
+    else { var t3=(e?T3E:T3)[i]; m=d*t3; txt=d.toLocaleString('fr-FR')+' km × '+t3.toFixed(3).replace('.',',')+' €'; }
+    res.textContent=eur.format(m);
+    det.textContent=txt+(e?' · barème électrique (+20 %)':'');
+  }
+  ['change','input'].forEach(function(ev){ cv.addEventListener(ev,calc); km.addEventListener(ev,calc); el.addEventListener(ev,calc); });
+  calc();
+})();
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Barème kilométrique 2026","description":"Tableau officiel du barème kilométrique 2026 pour les voitures, par puissance fiscale et tranche de kilométrage, avec la majoration de 20 % des véhicules électriques.","inLanguage":"fr-FR","datePublished":"2026-09-27","dateModified":"2026-09-27","author":{"@type":"Organization","name":"KmPro"},"publisher":{"@type":"Organization","name":"KmPro","url":"https://kmpro.app/"},"mainEntityOfPage":"https://kmpro.app/bareme-kilometrique-2026.html"}
+</script>
+</body>
+</html>
