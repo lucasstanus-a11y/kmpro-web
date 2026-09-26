@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="fr-FR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trouver le barème fiscal de sa voiture : la puissance fiscale</title>
+<meta name="description" content="Où lire la puissance fiscale de votre voiture sur la carte grise (case P.6), et quelle colonne du barème kilométrique lui correspond.">
+<link rel="canonical" href="https://kmpro.app/bareme-fiscal-voiture.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="KmPro">
+<meta property="og:title" content="Trouver le barème fiscal de sa voiture : la puissance fiscale">
+<meta property="og:description" content="Où lire la puissance fiscale de votre voiture sur la carte grise (case P.6), et quelle colonne du barème kilométrique lui correspond.">
+<meta property="og:url" content="https://kmpro.app/bareme-fiscal-voiture.html">
+<meta property="og:image" content="https://kmpro.app/assets/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<style>
+:root{--ground:#F4F7FB;--surface:#FFFFFF;--surface-2:#EEF3F9;--ink:#0B1A2E;--ink-2:#34445B;--muted:#627289;--line:#DAE3EE;--blue:#1F6BEB;--blue-deep:#1552C9;--sky:#DCE9FF;--green:#1E7F4F;--r-m:16px;--r-l:20px;--shadow-soft:0 12px 32px rgba(11,26,46,.08);--mono:ui-monospace,SFMono-Regular,Menlo,monospace;color-scheme:light}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--ground);color:var(--ink);font:17px/1.62 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:var(--blue-deep)}
+  :focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+  .wrap{max-width:860px;margin-inline:auto;padding-inline:clamp(16px,4vw,32px)}
+  header{padding-block:22px}
+  .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:750;font-size:19px;letter-spacing:-.02em}
+  .brand img{width:34px;height:34px;border-radius:9px}
+  .brand b{color:var(--blue);font-weight:750}
+  main{padding-block:8px 56px}
+  h1{font-size:clamp(2rem,5vw,2.9rem);line-height:1.06;letter-spacing:-.04em;margin:18px 0 10px}
+  h2{font-size:clamp(1.3rem,2.6vw,1.75rem);letter-spacing:-.025em;line-height:1.15;margin:44px 0 12px}
+  h3{font-size:1.05rem;margin:26px 0 8px}
+  p{margin:0 0 14px;color:var(--ink-2);text-wrap:pretty}
+  .chapo{font-size:clamp(1.05rem,2vw,1.2rem);color:var(--ink-2)}
+  .maj{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-deep)}
+  .card{background:var(--surface);border-radius:var(--r-l);padding:clamp(18px,3vw,26px);box-shadow:var(--shadow-soft);margin:18px 0}
+  .tbl{width:100%;overflow-x:auto}
+  table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;min-width:520px}
+  caption{text-align:left;font-weight:700;color:var(--ink);padding-bottom:10px}
+  th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:right;font-size:15.5px}
+  th:first-child,td:first-child{text-align:left}
+  thead th{color:var(--muted);font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
+  tbody tr:last-child td{border-bottom:0}
+  td.n{font-family:var(--mono)}
+  .note{background:var(--surface-2);border-radius:var(--r-m);padding:16px 18px;color:var(--ink-2);font-size:15.5px;margin:16px 0}
+  .calc{display:grid;gap:14px}
+  .calc__row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  label{display:grid;gap:6px;font-size:14px;font-weight:650;color:var(--ink)}
+  select,input{font:inherit;font-size:16px;padding:11px 12px;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);width:100%}
+  .check{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:600}
+  .check input{width:auto}
+  .out{background:linear-gradient(120deg,#E6F0FF,#E3F7FD);border-radius:var(--r-m);padding:18px 20px;display:grid;gap:4px}
+  .out b{font-size:clamp(1.8rem,4vw,2.4rem);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+  .out small{color:var(--ink-2);font-size:14px}
+  .cta{display:block;background:var(--blue);color:#fff;text-decoration:none;font-weight:700;padding:16px 22px;border-radius:999px;text-align:center;margin:10px 0}
+  .cta:hover{background:var(--blue-deep)}
+  .src{font-size:14px;color:var(--muted)}
+  footer{padding-block:0 48px;color:var(--muted);font-size:14px}
+  @media (max-width:560px){.calc__row{grid-template-columns:1fr}}
+  .aussi{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+  .aussi li a{display:block;background:var(--surface);border-radius:var(--r-m);padding:14px 18px;text-decoration:none;color:var(--ink);font-weight:650;box-shadow:var(--shadow-soft)}
+  .aussi li a:hover{color:var(--blue-deep)}
+  .etapes{list-style:none;counter-reset:e;margin:0;padding:0;display:grid;gap:14px}
+  .etapes li{counter-increment:e;display:grid;grid-template-columns:32px 1fr;gap:14px;align-items:start}
+  .etapes li::before{content:counter(e);width:32px;height:32px;border-radius:10px;background:var(--sky);color:var(--blue-deep);font-weight:750;display:grid;place-items:center;font-size:15px}
+  .etapes b{display:block;color:var(--ink)}
+  .etapes p{margin:4px 0 0}
+  ul.puces{padding-left:20px;color:var(--ink-2)}
+  ul.puces li{margin-bottom:8px}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <a class="brand" href="./"><img src="assets/kmpro-icon.webp" alt="" width="34" height="34"><span>Km<b>Pro</b></span></a>
+</header>
+
+<main class="wrap">
+<p class="maj">Véhicule</p>
+  <h1>Trouver le barème fiscal de sa voiture</h1>
+  <p class="chapo">Pour calculer des indemnités kilométriques, il faut connaître la <b>puissance fiscale</b> de son véhicule. Elle est écrite sur la carte grise, et c’est elle qui détermine la colonne du barème à appliquer.</p>
+
+  <h2>Où la lire sur la carte grise</h2>
+  <p>Sur le certificat d’immatriculation, la puissance fiscale se trouve à la <b>case P.6</b>. C’est un nombre simple, entre 1 et une dizaine, exprimé en chevaux fiscaux (CV).</p>
+  <div class="note">Ne la confondez pas avec la <b>case P.2</b>, qui indique la puissance réelle du moteur en kilowatts, ni avec la <b>case P.3</b>, qui indique le type de carburant. Seule la case P.6 sert au barème kilométrique.</div>
+
+  <h2>À quelle colonne du barème elle correspond</h2>
+  <p>Le barème ne distingue que cinq catégories. Tous les véhicules de 3 CV et moins sont traités ensemble, et tous ceux de 7 CV et plus également.</p>
+  <div class="card"><div class="tbl"><table>
+    <caption>Correspondance entre la case P.6 et le barème</caption>
+    <thead><tr><th>Puissance fiscale (P.6)</th><th>Catégorie du barème</th></tr></thead>
+    <tbody>
+      <tr><td>1, 2 ou 3 CV</td><td>3 CV et moins</td></tr>
+      <tr><td>4 CV</td><td>4 CV</td></tr>
+      <tr><td>5 CV</td><td>5 CV</td></tr>
+      <tr><td>6 CV</td><td>6 CV</td></tr>
+      <tr><td>7 CV et au-delà</td><td>7 CV et plus</td></tr>
+    </tbody>
+  </table></div></div>
+  <p>Une fois la catégorie connue, il ne reste qu’à croiser avec votre kilométrage annuel pour obtenir le montant : c’est ce que détaille le <a href="bareme-kilometrique-2026.html">barème kilométrique 2026</a>.</p>
+
+  <h2>Voiture électrique : une majoration de 20 %</h2>
+  <p>Un véhicule <b>100 % électrique</b> bénéficie d’une majoration de 20 % du montant calculé. Sur la carte grise, la case P.3 porte alors la mention « EL ».</p>
+  <p>Les véhicules <b>hybrides</b>, même rechargeables, ne sont pas concernés par cette majoration : ils suivent le barème ordinaire. La majoration ne vise que les véhicules qui roulent uniquement à l’électricité.</p>
+
+  <h2>Quelques situations particulières</h2>
+  <ul class="puces">
+    <li><b>Le véhicule n’est pas à votre nom.</b> Le barème suppose que vous supportez les frais du véhicule. Si la carte grise est au nom d’un tiers, d’une société ou d’un organisme de location longue durée, les règles diffèrent : faites le point avec votre comptable.</li>
+    <li><b>Vous avez changé de voiture en cours d’année.</b> Chaque véhicule a sa propre puissance fiscale : les kilomètres se répartissent entre eux, chacun avec son barème.</li>
+    <li><b>Plusieurs véhicules utilisés pour le travail.</b> Même principe : le calcul se fait véhicule par véhicule, et non sur le total des kilomètres.</li>
+  </ul>
+
+  <h2>Le renseigner une fois pour toutes</h2>
+  <p>Dans KmPro, la puissance fiscale et le type de motorisation se saisissent une seule fois, au paramétrage du véhicule. Ensuite, chaque trajet est valorisé automatiquement au bon taux, sans que vous ayez à rouvrir le barème.</p>
+  <a class="cta" href="https://apps.apple.com/app/id6802150703" target="_blank" rel="noopener">Découvrir KmPro sur iPhone et Mac</a>
+  <p class="src">Informations données à titre indicatif. En cas de doute sur votre situation, adressez-vous à un professionnel de la comptabilité ou à l’administration fiscale.</p>
+
+<h2>À lire aussi</h2>
+<ul class="aussi"><li><a href="bareme-kilometrique-2026.html">Barème kilométrique 2026 : tableau officiel et simulateur</a></li><li><a href="calculer-frais-kilometriques.html">Calculer ses frais kilométriques en France : méthode et exemples</a></li><li><a href="comptables.html">Comptables : proposez KmPro à vos clients</a></li><li><a href="frais-reels-vehicule-personnel.html">Déclarer ses frais kilométriques avec son véhicule personnel</a></li><li><a href="note-de-frais-kilometrique.html">Note de frais kilométrique : ce qu’elle doit contenir</a></li></ul>
+</main>
+
+<footer class="wrap">
+  <p>© 2026 KmPro · <a href="./">Accueil</a> · <a href="mentions-legales.html">Mentions légales</a></p>
+</footer>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Trouver le barème fiscal de sa voiture", "description": "Où lire la puissance fiscale de votre voiture sur la carte grise (case P.6), et quelle colonne du barème kilométrique lui correspond.", "inLanguage": "fr-FR", "datePublished": "2026-09-27", "dateModified": "2026-09-27", "author": {"@type": "Organization", "name": "KmPro"}, "publisher": {"@type": "Organization", "name": "KmPro", "url": "https://kmpro.app/"}, "mainEntityOfPage": "https://kmpro.app/bareme-fiscal-voiture.html"}</script>
+</body>
+</html>

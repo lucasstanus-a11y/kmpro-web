@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="fr-FR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comptables : proposez KmPro à vos clients</title>
+<meta name="description" content="Vos clients vous remettent leurs kilomètres en vrac ? KmPro leur fait produire un tableau Excel ou PDF complet, mois par mois, prêt à intégrer à leur comptabilité.">
+<link rel="canonical" href="https://kmpro.app/comptables.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="KmPro">
+<meta property="og:title" content="Comptables : proposez KmPro à vos clients">
+<meta property="og:description" content="Vos clients vous remettent leurs kilomètres en vrac ? KmPro leur fait produire un tableau Excel ou PDF complet, mois par mois, prêt à intégrer à leur comptabilité.">
+<meta property="og:url" content="https://kmpro.app/comptables.html">
+<meta property="og:image" content="https://kmpro.app/assets/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<style>
+:root{--ground:#F4F7FB;--surface:#FFFFFF;--surface-2:#EEF3F9;--ink:#0B1A2E;--ink-2:#34445B;--muted:#627289;--line:#DAE3EE;--blue:#1F6BEB;--blue-deep:#1552C9;--sky:#DCE9FF;--green:#1E7F4F;--r-m:16px;--r-l:20px;--shadow-soft:0 12px 32px rgba(11,26,46,.08);--mono:ui-monospace,SFMono-Regular,Menlo,monospace;color-scheme:light}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--ground);color:var(--ink);font:17px/1.62 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:var(--blue-deep)}
+  :focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+  .wrap{max-width:860px;margin-inline:auto;padding-inline:clamp(16px,4vw,32px)}
+  header{padding-block:22px}
+  .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:750;font-size:19px;letter-spacing:-.02em}
+  .brand img{width:34px;height:34px;border-radius:9px}
+  .brand b{color:var(--blue);font-weight:750}
+  main{padding-block:8px 56px}
+  h1{font-size:clamp(2rem,5vw,2.9rem);line-height:1.06;letter-spacing:-.04em;margin:18px 0 10px}
+  h2{font-size:clamp(1.3rem,2.6vw,1.75rem);letter-spacing:-.025em;line-height:1.15;margin:44px 0 12px}
+  h3{font-size:1.05rem;margin:26px 0 8px}
+  p{margin:0 0 14px;color:var(--ink-2);text-wrap:pretty}
+  .chapo{font-size:clamp(1.05rem,2vw,1.2rem);color:var(--ink-2)}
+  .maj{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-deep)}
+  .card{background:var(--surface);border-radius:var(--r-l);padding:clamp(18px,3vw,26px);box-shadow:var(--shadow-soft);margin:18px 0}
+  .tbl{width:100%;overflow-x:auto}
+  table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;min-width:520px}
+  caption{text-align:left;font-weight:700;color:var(--ink);padding-bottom:10px}
+  th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:right;font-size:15.5px}
+  th:first-child,td:first-child{text-align:left}
+  thead th{color:var(--muted);font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
+  tbody tr:last-child td{border-bottom:0}
+  td.n{font-family:var(--mono)}
+  .note{background:var(--surface-2);border-radius:var(--r-m);padding:16px 18px;color:var(--ink-2);font-size:15.5px;margin:16px 0}
+  .calc{display:grid;gap:14px}
+  .calc__row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  label{display:grid;gap:6px;font-size:14px;font-weight:650;color:var(--ink)}
+  select,input{font:inherit;font-size:16px;padding:11px 12px;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);width:100%}
+  .check{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:600}
+  .check input{width:auto}
+  .out{background:linear-gradient(120deg,#E6F0FF,#E3F7FD);border-radius:var(--r-m);padding:18px 20px;display:grid;gap:4px}
+  .out b{font-size:clamp(1.8rem,4vw,2.4rem);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+  .out small{color:var(--ink-2);font-size:14px}
+  .cta{display:block;background:var(--blue);color:#fff;text-decoration:none;font-weight:700;padding:16px 22px;border-radius:999px;text-align:center;margin:10px 0}
+  .cta:hover{background:var(--blue-deep)}
+  .src{font-size:14px;color:var(--muted)}
+  footer{padding-block:0 48px;color:var(--muted);font-size:14px}
+  @media (max-width:560px){.calc__row{grid-template-columns:1fr}}
+  .aussi{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+  .aussi li a{display:block;background:var(--surface);border-radius:var(--r-m);padding:14px 18px;text-decoration:none;color:var(--ink);font-weight:650;box-shadow:var(--shadow-soft)}
+  .aussi li a:hover{color:var(--blue-deep)}
+  .etapes{list-style:none;counter-reset:e;margin:0;padding:0;display:grid;gap:14px}
+  .etapes li{counter-increment:e;display:grid;grid-template-columns:32px 1fr;gap:14px;align-items:start}
+  .etapes li::before{content:counter(e);width:32px;height:32px;border-radius:10px;background:var(--sky);color:var(--blue-deep);font-weight:750;display:grid;place-items:center;font-size:15px}
+  .etapes b{display:block;color:var(--ink)}
+  .etapes p{margin:4px 0 0}
+  ul.puces{padding-left:20px;color:var(--ink-2)}
+  ul.puces li{margin-bottom:8px}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <a class="brand" href="./"><img src="assets/kmpro-icon.webp" alt="" width="34" height="34"><span>Km<b>Pro</b></span></a>
+</header>
+
+<main class="wrap">
+<p class="maj">Cabinets comptables</p>
+  <h1>Comptables : proposez KmPro à vos clients</h1>
+  <p class="chapo">Chaque année, la même scène : un client arrive avec un agenda, des souvenirs et un ordre de grandeur. Il faut reconstituer ses déplacements, vérifier les distances, appliquer le bon barème — et le résultat reste fragile en cas de contrôle.</p>
+
+  <h2>Ce que vous recevez ensuite</h2>
+  <p>Un client équipé de KmPro vous remet un document déjà construit :</p>
+  <ul class="puces">
+    <li>un <b>fichier Excel</b> avec un onglet par mois, un récapitulatif annuel et de vraies formules, modifiables ;</li>
+    <li>ou un <b>PDF</b> prêt à archiver et à joindre au dossier ;</li>
+    <li>pour chaque ligne : date, trajet, client ou projet, motif, distance et montant ;</li>
+    <li>des montants calculés au <a href="bareme-kilometrique-2026.html">barème de l’année</a>, selon la puissance fiscale et la tranche de kilométrage du véhicule.</li>
+  </ul>
+  <p>Vous n’avez plus à recalculer : vous vérifiez et vous intégrez.</p>
+
+  <h2>Pourquoi le justificatif tient</h2>
+  <p>Les trajets sont enregistrés au fil de l’année, pas reconstitués en mars. Les distances sont calculées par l’application, et chaque déplacement porte son motif professionnel. C’est la différence entre un total estimé et un historique daté, ligne par ligne.</p>
+
+  <h2>Les clients à qui en parler</h2>
+  <p>Ce sont ceux qui vous coûtent le plus de relances : indépendants qui roulent beaucoup, professions de santé à domicile, commerciaux, artisans, et les salariés de vos clients qui avancent leurs kilomètres. Plus le nombre de déplacements est élevé, plus le gain est net — pour eux comme pour vous.</p>
+
+  <h2>Ce qu’ils doivent savoir</h2>
+  <ul class="puces">
+    <li>L’application fonctionne sur <b>iPhone et Mac</b>, avec un seul abonnement annuel.</li>
+    <li>Elle peut retrouver les déplacements déjà présents dans leur <b>calendrier</b> et remplir un mois, ou une année, d’un coup.</li>
+    <li>Les <b>exports restent accessibles même sans abonnement actif</b> : leurs pièces comptables ne dépendent pas d’un renouvellement.</li>
+    <li>Les données restent dans leur <b>espace iCloud privé</b> ; l’éditeur ne collecte aucune donnée.</li>
+  </ul>
+
+  <h2>Une question, un besoin particulier ?</h2>
+  <p>Si vous accompagnez plusieurs clients concernés, ou si le format d’export doit s’adapter à vos habitudes de saisie, écrivez-moi : <a href="mailto:contact@kmpro.app">contact@kmpro.app</a>. Les retours de cabinets sont précieux — l’export a déjà été façonné par ce genre de remarques.</p>
+  <a class="cta" href="https://apps.apple.com/app/id6802150703" target="_blank" rel="noopener">Voir KmPro sur l’App Store</a>
+  <p class="src">KmPro est édité par LUCAS STANUS VIDEOS. Les informations fiscales présentées sur ce site le sont à titre indicatif et ne constituent pas un conseil professionnel.</p>
+
+<h2>À lire aussi</h2>
+<ul class="aussi"><li><a href="bareme-fiscal-voiture.html">Trouver le barème fiscal de sa voiture : la puissance fiscale</a></li><li><a href="bareme-kilometrique-2026.html">Barème kilométrique 2026 : tableau officiel et simulateur</a></li><li><a href="calculer-frais-kilometriques.html">Calculer ses frais kilométriques en France : méthode et exemples</a></li><li><a href="frais-reels-vehicule-personnel.html">Déclarer ses frais kilométriques avec son véhicule personnel</a></li><li><a href="note-de-frais-kilometrique.html">Note de frais kilométrique : ce qu’elle doit contenir</a></li></ul>
+</main>
+
+<footer class="wrap">
+  <p>© 2026 KmPro · <a href="./">Accueil</a> · <a href="mentions-legales.html">Mentions légales</a></p>
+</footer>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Comptables", "description": "Vos clients vous remettent leurs kilomètres en vrac ? KmPro leur fait produire un tableau Excel ou PDF complet, mois par mois, prêt à intégrer à leur comptabilité.", "inLanguage": "fr-FR", "datePublished": "2026-09-27", "dateModified": "2026-09-27", "author": {"@type": "Organization", "name": "KmPro"}, "publisher": {"@type": "Organization", "name": "KmPro", "url": "https://kmpro.app/"}, "mainEntityOfPage": "https://kmpro.app/comptables.html"}</script>
+</body>
+</html>

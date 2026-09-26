@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="fr-FR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculer ses frais kilométriques en France : méthode et exemples</title>
+<meta name="description" content="La méthode complète pour calculer ses frais kilométriques : compter les kilomètres professionnels, appliquer le barème selon la puissance fiscale, et savoir ce que le barème couvre déjà.">
+<link rel="canonical" href="https://kmpro.app/calculer-frais-kilometriques.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="KmPro">
+<meta property="og:title" content="Calculer ses frais kilométriques en France : méthode et exemples">
+<meta property="og:description" content="La méthode complète pour calculer ses frais kilométriques : compter les kilomètres professionnels, appliquer le barème selon la puissance fiscale, et savoir ce que le barème couvre déjà.">
+<meta property="og:url" content="https://kmpro.app/calculer-frais-kilometriques.html">
+<meta property="og:image" content="https://kmpro.app/assets/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<style>
+:root{--ground:#F4F7FB;--surface:#FFFFFF;--surface-2:#EEF3F9;--ink:#0B1A2E;--ink-2:#34445B;--muted:#627289;--line:#DAE3EE;--blue:#1F6BEB;--blue-deep:#1552C9;--sky:#DCE9FF;--green:#1E7F4F;--r-m:16px;--r-l:20px;--shadow-soft:0 12px 32px rgba(11,26,46,.08);--mono:ui-monospace,SFMono-Regular,Menlo,monospace;color-scheme:light}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--ground);color:var(--ink);font:17px/1.62 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:var(--blue-deep)}
+  :focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+  .wrap{max-width:860px;margin-inline:auto;padding-inline:clamp(16px,4vw,32px)}
+  header{padding-block:22px}
+  .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:750;font-size:19px;letter-spacing:-.02em}
+  .brand img{width:34px;height:34px;border-radius:9px}
+  .brand b{color:var(--blue);font-weight:750}
+  main{padding-block:8px 56px}
+  h1{font-size:clamp(2rem,5vw,2.9rem);line-height:1.06;letter-spacing:-.04em;margin:18px 0 10px}
+  h2{font-size:clamp(1.3rem,2.6vw,1.75rem);letter-spacing:-.025em;line-height:1.15;margin:44px 0 12px}
+  h3{font-size:1.05rem;margin:26px 0 8px}
+  p{margin:0 0 14px;color:var(--ink-2);text-wrap:pretty}
+  .chapo{font-size:clamp(1.05rem,2vw,1.2rem);color:var(--ink-2)}
+  .maj{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-deep)}
+  .card{background:var(--surface);border-radius:var(--r-l);padding:clamp(18px,3vw,26px);box-shadow:var(--shadow-soft);margin:18px 0}
+  .tbl{width:100%;overflow-x:auto}
+  table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;min-width:520px}
+  caption{text-align:left;font-weight:700;color:var(--ink);padding-bottom:10px}
+  th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:right;font-size:15.5px}
+  th:first-child,td:first-child{text-align:left}
+  thead th{color:var(--muted);font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
+  tbody tr:last-child td{border-bottom:0}
+  td.n{font-family:var(--mono)}
+  .note{background:var(--surface-2);border-radius:var(--r-m);padding:16px 18px;color:var(--ink-2);font-size:15.5px;margin:16px 0}
+  .calc{display:grid;gap:14px}
+  .calc__row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  label{display:grid;gap:6px;font-size:14px;font-weight:650;color:var(--ink)}
+  select,input{font:inherit;font-size:16px;padding:11px 12px;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);width:100%}
+  .check{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:600}
+  .check input{width:auto}
+  .out{background:linear-gradient(120deg,#E6F0FF,#E3F7FD);border-radius:var(--r-m);padding:18px 20px;display:grid;gap:4px}
+  .out b{font-size:clamp(1.8rem,4vw,2.4rem);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+  .out small{color:var(--ink-2);font-size:14px}
+  .cta{display:block;background:var(--blue);color:#fff;text-decoration:none;font-weight:700;padding:16px 22px;border-radius:999px;text-align:center;margin:10px 0}
+  .cta:hover{background:var(--blue-deep)}
+  .src{font-size:14px;color:var(--muted)}
+  footer{padding-block:0 48px;color:var(--muted);font-size:14px}
+  @media (max-width:560px){.calc__row{grid-template-columns:1fr}}
+  .aussi{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+  .aussi li a{display:block;background:var(--surface);border-radius:var(--r-m);padding:14px 18px;text-decoration:none;color:var(--ink);font-weight:650;box-shadow:var(--shadow-soft)}
+  .aussi li a:hover{color:var(--blue-deep)}
+  .etapes{list-style:none;counter-reset:e;margin:0;padding:0;display:grid;gap:14px}
+  .etapes li{counter-increment:e;display:grid;grid-template-columns:32px 1fr;gap:14px;align-items:start}
+  .etapes li::before{content:counter(e);width:32px;height:32px;border-radius:10px;background:var(--sky);color:var(--blue-deep);font-weight:750;display:grid;place-items:center;font-size:15px}
+  .etapes b{display:block;color:var(--ink)}
+  .etapes p{margin:4px 0 0}
+  ul.puces{padding-left:20px;color:var(--ink-2)}
+  ul.puces li{margin-bottom:8px}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <a class="brand" href="./"><img src="assets/kmpro-icon.webp" alt="" width="34" height="34"><span>Km<b>Pro</b></span></a>
+</header>
+
+<main class="wrap">
+<p class="maj">Méthode</p>
+  <h1>Calculer ses frais kilométriques</h1>
+  <p class="chapo">Calculer ses frais kilométriques tient en quatre étapes. La difficulté n’est jamais le calcul lui-même : c’est de retrouver, en fin d’année, les kilomètres qu’on a réellement parcourus pour son travail.</p>
+
+  <h2>Les quatre étapes</h2>
+  <ol class="etapes">
+    <li><b>Additionner vos kilomètres professionnels de l’année</b>
+      <p>Uniquement les déplacements liés à votre activité : clients, chantiers, fournisseurs, rendez-vous, formations, interventions. Les trajets strictement personnels n’entrent pas dans le calcul.</p></li>
+    <li><b>Relever la puissance fiscale du véhicule</b>
+      <p>Elle est écrite à la case P.6 de la carte grise. <a href="bareme-fiscal-voiture.html">Voir où la trouver exactement</a>.</p></li>
+    <li><b>Repérer votre tranche de kilométrage</b>
+      <p>Le barème comporte trois tranches : jusqu’à 5 000 km, de 5 001 à 20 000 km, et au-delà de 20 000 km. La tranche se détermine sur le total annuel, pas sur un trajet.</p></li>
+    <li><b>Appliquer le barème</b>
+      <p>Dans la première et la troisième tranche, c’est une simple multiplication. Dans la deuxième, on multiplie par un coefficient puis on ajoute un montant fixe. <a href="bareme-kilometrique-2026.html">Le tableau complet et un calculateur</a>.</p></li>
+  </ol>
+
+  <h2>Trois exemples chiffrés</h2>
+  <div class="card"><div class="tbl"><table>
+    <caption>Barème 2026, véhicules thermiques</caption>
+    <thead><tr><th>Situation</th><th>Calcul</th><th>Montant</th></tr></thead>
+    <tbody>
+      <tr><td>3 000 km, 5 CV</td><td class="n">3 000 × 0,636</td><td class="n">1 908 €</td></tr>
+      <tr><td>12 000 km, 5 CV</td><td class="n">(12 000 × 0,357) + 1 395</td><td class="n">5 679 €</td></tr>
+      <tr><td>25 000 km, 6 CV</td><td class="n">25 000 × 0,447</td><td class="n">11 175 €</td></tr>
+    </tbody>
+  </table></div></div>
+  <p>On voit tout de suite l’effet du barème : le montant par kilomètre baisse à mesure que le kilométrage augmente, parce que les frais fixes du véhicule sont déjà couverts.</p>
+
+  <h2>Ce que le barème couvre déjà</h2>
+  <p>Le barème est forfaitaire : il représente l’ensemble des frais courants du véhicule. Sont considérés comme déjà compris :</p>
+  <ul class="puces">
+    <li>le carburant ou l’électricité ;</li>
+    <li>l’entretien, les réparations et les pneumatiques ;</li>
+    <li>l’assurance du véhicule ;</li>
+    <li>la dépréciation du véhicule.</li>
+  </ul>
+  <p>Ces dépenses ne peuvent donc pas être déduites une seconde fois à côté du barème. En revanche, certains frais restent traités séparément — péages, stationnement, et intérêts d’emprunt pour l’achat du véhicule. Conservez-en les justificatifs.</p>
+
+  <h2>Le cas des trajets domicile – travail</h2>
+  <p>Les trajets entre le domicile et le lieu de travail peuvent entrer dans le calcul, mais la distance retenue est en principe plafonnée à 40 km par trajet. Au-delà, il faut pouvoir justifier l’éloignement par des circonstances particulières. C’est un point sur lequel il vaut mieux demander confirmation à votre comptable, car il dépend de votre situation.</p>
+
+  <h2>Ce qu’il faut pouvoir justifier</h2>
+  <p>Un montant sans historique n’a pas de valeur en cas de contrôle. Pour chaque déplacement, gardez : la <b>date</b>, la <b>destination</b>, le <b>motif professionnel</b> et la <b>distance</b>. Le véhicule utilisé et sa puissance fiscale doivent également pouvoir être établis.</p>
+  <div class="note">C’est exactement ce que produit KmPro : chaque trajet enregistré porte sa date, son trajet, son motif et sa distance, et l’export mensuel ou annuel reprend le tout dans un tableau Excel ou un PDF prêt à transmettre.</div>
+  <a class="cta" href="https://apps.apple.com/app/id6802150703" target="_blank" rel="noopener">Suivre ses kilomètres avec KmPro</a>
+  <p class="src">Informations données à titre indicatif, à jour du barème 2026. Elles ne remplacent pas l’avis d’un professionnel de la comptabilité.</p>
+
+<h2>À lire aussi</h2>
+<ul class="aussi"><li><a href="bareme-fiscal-voiture.html">Trouver le barème fiscal de sa voiture : la puissance fiscale</a></li><li><a href="bareme-kilometrique-2026.html">Barème kilométrique 2026 : tableau officiel et simulateur</a></li><li><a href="comptables.html">Comptables : proposez KmPro à vos clients</a></li><li><a href="frais-reels-vehicule-personnel.html">Déclarer ses frais kilométriques avec son véhicule personnel</a></li><li><a href="note-de-frais-kilometrique.html">Note de frais kilométrique : ce qu’elle doit contenir</a></li></ul>
+</main>
+
+<footer class="wrap">
+  <p>© 2026 KmPro · <a href="./">Accueil</a> · <a href="mentions-legales.html">Mentions légales</a></p>
+</footer>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Calculer ses frais kilométriques en France", "description": "La méthode complète pour calculer ses frais kilométriques : compter les kilomètres professionnels, appliquer le barème selon la puissance fiscale, et savoir ce que le barème couvre déjà.", "inLanguage": "fr-FR", "datePublished": "2026-09-27", "dateModified": "2026-09-27", "author": {"@type": "Organization", "name": "KmPro"}, "publisher": {"@type": "Organization", "name": "KmPro", "url": "https://kmpro.app/"}, "mainEntityOfPage": "https://kmpro.app/calculer-frais-kilometriques.html"}</script>
+</body>
+</html>

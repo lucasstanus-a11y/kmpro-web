@@ -3,21 +3,21 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Barème kilométrique 2026 : tableau officiel et calcul</title>
-<meta name="description" content="Barème kilométrique 2026 pour les voitures : tableau officiel par puissance fiscale et tranche de kilométrage, majoration de 20 % pour les véhicules électriques, et calcul en ligne.">
+<title>Barème kilométrique 2026 : tableau officiel et simulateur</title>
+<meta name="description" content="Barème kilométrique 2026 : tableau officiel par puissance fiscale et tranche de kilométrage, majoration de 20 % pour les véhicules électriques, et simulateur de frais kilométriques en ligne.">
 <link rel="canonical" href="https://kmpro.app/bareme-kilometrique-2026.html">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="KmPro">
-<meta property="og:title" content="Barème kilométrique 2026 : tableau officiel et calcul">
-<meta property="og:description" content="Le tableau officiel du barème kilométrique 2026 par puissance fiscale et tranche de kilométrage, et le calcul de vos indemnités kilométriques.">
+<meta property="og:title" content="Barème kilométrique 2026 : tableau officiel et simulateur">
+<meta property="og:description" content="Barème kilométrique 2026 : tableau officiel par puissance fiscale et tranche de kilométrage, majoration de 20 % pour les véhicules électriques, et simulateur de frais kilométriques en ligne.">
 <meta property="og:url" content="https://kmpro.app/bareme-kilometrique-2026.html">
 <meta property="og:image" content="https://kmpro.app/assets/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <style>
-  :root{--ground:#F4F7FB;--surface:#FFFFFF;--surface-2:#EEF3F9;--ink:#0B1A2E;--ink-2:#34445B;--muted:#627289;--line:#DAE3EE;--blue:#1F6BEB;--blue-deep:#1552C9;--sky:#DCE9FF;--green:#1E7F4F;--r-m:16px;--r-l:20px;--shadow-soft:0 12px 32px rgba(11,26,46,.08);--mono:ui-monospace,SFMono-Regular,Menlo,monospace;color-scheme:light}
+:root{--ground:#F4F7FB;--surface:#FFFFFF;--surface-2:#EEF3F9;--ink:#0B1A2E;--ink-2:#34445B;--muted:#627289;--line:#DAE3EE;--blue:#1F6BEB;--blue-deep:#1552C9;--sky:#DCE9FF;--green:#1E7F4F;--r-m:16px;--r-l:20px;--shadow-soft:0 12px 32px rgba(11,26,46,.08);--mono:ui-monospace,SFMono-Regular,Menlo,monospace;color-scheme:light}
   *{box-sizing:border-box}
   body{margin:0;background:var(--ground);color:var(--ink);font:17px/1.62 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
   a{color:var(--blue-deep)}
@@ -58,6 +58,16 @@
   .src{font-size:14px;color:var(--muted)}
   footer{padding-block:0 48px;color:var(--muted);font-size:14px}
   @media (max-width:560px){.calc__row{grid-template-columns:1fr}}
+  .aussi{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+  .aussi li a{display:block;background:var(--surface);border-radius:var(--r-m);padding:14px 18px;text-decoration:none;color:var(--ink);font-weight:650;box-shadow:var(--shadow-soft)}
+  .aussi li a:hover{color:var(--blue-deep)}
+  .etapes{list-style:none;counter-reset:e;margin:0;padding:0;display:grid;gap:14px}
+  .etapes li{counter-increment:e;display:grid;grid-template-columns:32px 1fr;gap:14px;align-items:start}
+  .etapes li::before{content:counter(e);width:32px;height:32px;border-radius:10px;background:var(--sky);color:var(--blue-deep);font-weight:750;display:grid;place-items:center;font-size:15px}
+  .etapes b{display:block;color:var(--ink)}
+  .etapes p{margin:4px 0 0}
+  ul.puces{padding-left:20px;color:var(--ink-2)}
+  ul.puces li{margin-bottom:8px}
 </style>
 </head>
 <body>
@@ -66,9 +76,9 @@
 </header>
 
 <main class="wrap">
-  <p class="maj">Barème fiscal</p>
+<p class="maj">Barème fiscal</p>
   <h1>Barème kilométrique 2026</h1>
-  <p class="chapo">Le barème kilométrique sert à calculer les indemnités kilométriques d’un véhicule personnel utilisé pour le travail. Pour 2026, il est reconduit à l’identique de 2025 : les montants ci-dessous sont ceux à appliquer.</p>
+  <p class="chapo">Le barème kilométrique sert à calculer les indemnités kilométriques d’un véhicule personnel utilisé pour le travail. Pour 2026, il est reconduit à l’identique de 2025 : les montants ci-dessous sont ceux à appliquer. <a href="#simulateur">Aller directement au simulateur</a>.</p>
 
   <div class="note">Cette page concerne les <b>voitures</b>. Le montant dépend de deux choses : la <b>puissance fiscale</b> du véhicule (case P.6 de la carte grise) et le <b>nombre de kilomètres parcourus dans l’année</b> à titre professionnel.</div>
 
@@ -117,7 +127,8 @@
   <h2>Véhicules électriques : majoration de 20 %</h2>
   <p>Pour un véhicule 100 % électrique, le montant obtenu est majoré de 20 %. Les colonnes « 100 % électrique » des tableaux ci-dessus appliquent déjà cette majoration.</p>
 
-  <h2>Calculez votre montant</h2>
+  <h2 id="simulateur">Simulateur de frais kilométriques 2026</h2>
+  <p>Ce simulateur applique le barème fiscal ci-dessus : indiquez la puissance fiscale de votre véhicule et vos kilomètres professionnels de l’année, le montant se calcule immédiatement.</p>
   <div class="card">
     <form class="calc" id="calc" novalidate>
       <div class="calc__row">
@@ -150,14 +161,8 @@
   <p>C’est précisément le travail que fait KmPro : l’application enregistre chaque déplacement, calcule la distance et applique ce barème selon votre véhicule, puis exporte le tout en Excel ou en PDF pour votre comptable. Elle peut aussi retrouver vos déplacements dans votre calendrier et remplir une année entière d’un coup.</p>
   <a class="cta" href="https://apps.apple.com/app/id6802150703" target="_blank" rel="noopener">Découvrir KmPro sur iPhone et Mac</a>
   <p class="src">Source du barème : <a href="https://www.urssaf.fr/accueil/outils-documentation/taux-baremes/indemnites-kilometriques.html" rel="noopener" target="_blank">barème des indemnités kilométriques publié par l’URSSAF</a>. Page mise à jour le 27 septembre 2026. Ces informations sont données à titre indicatif et ne remplacent pas l’avis d’un professionnel de la comptabilité.</p>
-</main>
 
-<footer class="wrap">
-  <p>© 2026 KmPro · <a href="./">Accueil</a> · <a href="mentions-legales.html">Mentions légales</a></p>
-</footer>
-
-<script>
-(function(){
+<script>(function(){
   var T1=[0.529,0.606,0.636,0.665,0.697], T1E=[0.635,0.727,0.763,0.798,0.836];
   var T2=[[0.316,1065],[0.340,1330],[0.357,1395],[0.374,1457],[0.394,1515]];
   var T2E=[[0.379,1278],[0.408,1596],[0.428,1674],[0.449,1748],[0.473,1818]];
@@ -177,8 +182,14 @@
   calc();
 })();
 </script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"Barème kilométrique 2026","description":"Tableau officiel du barème kilométrique 2026 pour les voitures, par puissance fiscale et tranche de kilométrage, avec la majoration de 20 % des véhicules électriques.","inLanguage":"fr-FR","datePublished":"2026-09-27","dateModified":"2026-09-27","author":{"@type":"Organization","name":"KmPro"},"publisher":{"@type":"Organization","name":"KmPro","url":"https://kmpro.app/"},"mainEntityOfPage":"https://kmpro.app/bareme-kilometrique-2026.html"}
-</script>
+
+<h2>À lire aussi</h2>
+<ul class="aussi"><li><a href="bareme-fiscal-voiture.html">Trouver le barème fiscal de sa voiture : la puissance fiscale</a></li><li><a href="calculer-frais-kilometriques.html">Calculer ses frais kilométriques en France : méthode et exemples</a></li><li><a href="comptables.html">Comptables : proposez KmPro à vos clients</a></li><li><a href="frais-reels-vehicule-personnel.html">Déclarer ses frais kilométriques avec son véhicule personnel</a></li><li><a href="note-de-frais-kilometrique.html">Note de frais kilométrique : ce qu’elle doit contenir</a></li></ul>
+</main>
+
+<footer class="wrap">
+  <p>© 2026 KmPro · <a href="./">Accueil</a> · <a href="mentions-legales.html">Mentions légales</a></p>
+</footer>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Barème kilométrique 2026", "description": "Barème kilométrique 2026 : tableau officiel par puissance fiscale et tranche de kilométrage, majoration de 20 % pour les véhicules électriques, et simulateur de frais kilométriques en ligne.", "inLanguage": "fr-FR", "datePublished": "2026-09-27", "dateModified": "2026-09-27", "author": {"@type": "Organization", "name": "KmPro"}, "publisher": {"@type": "Organization", "name": "KmPro", "url": "https://kmpro.app/"}, "mainEntityOfPage": "https://kmpro.app/bareme-kilometrique-2026.html"}</script>
 </body>
 </html>

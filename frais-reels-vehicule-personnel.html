@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="fr-FR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Déclarer ses frais kilométriques avec son véhicule personnel</title>
+<meta name="description" content="Pourquoi déclarer ses frais kilométriques quand on utilise son véhicule personnel pour travailler : frais réels ou déduction forfaitaire, ce que ça change et comment arbitrer.">
+<link rel="canonical" href="https://kmpro.app/frais-reels-vehicule-personnel.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="KmPro">
+<meta property="og:title" content="Déclarer ses frais kilométriques avec son véhicule personnel">
+<meta property="og:description" content="Pourquoi déclarer ses frais kilométriques quand on utilise son véhicule personnel pour travailler : frais réels ou déduction forfaitaire, ce que ça change et comment arbitrer.">
+<meta property="og:url" content="https://kmpro.app/frais-reels-vehicule-personnel.html">
+<meta property="og:image" content="https://kmpro.app/assets/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<style>
+:root{--ground:#F4F7FB;--surface:#FFFFFF;--surface-2:#EEF3F9;--ink:#0B1A2E;--ink-2:#34445B;--muted:#627289;--line:#DAE3EE;--blue:#1F6BEB;--blue-deep:#1552C9;--sky:#DCE9FF;--green:#1E7F4F;--r-m:16px;--r-l:20px;--shadow-soft:0 12px 32px rgba(11,26,46,.08);--mono:ui-monospace,SFMono-Regular,Menlo,monospace;color-scheme:light}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--ground);color:var(--ink);font:17px/1.62 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:var(--blue-deep)}
+  :focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+  .wrap{max-width:860px;margin-inline:auto;padding-inline:clamp(16px,4vw,32px)}
+  header{padding-block:22px}
+  .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:750;font-size:19px;letter-spacing:-.02em}
+  .brand img{width:34px;height:34px;border-radius:9px}
+  .brand b{color:var(--blue);font-weight:750}
+  main{padding-block:8px 56px}
+  h1{font-size:clamp(2rem,5vw,2.9rem);line-height:1.06;letter-spacing:-.04em;margin:18px 0 10px}
+  h2{font-size:clamp(1.3rem,2.6vw,1.75rem);letter-spacing:-.025em;line-height:1.15;margin:44px 0 12px}
+  h3{font-size:1.05rem;margin:26px 0 8px}
+  p{margin:0 0 14px;color:var(--ink-2);text-wrap:pretty}
+  .chapo{font-size:clamp(1.05rem,2vw,1.2rem);color:var(--ink-2)}
+  .maj{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-deep)}
+  .card{background:var(--surface);border-radius:var(--r-l);padding:clamp(18px,3vw,26px);box-shadow:var(--shadow-soft);margin:18px 0}
+  .tbl{width:100%;overflow-x:auto}
+  table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;min-width:520px}
+  caption{text-align:left;font-weight:700;color:var(--ink);padding-bottom:10px}
+  th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:right;font-size:15.5px}
+  th:first-child,td:first-child{text-align:left}
+  thead th{color:var(--muted);font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
+  tbody tr:last-child td{border-bottom:0}
+  td.n{font-family:var(--mono)}
+  .note{background:var(--surface-2);border-radius:var(--r-m);padding:16px 18px;color:var(--ink-2);font-size:15.5px;margin:16px 0}
+  .calc{display:grid;gap:14px}
+  .calc__row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  label{display:grid;gap:6px;font-size:14px;font-weight:650;color:var(--ink)}
+  select,input{font:inherit;font-size:16px;padding:11px 12px;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);width:100%}
+  .check{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:600}
+  .check input{width:auto}
+  .out{background:linear-gradient(120deg,#E6F0FF,#E3F7FD);border-radius:var(--r-m);padding:18px 20px;display:grid;gap:4px}
+  .out b{font-size:clamp(1.8rem,4vw,2.4rem);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+  .out small{color:var(--ink-2);font-size:14px}
+  .cta{display:block;background:var(--blue);color:#fff;text-decoration:none;font-weight:700;padding:16px 22px;border-radius:999px;text-align:center;margin:10px 0}
+  .cta:hover{background:var(--blue-deep)}
+  .src{font-size:14px;color:var(--muted)}
+  footer{padding-block:0 48px;color:var(--muted);font-size:14px}
+  @media (max-width:560px){.calc__row{grid-template-columns:1fr}}
+  .aussi{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+  .aussi li a{display:block;background:var(--surface);border-radius:var(--r-m);padding:14px 18px;text-decoration:none;color:var(--ink);font-weight:650;box-shadow:var(--shadow-soft)}
+  .aussi li a:hover{color:var(--blue-deep)}
+  .etapes{list-style:none;counter-reset:e;margin:0;padding:0;display:grid;gap:14px}
+  .etapes li{counter-increment:e;display:grid;grid-template-columns:32px 1fr;gap:14px;align-items:start}
+  .etapes li::before{content:counter(e);width:32px;height:32px;border-radius:10px;background:var(--sky);color:var(--blue-deep);font-weight:750;display:grid;place-items:center;font-size:15px}
+  .etapes b{display:block;color:var(--ink)}
+  .etapes p{margin:4px 0 0}
+  ul.puces{padding-left:20px;color:var(--ink-2)}
+  ul.puces li{margin-bottom:8px}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <a class="brand" href="./"><img src="assets/kmpro-icon.webp" alt="" width="34" height="34"><span>Km<b>Pro</b></span></a>
+</header>
+
+<main class="wrap">
+<p class="maj">Déclaration</p>
+  <h1>Déclarer ses frais kilométriques avec son véhicule personnel</h1>
+  <p class="chapo">Utiliser sa propre voiture pour travailler représente une dépense réelle : carburant, entretien, assurance, usure. Le barème kilométrique existe pour en tenir compte. Encore faut-il déclarer ces kilomètres — et donc les avoir suivis.</p>
+
+  <h2>Salarié : frais réels ou déduction forfaitaire</h2>
+  <p>Par défaut, l’administration applique aux salaires une déduction forfaitaire censée couvrir les frais professionnels. Vous pouvez y renoncer et déclarer vos <b>frais réels</b> à la place — les frais kilométriques en font partie.</p>
+  <p>L’arbitrage est purement arithmétique : on compare le total de ses frais réels au montant de la déduction forfaitaire, et on retient le plus favorable. Pour quelqu’un qui roule beaucoup avec son véhicule personnel, l’écart peut être important.</p>
+  <div class="note">Exemple d’ordre de grandeur : 12 000 km parcourus dans l’année avec une 5 CV représentent <b>5 679 €</b> de frais kilométriques au barème 2026. À comparer avec la déduction forfaitaire calculée sur votre salaire — le comparatif se fait chaque année, car les deux termes bougent.</div>
+  <p>Attention : opter pour les frais réels engage sur l’ensemble des frais professionnels de l’année, et suppose de pouvoir tout justifier.</p>
+
+  <h2>Indépendant : selon votre régime</h2>
+  <p>Au régime réel, les frais kilométriques se déduisent du résultat, au barème ou aux frais réellement engagés selon les cas. Sous un régime micro en revanche, l’abattement forfaitaire tient déjà lieu de déduction : aucun frais ne s’y ajoute, kilomètres compris.</p>
+  <p>C’est un point à vérifier avant de se lancer dans un suivi détaillé : selon votre régime, il sera déterminant ou sans effet.</p>
+
+  <h2>Dirigeant remboursé par sa société</h2>
+  <p>Un gérant qui utilise son véhicule personnel pour l’activité de sa société peut se faire rembourser ses kilomètres au barème. Pour la société, c’est une charge ; pour le dirigeant, un remboursement de frais. Là encore, tout repose sur la qualité du justificatif.</p>
+
+  <h2>Ce que ça suppose concrètement</h2>
+  <ul class="puces">
+    <li>Connaître la <b>puissance fiscale</b> du véhicule — <a href="bareme-fiscal-voiture.html">case P.6 de la carte grise</a>.</li>
+    <li>Disposer du <b>détail des déplacements</b> : date, destination, motif, distance.</li>
+    <li>Appliquer le <a href="bareme-kilometrique-2026.html">barème de l’année</a> à la bonne tranche de kilométrage.</li>
+    <li>Conserver le tout plusieurs années, sous une forme consultable.</li>
+  </ul>
+  <p>Rien d’insurmontable — à condition de ne pas s’y prendre en fin d’année. C’est le suivi au fil des mois qui rend la déclaration simple, pas l’inverse.</p>
+
+  <a class="cta" href="https://apps.apple.com/app/id6802150703" target="_blank" rel="noopener">Suivre ses kilomètres toute l’année avec KmPro</a>
+  <p class="src">Informations générales données à titre indicatif, sans valeur de conseil fiscal. Votre situation personnelle détermine le régime applicable : consultez un professionnel de la comptabilité ou l’administration fiscale.</p>
+
+<h2>À lire aussi</h2>
+<ul class="aussi"><li><a href="bareme-fiscal-voiture.html">Trouver le barème fiscal de sa voiture : la puissance fiscale</a></li><li><a href="bareme-kilometrique-2026.html">Barème kilométrique 2026 : tableau officiel et simulateur</a></li><li><a href="calculer-frais-kilometriques.html">Calculer ses frais kilométriques en France : méthode et exemples</a></li><li><a href="comptables.html">Comptables : proposez KmPro à vos clients</a></li><li><a href="note-de-frais-kilometrique.html">Note de frais kilométrique : ce qu’elle doit contenir</a></li></ul>
+</main>
+
+<footer class="wrap">
+  <p>© 2026 KmPro · <a href="./">Accueil</a> · <a href="mentions-legales.html">Mentions légales</a></p>
+</footer>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Déclarer ses frais kilométriques avec son véhicule personnel", "description": "Pourquoi déclarer ses frais kilométriques quand on utilise son véhicule personnel pour travailler : frais réels ou déduction forfaitaire, ce que ça change et comment arbitrer.", "inLanguage": "fr-FR", "datePublished": "2026-09-27", "dateModified": "2026-09-27", "author": {"@type": "Organization", "name": "KmPro"}, "publisher": {"@type": "Organization", "name": "KmPro", "url": "https://kmpro.app/"}, "mainEntityOfPage": "https://kmpro.app/frais-reels-vehicule-personnel.html"}</script>
+</body>
+</html>
