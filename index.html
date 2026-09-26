@@ -359,7 +359,10 @@ svg.ic{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;strok
 
 /* ——— Étapes / favoris / récurrents ——— */
 .pair{display:grid;grid-template-columns:1fr;gap:20px;margin-top:clamp(40px,6vw,72px)}
-.card{background:var(--surface);border-radius:var(--r-l);padding:clamp(24px,3.5vw,36px);display:grid;gap:14px;align-content:start}
+.card{background:var(--surface);border-radius:var(--r-l);padding:clamp(24px,3.5vw,36px);display:grid;grid-template-columns:auto 1fr;column-gap:14px;row-gap:14px;align-content:start;align-items:center}
+.card__ic{grid-column:1;grid-row:1}
+.card h3{grid-column:2;grid-row:1}
+.card>p,.card .favs{grid-column:1/-1}
 .card__ic{display:grid;place-items:center;width:44px;height:44px;border-radius:13px;background:var(--sky);color:var(--blue)}
 .card__ic svg{width:22px;height:22px}
 .card p{color:var(--ink-2)}
