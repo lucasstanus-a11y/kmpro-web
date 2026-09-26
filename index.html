@@ -515,7 +515,8 @@ kbd{font-family:var(--font);font-size:13px;min-width:28px;text-align:center;back
 @media (max-width:520px){.no-list{grid-template-columns:1fr}}
 
 /* ——— Tarif ——— */
-.pricing{display:grid;grid-template-columns:minmax(0,440px);justify-content:center;gap:clamp(32px,6vw,80px);align-items:center}
+.pricing{display:grid;grid-template-columns:1fr minmax(0,440px);gap:clamp(32px,6vw,72px);align-items:center}
+.pricing__copy{display:grid;gap:14px;align-content:center}
 .price{background:var(--surface);border-radius:var(--r-xl);box-shadow:var(--shadow);padding:clamp(26px,4vw,40px);display:grid;gap:18px;position:relative}
 .price__top{display:flex;align-items:center;gap:12px}
 .price__top img{width:48px;height:48px;border-radius:12px}
@@ -532,7 +533,7 @@ kbd{font-family:var(--font);font-size:13px;min-width:28px;text-align:center;back
 .price__trial b{font-size:15.5px}
 .price .btn{width:100%;padding:14px 18px;font-size:16.5px}
 .price__fine{font-size:13px;color:var(--muted);text-align:center;margin-top:-6px}
-@media (max-width:900px){.pricing{grid-template-columns:1fr}.price{max-width:520px}}
+@media (max-width:900px){.pricing{grid-template-columns:1fr}.price{max-width:520px}.pricing__copy{text-align:left}}
 
 /* ——— FAQ ——— */
 .faq{display:grid;grid-template-columns:.7fr 1.3fr;gap:clamp(28px,5vw,64px);align-items:start}
@@ -1021,11 +1022,12 @@ kbd{font-family:var(--font);font-size:13px;min-width:28px;text-align:center;back
 <!-- TARIF -->
 <section class="sec" id="tarif" style="padding-top:0">
   <div class="wrap">
-    <div class="sec__head">
-      <p class="borne">Tarif</p>
-      <h2>Un seul abonnement. iPhone et Mac inclus.</h2>
-    </div>
     <div class="pricing">
+      <div class="pricing__copy">
+        <p class="borne">Tarif</p>
+        <h2>Un seul abonnement. iPhone et Mac inclus.</h2>
+        <p class="lead">Une seule fois par an, pour l’iPhone et le Mac. Vous décidez de vous abonner — ou pas — après vos 14 jours d’essai.</p>
+      </div>
       <div class="price reveal">
         <div class="price__top"><img src="assets/kmpro-icon.webp" alt="" width="48" height="48" loading="lazy"><div><b>KmPro annuel</b><small>Un seul abonnement pour iPhone et Mac</small></div></div>
         <p class="price__amount"><strong class="tnum">29,99 €</strong><span>/ an</span></p>
