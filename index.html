@@ -167,14 +167,14 @@ p{margin:0}
 
 /* ——— Paragraphes justifiés (lignes de même longueur), coupure des mots en français ——— */
 .lead,.hero__detail p,.muted,.split__copy>p:not([class]),.problem__copy>p,.journey__more p,
-.how__step p,.card p,.format p,.sync__text p,.backups p,.after>p:not([class]),.faq details p{
+.how__step p,.card p,.format p,.backups p,.faq details p{
   text-align:justify;text-align-last:left;-webkit-hyphens:none;hyphens:none;text-wrap:wrap}
 .problem__copy>.borne{text-align:left}
 
 @media (max-width:620px){
   /* Colonnes étroites : on autorise la coupure, mais uniquement des mots longs */
   .lead,.hero__detail p,.muted,.split__copy>p:not([class]),.problem__copy>p,.journey__more p,
-  .how__step p,.card p,.format p,.sync__text p,.backups p,.after>p:not([class]),.faq details p{
+  .how__step p,.card p,.format p,.backups p,.faq details p{
     -webkit-hyphens:auto;hyphens:auto;hyphenate-limit-chars:10 5 4}
 }
 
@@ -458,10 +458,8 @@ svg.ic{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;strok
 .sync__dots{width:4px;height:70px;background:repeating-linear-gradient(var(--blue) 0 4px,transparent 4px 10px);border-radius:2px;background-size:4px 10px}
 @media (prefers-reduced-motion:no-preference){.sync__dots{animation:flow 1.2s linear infinite}}
 @keyframes flow{to{background-position:0 10px}}
-.sync__text{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:clamp(28px,4vw,48px)}
 .sync__text p{color:var(--ink-2);font-size:16px;border-top:2px solid var(--line);padding-top:14px}
-.sync__text p b{color:var(--ink);display:block;margin-bottom:4px}
-@media (max-width:760px){.sync{grid-template-columns:1fr}.sync__link{grid-auto-flow:column}.sync__dots{width:60px;height:4px;background:repeating-linear-gradient(90deg,var(--blue) 0 4px,transparent 4px 10px)}.sync__text{grid-template-columns:1fr}}
+@media (max-width:760px){.sync{grid-template-columns:1fr}.sync__link{grid-auto-flow:column}.sync__dots{width:60px;height:4px;background:repeating-linear-gradient(90deg,var(--blue) 0 4px,transparent 4px 10px)}}
 
 /* ——— Terrain + carrousel régional ——— */
 .feat-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
@@ -514,7 +512,7 @@ kbd{font-family:var(--font);font-size:13px;min-width:28px;text-align:center;back
 @media (max-width:520px){.no-list{grid-template-columns:1fr}}
 
 /* ——— Tarif ——— */
-.pricing{display:grid;grid-template-columns:minmax(0,440px) 1fr;gap:clamp(32px,6vw,80px);align-items:center}
+.pricing{display:grid;grid-template-columns:minmax(0,440px);justify-content:center;gap:clamp(32px,6vw,80px);align-items:center}
 .price{background:var(--surface);border-radius:var(--r-xl);box-shadow:var(--shadow);padding:clamp(26px,4vw,40px);display:grid;gap:18px;position:relative}
 .price__top{display:flex;align-items:center;gap:12px}
 .price__top img{width:48px;height:48px;border-radius:12px}
@@ -531,9 +529,6 @@ kbd{font-family:var(--font);font-size:13px;min-width:28px;text-align:center;back
 .price__trial b{font-size:15.5px}
 .price .btn{width:100%;padding:14px 18px;font-size:16.5px}
 .price__fine{font-size:13px;color:var(--muted);text-align:center;margin-top:-6px}
-.after{display:grid;gap:18px}
-.after__quote{font-size:clamp(1.2rem,2vw,1.45rem);font-weight:700;letter-spacing:-.015em;line-height:1.3;background:var(--surface-2);border-radius:var(--r-m);padding:20px 24px;text-wrap:balance}
-.after p{color:var(--ink-2)}
 @media (max-width:900px){.pricing{grid-template-columns:1fr}.price{max-width:520px}}
 
 /* ——— FAQ ——— */
@@ -873,35 +868,20 @@ kbd{font-family:var(--font);font-size:13px;min-width:28px;text-align:center;back
   <div class="wrap">
     <div class="sec__head">
       <p class="borne">iPhone + Mac</p>
-      <h2>Sur l’iPhone quand vous roulez. Sur le Mac quand vous faites vos comptes.</h2>
+      <h2>Sur l’iPhone au quotidien. Sur le Mac quand vous faites votre comptabilité.</h2>
+      <p class="lead">L’abonnement donne accès à l’application sur iPhone et sur Mac. Utilisez les deux, ou seulement l’un : chaque application est autonome, et les deux se retrouvent par votre iCloud privé.</p>
     </div>
     <div class="sync reveal">
       <div class="shot shot--phone"><img src="assets/demo-iphone-accueil.webp" width="760" height="1030" loading="lazy" alt="iPhone affichant l’accueil de KmPro (données de démonstration)"></div>
       <div class="sync__link" aria-hidden="true"><span class="sync__dots"></span><i><svg class="ic"><use href="#i-cloud"/></svg></i><span>iCloud privé</span><span class="sync__dots"></span></div>
       <div class="shot shot--mac"><img src="assets/demo-mac-iphone.webp" width="941" height="759" loading="lazy" alt="MacBook et iPhone affichant les mêmes données KmPro, synchronisées par iCloud (données de démonstration)"></div>
     </div>
-    <div class="sync__text">
-      <p><b>L’iPhone au quotidien.</b>Ajoutez un trajet, retrouvez vos favoris, consultez votre mois.</p>
-      <p><b>Le Mac pour la vue d’ensemble.</b>Votre année, vos mois et le détail de vos déplacements.</p>
-      <p><b>Les deux ensemble.</b>Vos données suivent, par votre espace iCloud privé.</p>
-    </div>
   </div>
 </section>
 
 <!-- iPHONE TERRAIN + VISUELS RÉGIONAUX — [[ASSET_REGIONAL_COVERS]] -->
 <section class="sec" id="iphone" style="padding-top:0">
-  <div class="wrap split">
-    <div class="split__copy">
-      <p class="borne">Sur l’iPhone</p>
-      <h2>Votre quotidien, à portée de main.</h2>
-      <p class="lead">Et un visuel régional choisi selon l’adresse de votre société.</p>
-      <ul class="feat-list">
-        <li><svg class="ic" aria-hidden="true"><use href="#i-gauge"/></svg>Votre mois en un coup d’œil</li>
-        <li><svg class="ic" aria-hidden="true"><use href="#i-route"/></svg>Vos derniers trajets</li>
-        <li><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg>Vos habitudes en un geste</li>
-        <li><svg class="ic" aria-hidden="true"><use href="#i-bolt"/></svg>Un trajet en quelques secondes</li>
-      </ul>
-    </div>
+  <div class="wrap">
     <div class="carousel reveal" id="regions" aria-roledescription="carrousel" aria-label="Visuels régionaux KmPro">
       <div class="carousel__track" id="regions-track" tabindex="0">
         <figure role="group" aria-label="1 sur 16"><img src="assets/regions/haute-savoie.webp" width="1100" height="619" alt="Visuel régional KmPro : Haute-Savoie"><figcaption><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg>Haute-Savoie</figcaption></figure>
@@ -932,18 +912,8 @@ kbd{font-family:var(--font);font-size:13px;min-width:28px;text-align:center;back
 
 <!-- MAC — [[ASSET_SCREEN_ANNUAL_MAC]] -->
 <section class="sec" id="mac" style="padding-top:0">
-  <div class="wrap mac-wide">
+  <div class="wrap">
     <div class="shot reveal"><img src="assets/demo-mac-annee.webp" width="941" height="759" loading="lazy" alt="MacBook affichant le récapitulatif annuel de KmPro, mois par mois (données de démonstration)"></div>
-    <div class="split__copy">
-      <p class="borne">Sur le Mac</p>
-      <h2>Toute votre année, d’un seul regard.</h2>
-      <ul class="feat-list" style="grid-template-columns:1fr">
-        <li><svg class="ic" aria-hidden="true"><use href="#i-cal"/></svg>Votre année, mois par mois</li>
-        <li><svg class="ic" aria-hidden="true"><use href="#i-gauge"/></svg>Une jauge pour suivre votre volume</li>
-        <li><svg class="ic" aria-hidden="true"><use href="#i-table"/></svg>Le détail de chaque déplacement</li>
-        <li><svg class="ic" aria-hidden="true"><use href="#i-map"/></svg>La carte et les itinéraires possibles</li>
-      </ul>
-    </div>
   </div>
 </section>
 
@@ -1032,17 +1002,14 @@ kbd{font-family:var(--font);font-size:13px;min-width:28px;text-align:center;back
       <div class="privacy__copy">
         <p class="borne">Confidentialité</p>
         <h2>Vos déplacements restent vos données.</h2>
-        <p class="quote">KmPro n’a pas besoin de savoir où vous allez pour fonctionner avec vos données.</p>
-        <p class="muted">Le site kmpro.app, lui, compte ses visites de façon anonyme et sans cookie, avec Cloudflare Web Analytics.</p>
+        <p class="muted">Le site kmpro.app, lui, compte ses visites sans cookie, avec Cloudflare Web Analytics.</p>
         <p class="links"><a href="https://lucasstanus-a11y.github.io/kmpro-site/confidentialite.html" target="_blank" rel="noopener">Politique de confidentialité</a><a href="https://lucasstanus-a11y.github.io/kmpro-site/" target="_blank" rel="noopener">Assistance</a></p>
       </div>
       <ul class="no-list">
         <li><i><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg></i>Aucune donnée collectée par l’éditeur</li>
-        <li><i><svg class="ic" aria-hidden="true"><use href="#i-server-off"/></svg></i>Aucun serveur éditeur</li>
-        <li><i><svg class="ic" aria-hidden="true"><use href="#i-eye-off"/></svg></i>Dans l’app : ni publicité, ni traceur, ni mesure d’audience</li>
+        <li><i><svg class="ic" aria-hidden="true"><use href="#i-eye-off"/></svg></i>Dans l’app : ni publicité, ni traceur</li>
         <li><i><svg class="ic" aria-hidden="true"><use href="#i-cloud"/></svg></i>Données dans votre iCloud privé</li>
         <li><i><svg class="ic" aria-hidden="true"><use href="#i-cal"/></svg></i>Calendrier lu sur l’appareil</li>
-        <li><i><svg class="ic" aria-hidden="true"><use href="#i-location"/></svg></i>Localisation facultative</li>
       </ul>
     </div>
   </div>
@@ -1073,34 +1040,6 @@ kbd{font-family:var(--font);font-size:13px;min-width:28px;text-align:center;back
         <a class="btn btn--blue" href="https://apps.apple.com/app/id6802150703" target="_blank" rel="noopener">Essayer KmPro pendant 14 jours</a>
         <p class="price__fine">Pendant l’essai, vous saisissez les trajets des mois couverts par les 14 jours. Exports Excel et PDF ouverts à tous.</p>
       </div>
-      <div class="after">
-        <p class="borne">Vos archives</p>
-        <h3 style="font-size:clamp(1.6rem,3vw,2.3rem);letter-spacing:-.03em;line-height:1.1">Vos données restent accessibles, abonné ou non.</h3>
-        <p>Trajets, sauvegardes et exports restent accessibles, même si vous arrêtez votre abonnement. Seule la saisie de nouveaux trajets en demande un.</p>
-        <p class="after__quote">Des pièces comptables ne doivent pas devenir inaccessibles parce qu’un abonnement s’arrête.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="sec" id="faq" style="padding-top:0">
-  <div class="wrap faq">
-    <div class="sec__head" style="margin:0">
-      <p class="borne">FAQ</p>
-      <h2>Questions fréquentes</h2>
-      <p class="muted">Une autre question ? Écrivez à <a href="mailto:contact@kmpro.app">contact@kmpro.app</a> ou consultez l’<a href="https://lucasstanus-a11y.github.io/kmpro-site/" target="_blank" rel="noopener">assistance</a>.</p>
-      <p class="countries" aria-label="Pays pris en charge"><span><em>🇫🇷</em>France</span><span><em>🇨🇭</em>Suisse</span><span class="soon">D’autres pays à l’étude</span></p>
-    </div>
-    <div class="faq__list">
-      <details><summary>KmPro est-il disponible dans mon pays ?</summary><p>KmPro se télécharge dans tous les pays de l’App Store. Les calculs sont adaptés à la France (barème kilométrique fiscal) et à la Suisse (taux de référence fédéral). D’autres pays sont à l’étude.</p></details>
-      <details><summary>KmPro fonctionne-t-il sur iPhone et Mac ?</summary><p>Oui. Un seul abonnement couvre les deux.</p></details>
-      <details><summary>Y a-t-il un essai ?</summary><p>Oui : 14 jours d’essai de l’abonnement, sans carte bancaire, pour saisir les trajets des mois qu’ils couvrent. Aucun abonnement ne démarre automatiquement ensuite.</p></details>
-      <details><summary>Puis-je utiliser KmPro sans iCloud ?</summary><p>Oui. Seule la synchronisation entre appareils est alors indisponible.</p></details>
-      <details><summary>KmPro collecte-t-il mes déplacements ?</summary><p>Non. L’éditeur ne collecte aucune donnée. Vos données restent dans votre iCloud privé.</p></details>
-      <details><summary>Mon calendrier est-il envoyé sur un serveur ?</summary><p>Non. L’analyse est faite sur l’appareil.</p></details>
-      <details><summary>Puis-je exporter mes trajets ?</summary><p>Oui, en Excel et PDF, par mois ou par année. Les exports sont ouverts à tous, abonné ou non.</p></details>
-      <details><summary>Si j’arrête mon abonnement, je perds mes données ?</summary><p>Non. Trajets, sauvegardes et exports Excel et PDF restent accessibles. Seule la saisie de nouveaux trajets se ferme.</p></details>
     </div>
   </div>
 </section>
@@ -1124,6 +1063,28 @@ kbd{font-family:var(--font);font-size:13px;min-width:28px;text-align:center;back
     <div class="final__devices">
       <div class="shot shot--mac"><img src="assets/demo-mac-export.webp" width="941" height="759" loading="lazy" alt="MacBook affichant la fenêtre d’export Excel et PDF de KmPro (données de démonstration)"></div>
       <div class="shot shot--phone"><img src="assets/demo-iphone-export.webp" width="760" height="1030" loading="lazy" alt="iPhone affichant l’écran Exporter de KmPro : Excel ou PDF, par mois ou par année (données de démonstration)"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq" style="padding-top:0">
+  <div class="wrap faq">
+    <div class="sec__head" style="margin:0">
+      <p class="borne">FAQ</p>
+      <h2>Questions fréquentes</h2>
+      <p class="muted">Une autre question ? Écrivez à <a href="mailto:contact@kmpro.app">contact@kmpro.app</a> ou consultez l’<a href="https://lucasstanus-a11y.github.io/kmpro-site/" target="_blank" rel="noopener">assistance</a>.</p>
+      <p class="countries" aria-label="Pays pris en charge"><span><em>🇫🇷</em>France</span><span><em>🇨🇭</em>Suisse</span><span class="soon">D’autres pays à l’étude</span></p>
+    </div>
+    <div class="faq__list">
+      <details><summary>KmPro est-il disponible dans mon pays ?</summary><p>KmPro se télécharge dans tous les pays de l’App Store. Les calculs sont adaptés à la France (barème kilométrique fiscal) et à la Suisse (taux de référence fédéral). D’autres pays sont à l’étude.</p></details>
+      <details><summary>KmPro fonctionne-t-il sur iPhone et Mac ?</summary><p>Oui. Un seul abonnement couvre les deux.</p></details>
+      <details><summary>Y a-t-il un essai ?</summary><p>Oui : 14 jours d’essai de l’abonnement, sans carte bancaire, pour saisir les trajets des mois qu’ils couvrent. Aucun abonnement ne démarre automatiquement ensuite.</p></details>
+      <details><summary>Puis-je utiliser KmPro sans iCloud ?</summary><p>Oui. Seule la synchronisation entre appareils est alors indisponible.</p></details>
+      <details><summary>KmPro collecte-t-il mes déplacements ?</summary><p>Non. L’éditeur ne collecte aucune donnée. Vos données restent dans votre iCloud privé.</p></details>
+      <details><summary>Mon calendrier est-il envoyé sur un serveur ?</summary><p>Non. L’analyse est faite sur l’appareil.</p></details>
+      <details><summary>Puis-je exporter mes trajets ?</summary><p>Oui, en Excel et PDF, par mois ou par année. Les exports sont ouverts à tous, abonné ou non.</p></details>
+      <details><summary>Si j’arrête mon abonnement, je perds mes données ?</summary><p>Non. Trajets, sauvegardes et exports Excel et PDF restent accessibles. Seule la saisie de nouveaux trajets se ferme.</p></details>
     </div>
   </div>
 </section>
