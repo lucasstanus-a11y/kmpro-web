@@ -68,6 +68,16 @@
   .etapes p{margin:4px 0 0}
   ul.puces{padding-left:20px;color:var(--ink-2)}
   ul.puces li{margin-bottom:8px}
+  figure.shot{margin:22px 0;display:grid;gap:10px}
+  figure.shot img{display:block;width:100%;height:auto;border-radius:var(--r-l);box-shadow:var(--shadow-soft);background:var(--surface)}
+  figure.shot figcaption{font-size:14px;color:var(--muted);text-wrap:pretty}
+  figure.shot--phone{max-width:300px}
+  figure.shot--duo{max-width:100%}
+  figure.shot--right{margin-inline:auto}
+  .duo-shots{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start;margin:22px 0}
+  .duo-shots figure.shot{margin:0}
+  .duo-shots figure.shot--phone{max-width:100%}
+  @media (max-width:620px){.duo-shots{grid-template-columns:1fr}.duo-shots figure.shot--phone{max-width:300px;margin-inline:auto}}
 </style>
 </head>
 <body>
@@ -92,6 +102,8 @@
   </ul>
   <p>Un total mensuel et un total annuel complètent utilement le tableau : ce sont eux que reprend la comptabilité.</p>
 
+  <figure class="shot"><img src="assets/demo-mac-export.webp" width="941" height="759" loading="lazy" alt="Fenêtre d’export de KmPro sur Mac : choix entre Excel et PDF, par mois ou par année (données de démonstration)"><figcaption>L’export reprend chaque ligne avec sa date, son trajet, son motif et son montant.</figcaption></figure>
+
   <h2>Le remboursement au barème</h2>
   <p>Quand un employeur rembourse des frais kilométriques dans la limite du barème, ce remboursement est un remboursement de frais professionnels, et non un complément de salaire. C’est la raison pour laquelle le barème est utilisé comme référence, et pourquoi le justificatif compte autant que le montant.</p>
   <p>Au-delà du barème, la partie excédentaire suit un autre régime. Si votre entreprise applique un taux différent, faites-le confirmer par votre comptable ou votre service paie.</p>
@@ -105,6 +117,7 @@
 
   <h2>Un tableau prêt à transmettre</h2>
   <p>KmPro produit exactement ce document : un export Excel avec un onglet par mois, un récapitulatif annuel et de vraies formules, ou un PDF prêt à joindre à une note de frais. Les exports restent accessibles même sans abonnement actif — vos pièces comptables ne dépendent pas d’un renouvellement.</p>
+  <figure class="shot shot--phone"><img src="assets/demo-iphone-export.webp" width="760" height="1030" loading="lazy" alt="Écran Exporter de KmPro sur iPhone : export Excel ou PDF, par mois ou année entière (données de démonstration)"><figcaption>Le même document part depuis l’iPhone, en deux gestes.</figcaption></figure>
   <a class="cta" href="https://apps.apple.com/app/id6802150703" target="_blank" rel="noopener">Essayer KmPro sur iPhone et Mac</a>
   <p class="src">Informations données à titre indicatif. Les règles applicables dépendent de votre statut et de votre situation : rapprochez-vous de votre comptable ou de votre service paie.</p>
 

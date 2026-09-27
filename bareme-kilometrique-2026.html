@@ -68,6 +68,16 @@
   .etapes p{margin:4px 0 0}
   ul.puces{padding-left:20px;color:var(--ink-2)}
   ul.puces li{margin-bottom:8px}
+  figure.shot{margin:22px 0;display:grid;gap:10px}
+  figure.shot img{display:block;width:100%;height:auto;border-radius:var(--r-l);box-shadow:var(--shadow-soft);background:var(--surface)}
+  figure.shot figcaption{font-size:14px;color:var(--muted);text-wrap:pretty}
+  figure.shot--phone{max-width:300px}
+  figure.shot--duo{max-width:100%}
+  figure.shot--right{margin-inline:auto}
+  .duo-shots{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start;margin:22px 0}
+  .duo-shots figure.shot{margin:0}
+  .duo-shots figure.shot--phone{max-width:100%}
+  @media (max-width:620px){.duo-shots{grid-template-columns:1fr}.duo-shots figure.shot--phone{max-width:300px;margin-inline:auto}}
 </style>
 </head>
 <body>
@@ -81,6 +91,8 @@
   <p class="chapo">Le barème kilométrique sert à calculer les indemnités kilométriques d’un véhicule personnel utilisé pour le travail. Pour 2026, il est reconduit à l’identique de 2025 : les montants ci-dessous sont ceux à appliquer. <a href="#simulateur">Aller directement au simulateur</a>.</p>
 
   <div class="note">Cette page concerne les <b>voitures</b>. Le montant dépend de deux choses : la <b>puissance fiscale</b> du véhicule (case P.6 de la carte grise) et le <b>nombre de kilomètres parcourus dans l’année</b> à titre professionnel.</div>
+
+  <figure class="shot shot--phone"><img src="assets/demo-iphone-trajet.webp" width="760" height="1030" loading="lazy" alt="Écran Nouveau trajet de KmPro sur iPhone : itinéraires proposés, option aller-retour et véhicule sélectionné (données de démonstration)"><figcaption>Dans KmPro, le taux du barème est appliqué au trajet dès que la distance est calculée.</figcaption></figure>
 
   <h2>Tranche 1 — jusqu’à 5 000 km par an</h2>
   <div class="card"><div class="tbl"><table>
@@ -159,6 +171,7 @@
 
   <h2>Justifier ses kilomètres sans y passer des soirées</h2>
   <p>C’est précisément le travail que fait KmPro : l’application enregistre chaque déplacement, calcule la distance et applique ce barème selon votre véhicule, puis exporte le tout en Excel ou en PDF pour votre comptable. Elle peut aussi retrouver vos déplacements dans votre calendrier et remplir une année entière d’un coup.</p>
+  <figure class="shot"><img src="assets/demo-mac-annee.webp" width="941" height="759" loading="lazy" alt="Récapitulatif annuel de KmPro sur Mac : kilomètres et montants mois par mois (données de démonstration)"><figcaption>Le total annuel se construit tout seul, mois après mois, au barème du véhicule.</figcaption></figure>
   <a class="cta" href="https://apps.apple.com/app/id6802150703" target="_blank" rel="noopener">Découvrir KmPro sur iPhone et Mac</a>
   <p class="src">Source du barème : <a href="https://www.urssaf.fr/accueil/outils-documentation/taux-baremes/indemnites-kilometriques.html" rel="noopener" target="_blank">barème des indemnités kilométriques publié par l’URSSAF</a>. Page mise à jour le 27 septembre 2026. Ces informations sont données à titre indicatif et ne remplacent pas l’avis d’un professionnel de la comptabilité.</p>
 

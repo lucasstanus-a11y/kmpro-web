@@ -68,6 +68,16 @@
   .etapes p{margin:4px 0 0}
   ul.puces{padding-left:20px;color:var(--ink-2)}
   ul.puces li{margin-bottom:8px}
+  figure.shot{margin:22px 0;display:grid;gap:10px}
+  figure.shot img{display:block;width:100%;height:auto;border-radius:var(--r-l);box-shadow:var(--shadow-soft);background:var(--surface)}
+  figure.shot figcaption{font-size:14px;color:var(--muted);text-wrap:pretty}
+  figure.shot--phone{max-width:300px}
+  figure.shot--duo{max-width:100%}
+  figure.shot--right{margin-inline:auto}
+  .duo-shots{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start;margin:22px 0}
+  .duo-shots figure.shot{margin:0}
+  .duo-shots figure.shot--phone{max-width:100%}
+  @media (max-width:620px){.duo-shots{grid-template-columns:1fr}.duo-shots figure.shot--phone{max-width:300px;margin-inline:auto}}
 </style>
 </head>
 <body>
@@ -103,6 +113,8 @@
     </tbody>
   </table></div></div>
   <p>On voit tout de suite l’effet du barème : le montant par kilomètre baisse à mesure que le kilométrage augmente, parce que les frais fixes du véhicule sont déjà couverts.</p>
+
+  <div class="duo-shots"><figure class="shot shot--phone"><img src="assets/demo-iphone-accueil.webp" width="760" height="1030" loading="lazy" alt="Accueil de KmPro sur iPhone : trajets, kilomètres et montant du mois en cours (données de démonstration)"><figcaption>Le total du mois, sans calcul à faire.</figcaption></figure><figure class="shot"><img src="assets/demo-mac-mois.webp" width="941" height="759" loading="lazy" alt="Détail d’un mois dans KmPro sur Mac : liste des trajets avec distances et montants (données de démonstration)"><figcaption>Chaque trajet garde sa date, son motif et sa distance.</figcaption></figure></div>
 
   <h2>Ce que le barème couvre déjà</h2>
   <p>Le barème est forfaitaire : il représente l’ensemble des frais courants du véhicule. Sont considérés comme déjà compris :</p>

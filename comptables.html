@@ -68,6 +68,16 @@
   .etapes p{margin:4px 0 0}
   ul.puces{padding-left:20px;color:var(--ink-2)}
   ul.puces li{margin-bottom:8px}
+  figure.shot{margin:22px 0;display:grid;gap:10px}
+  figure.shot img{display:block;width:100%;height:auto;border-radius:var(--r-l);box-shadow:var(--shadow-soft);background:var(--surface)}
+  figure.shot figcaption{font-size:14px;color:var(--muted);text-wrap:pretty}
+  figure.shot--phone{max-width:300px}
+  figure.shot--duo{max-width:100%}
+  figure.shot--right{margin-inline:auto}
+  .duo-shots{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start;margin:22px 0}
+  .duo-shots figure.shot{margin:0}
+  .duo-shots figure.shot--phone{max-width:100%}
+  @media (max-width:620px){.duo-shots{grid-template-columns:1fr}.duo-shots figure.shot--phone{max-width:300px;margin-inline:auto}}
 </style>
 </head>
 <body>
@@ -90,11 +100,15 @@
   </ul>
   <p>Vous n’avez plus à recalculer : vous vérifiez et vous intégrez.</p>
 
+  <figure class="shot"><img src="assets/demo-mac-export.webp" width="941" height="759" loading="lazy" alt="Export de KmPro sur Mac : un classeur Excel avec un onglet par mois et un PDF récapitulatif (données de démonstration)"><figcaption>Ce que votre client vous transmet : un classeur Excel avec formules, ou un PDF.</figcaption></figure>
+
   <h2>Pourquoi le justificatif tient</h2>
   <p>Les trajets sont enregistrés au fil de l’année, pas reconstitués en mars. Les distances sont calculées par l’application, et chaque déplacement porte son motif professionnel. C’est la différence entre un total estimé et un historique daté, ligne par ligne.</p>
 
   <h2>Les clients à qui en parler</h2>
   <p>Ce sont ceux qui vous coûtent le plus de relances : indépendants qui roulent beaucoup, professions de santé à domicile, commerciaux, artisans, et les salariés de vos clients qui avancent leurs kilomètres. Plus le nombre de déplacements est élevé, plus le gain est net — pour eux comme pour vous.</p>
+
+  <figure class="shot"><img src="assets/demo-calendrier-mac.webp" width="941" height="626" loading="lazy" alt="KmPro sur Mac : écran d’import du calendrier, avec les agendas à connecter"><figcaption>Les déplacements déjà inscrits à l’agenda peuvent être importés en une fois.</figcaption></figure>
 
   <h2>Ce qu’ils doivent savoir</h2>
   <ul class="puces">

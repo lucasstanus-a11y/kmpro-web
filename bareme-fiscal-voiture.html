@@ -68,6 +68,16 @@
   .etapes p{margin:4px 0 0}
   ul.puces{padding-left:20px;color:var(--ink-2)}
   ul.puces li{margin-bottom:8px}
+  figure.shot{margin:22px 0;display:grid;gap:10px}
+  figure.shot img{display:block;width:100%;height:auto;border-radius:var(--r-l);box-shadow:var(--shadow-soft);background:var(--surface)}
+  figure.shot figcaption{font-size:14px;color:var(--muted);text-wrap:pretty}
+  figure.shot--phone{max-width:300px}
+  figure.shot--duo{max-width:100%}
+  figure.shot--right{margin-inline:auto}
+  .duo-shots{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start;margin:22px 0}
+  .duo-shots figure.shot{margin:0}
+  .duo-shots figure.shot--phone{max-width:100%}
+  @media (max-width:620px){.duo-shots{grid-template-columns:1fr}.duo-shots figure.shot--phone{max-width:300px;margin-inline:auto}}
 </style>
 </head>
 <body>
@@ -98,6 +108,8 @@
     </tbody>
   </table></div></div>
   <p>Une fois la catégorie connue, il ne reste qu’à croiser avec votre kilométrage annuel pour obtenir le montant : c’est ce que détaille le <a href="bareme-kilometrique-2026.html">barème kilométrique 2026</a>.</p>
+
+  <figure class="shot shot--phone"><img src="assets/demo-iphone-trajet.webp" width="760" height="1030" loading="lazy" alt="Écran Nouveau trajet de KmPro sur iPhone, avec le véhicule utilisé affiché sous les options (données de démonstration)"><figcaption>Le véhicule est choisi une fois : sa puissance fiscale suit ensuite chaque trajet.</figcaption></figure>
 
   <h2>Voiture électrique : une majoration de 20 %</h2>
   <p>Un véhicule <b>100 % électrique</b> bénéficie d’une majoration de 20 % du montant calculé. Sur la carte grise, la case P.3 porte alors la mention « EL ».</p>

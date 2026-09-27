@@ -68,6 +68,16 @@
   .etapes p{margin:4px 0 0}
   ul.puces{padding-left:20px;color:var(--ink-2)}
   ul.puces li{margin-bottom:8px}
+  figure.shot{margin:22px 0;display:grid;gap:10px}
+  figure.shot img{display:block;width:100%;height:auto;border-radius:var(--r-l);box-shadow:var(--shadow-soft);background:var(--surface)}
+  figure.shot figcaption{font-size:14px;color:var(--muted);text-wrap:pretty}
+  figure.shot--phone{max-width:300px}
+  figure.shot--duo{max-width:100%}
+  figure.shot--right{margin-inline:auto}
+  .duo-shots{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start;margin:22px 0}
+  .duo-shots figure.shot{margin:0}
+  .duo-shots figure.shot--phone{max-width:100%}
+  @media (max-width:620px){.duo-shots{grid-template-columns:1fr}.duo-shots figure.shot--phone{max-width:300px;margin-inline:auto}}
 </style>
 </head>
 <body>
@@ -86,12 +96,16 @@
   <div class="note">Exemple d’ordre de grandeur : 12 000 km parcourus dans l’année avec une 5 CV représentent <b>5 679 €</b> de frais kilométriques au barème 2026. À comparer avec la déduction forfaitaire calculée sur votre salaire — le comparatif se fait chaque année, car les deux termes bougent.</div>
   <p>Attention : opter pour les frais réels engage sur l’ensemble des frais professionnels de l’année, et suppose de pouvoir tout justifier.</p>
 
+  <figure class="shot"><img src="assets/demo-mac-annee.webp" width="941" height="759" loading="lazy" alt="Vue annuelle de KmPro sur Mac : kilomètres et indemnités kilométriques mois par mois (données de démonstration)"><figcaption>Au moment de déclarer, le total de l’année est déjà là.</figcaption></figure>
+
   <h2>Indépendant : selon votre régime</h2>
   <p>Au régime réel, les frais kilométriques se déduisent du résultat, au barème ou aux frais réellement engagés selon les cas. Sous un régime micro en revanche, l’abattement forfaitaire tient déjà lieu de déduction : aucun frais ne s’y ajoute, kilomètres compris.</p>
   <p>C’est un point à vérifier avant de se lancer dans un suivi détaillé : selon votre régime, il sera déterminant ou sans effet.</p>
 
   <h2>Dirigeant remboursé par sa société</h2>
   <p>Un gérant qui utilise son véhicule personnel pour l’activité de sa société peut se faire rembourser ses kilomètres au barème. Pour la société, c’est une charge ; pour le dirigeant, un remboursement de frais. Là encore, tout repose sur la qualité du justificatif.</p>
+
+  <figure class="shot shot--phone"><img src="assets/photo-terrain-commerciale.webp" width="900" height="1125" loading="lazy" alt="Une commerciale enregistre son déplacement sur son iPhone devant sa voiture"><figcaption>Le bon moment pour noter un trajet, c’est juste après l’avoir fait.</figcaption></figure>
 
   <h2>Ce que ça suppose concrètement</h2>
   <ul class="puces">
