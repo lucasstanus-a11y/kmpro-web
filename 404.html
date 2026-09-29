@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="fr-FR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, follow">
+<title>Page introuvable — KmPro</title>
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<style>
+  :root{--ground:#F4F7FB;--surface:#FFFFFF;--ink:#0B1A2E;--ink-2:#34445B;--muted:#627289;--blue:#1F6BEB;--blue-deep:#1552C9;color-scheme:light}
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100svh;display:grid;place-items:center;background:var(--ground);color:var(--ink);font:17px/1.55 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  main{max-width:520px;padding:clamp(20px,5vw,40px);text-align:center}
+  img{width:56px;height:56px;border-radius:14px}
+  h1{font-size:clamp(1.6rem,5vw,2.2rem);letter-spacing:-.035em;line-height:1.1;margin:18px 0 10px}
+  p{color:var(--ink-2);margin:0 0 22px;text-wrap:pretty}
+  .links{display:grid;gap:10px}
+  a.btn{display:block;text-decoration:none;font-weight:700;padding:15px 20px;border-radius:999px}
+  .b1{background:var(--blue);color:#fff}
+  .b2{background:var(--surface);color:var(--ink);box-shadow:0 6px 18px rgba(11,26,46,.07)}
+  small{display:block;margin-top:20px;color:var(--muted)}
+  small a{color:var(--muted)}
+</style>
+<script>
+  // Rattrape les variantes de casse et les adresses proches : /PDF, /Pdf, /pdf.html…
+  (function(){
+    var p = location.pathname.toLowerCase().replace(/\/+$/,"").replace(/\.html?$/,"");
+    var routes = {
+      "/pdf":"/pdf/", "/plaquette":"/pdf/", "/brochure":"/pdf/",
+      "/bareme":"/bareme-kilometrique-2026.html",
+      "/bareme-kilometrique":"/bareme-kilometrique-2026.html",
+      "/comptable":"/comptables.html", "/comptables":"/comptables.html",
+      "/mentions":"/mentions-legales.html"
+    };
+    if (routes[p]) location.replace(routes[p]);
+  })();
+</script>
+</head>
+<body>
+<main>
+  <img src="/assets/kmpro-icon.webp" alt="" width="56" height="56">
+  <h1>Cette page n’existe pas</h1>
+  <p>Le lien est peut-être incomplet, ou la page a changé d’adresse.</p>
+  <div class="links">
+    <a class="btn b1" href="/">Aller à l’accueil</a>
+    <a class="btn b2" href="/pdf/">Voir la plaquette KmPro</a>
+  </div>
+  <small>Une question ? <a href="mailto:contact@kmpro.app">contact@kmpro.app</a></small>
+</main>
+</body>
+</html>

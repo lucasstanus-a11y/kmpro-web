@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="fr-FR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, follow">
+<title>KmPro — la plaquette</title>
+<meta name="description" content="KmPro en cinq pages : vos kilomètres professionnels déjà calculés, sur iPhone et Mac.">
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="KmPro">
+<meta property="og:title" content="KmPro — la plaquette">
+<meta property="og:description" content="Vos kilomètres professionnels, déjà calculés. iPhone et Mac.">
+<meta property="og:url" content="https://kmpro.app/pdf/">
+<meta property="og:image" content="https://kmpro.app/assets/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  :root{--ground:#F4F7FB;--surface:#FFFFFF;--ink:#0B1A2E;--ink-2:#34445B;--muted:#627289;--line:#DAE3EE;--blue:#1F6BEB;--blue-deep:#1552C9;--r-l:20px;--shadow:0 18px 44px rgba(11,26,46,.12);color-scheme:light}
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--ground);color:var(--ink);font:17px/1.55 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:clip}
+  a{color:var(--blue-deep)}
+  :focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:8px}
+  .wrap{max-width:860px;margin-inline:auto;padding-inline:clamp(14px,4vw,28px)}
+  header{padding-block:20px 6px}
+  .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:750;font-size:19px;letter-spacing:-.02em}
+  .brand img{width:34px;height:34px;border-radius:9px}
+  .brand b{color:var(--blue);font-weight:750}
+  .intro{padding-block:10px 4px}
+  h1{font-size:clamp(1.8rem,5.2vw,2.6rem);line-height:1.05;letter-spacing:-.04em;margin:14px 0 8px;text-wrap:balance}
+  .intro p{margin:0;color:var(--ink-2);font-size:clamp(1rem,2.4vw,1.12rem);text-wrap:pretty}
+  .pages{display:grid;gap:clamp(14px,3vw,26px);padding-block:clamp(18px,4vw,30px)}
+  .pages img{display:block;width:100%;height:auto;border-radius:var(--r-l);box-shadow:var(--shadow);background:var(--surface)}
+  .actions{display:grid;gap:10px;padding-block:6px 10px}
+  .btn{display:flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;font-weight:700;font-size:17px;padding:16px 20px;border-radius:999px;text-align:center}
+  .btn--blue{background:var(--blue);color:#fff;box-shadow:0 10px 24px rgba(31,107,235,.28)}
+  .btn--blue:active{background:var(--blue-deep)}
+  .btn--ghost{background:var(--surface);color:var(--ink);box-shadow:0 6px 18px rgba(11,26,46,.07)}
+  .sub{margin:2px 0 0;color:var(--muted);font-size:14px;text-align:center}
+  .sticky{position:sticky;bottom:0;z-index:5;padding:10px 0 max(10px,env(safe-area-inset-bottom));background:linear-gradient(to top,var(--ground) 62%,rgba(244,247,251,0))}
+  .sticky .btn{margin-inline:auto;max-width:520px}
+  footer{padding-block:18px 40px;color:var(--muted);font-size:14px;text-align:center}
+  footer a{color:var(--muted)}
+  @media (min-width:700px){.actions{grid-template-columns:1fr 1fr}.actions .btn--blue{grid-column:1/-1}}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <a class="brand" href="https://kmpro.app/"><img src="../assets/kmpro-icon.webp" alt="" width="34" height="34"><span>Km<b>Pro</b></span></a>
+</header>
+
+<main class="wrap">
+  <div class="intro">
+    <h1>Vos kilomètres professionnels, déjà calculés</h1>
+    <p>KmPro lit votre agenda, calcule vos trajets au barème fiscal et prépare les fichiers pour votre comptable. Cinq pages pour tout comprendre.</p>
+  </div>
+
+  <div class="actions">
+    <a class="btn btn--blue" href="https://apps.apple.com/app/id6802150703" target="_blank" rel="noopener">Essayer KmPro pendant 14 jours</a>
+    <a class="btn btn--ghost" href="https://kmpro.app/">Voir le site</a>
+    <a class="btn btn--ghost" href="../assets/plaquette/KmPro-plaquette.pdf" download>Télécharger le PDF</a>
+  </div>
+  <p class="sub">14 jours d’essai, sans paiement ni carte bancaire · iPhone et Mac</p>
+
+  <div class="pages">
+    <img src="../assets/plaquette/p1.webp" width="1200" height="1698" alt="Plaquette KmPro, page 1 : vos kilomètres professionnels, déjà calculés. 29,99 € par an, sans renouvellement automatique, 14 jours d’essai sans paiement ni carte bancaire." fetchpriority="high">
+    <img src="../assets/plaquette/p2.webp" width="1200" height="1698" loading="lazy" alt="Plaquette KmPro, page 2 : vos trajets importés et détectés automatiquement depuis votre agenda.">
+    <img src="../assets/plaquette/p3.webp" width="1200" height="1698" loading="lazy" alt="Plaquette KmPro, page 3 : des frais kilométriques au plus juste, avec plusieurs itinéraires proposés, les trajets à étapes et les déplacements récurrents.">
+    <img src="../assets/plaquette/p4.webp" width="1200" height="1698" loading="lazy" alt="Plaquette KmPro, page 4 : prêt pour votre comptable, avec les exports Excel et PDF mois par mois.">
+    <img src="../assets/plaquette/p5.webp" width="1200" height="1698" loading="lazy" alt="Plaquette KmPro, page 5 : 29,99 € par an, seulement si vous êtes satisfait de la période d’essai.">
+  </div>
+
+  <div class="sticky">
+    <a class="btn btn--blue" href="https://apps.apple.com/app/id6802150703" target="_blank" rel="noopener">Télécharger KmPro sur l’App Store</a>
+  </div>
+</main>
+
+<footer class="wrap">
+  <p>© 2026 KmPro · <a href="https://kmpro.app/">kmpro.app</a> · <a href="mailto:contact@kmpro.app">contact@kmpro.app</a> · <a href="https://kmpro.app/mentions-legales.html">Mentions légales</a></p>
+</footer>
+</body>
+</html>

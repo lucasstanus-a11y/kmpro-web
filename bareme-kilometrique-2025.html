@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="fr-FR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Barème kilométrique 2025 : le tableau à appliquer</title>
+<meta name="description" content="Le barème kilométrique 2025 pour les voitures, par puissance fiscale et tranche de kilométrage, et à quelle déclaration il s’applique.">
+<link rel="canonical" href="https://kmpro.app/bareme-kilometrique-2025.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="KmPro">
+<meta property="og:title" content="Barème kilométrique 2025 : le tableau à appliquer">
+<meta property="og:description" content="Le barème kilométrique 2025 pour les voitures, par puissance fiscale et tranche de kilométrage, et à quelle déclaration il s’applique.">
+<meta property="og:url" content="https://kmpro.app/bareme-kilometrique-2025.html">
+<meta property="og:image" content="https://kmpro.app/assets/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<style>
+:root{--ground:#F4F7FB;--surface:#FFFFFF;--surface-2:#EEF3F9;--ink:#0B1A2E;--ink-2:#34445B;--muted:#627289;--line:#DAE3EE;--blue:#1F6BEB;--blue-deep:#1552C9;--sky:#DCE9FF;--green:#1E7F4F;--r-m:16px;--r-l:20px;--shadow-soft:0 12px 32px rgba(11,26,46,.08);--mono:ui-monospace,SFMono-Regular,Menlo,monospace;color-scheme:light}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--ground);color:var(--ink);font:17px/1.62 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:var(--blue-deep)}
+  :focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+  .wrap{max-width:860px;margin-inline:auto;padding-inline:clamp(16px,4vw,32px)}
+  header{padding-block:22px}
+  .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:750;font-size:19px;letter-spacing:-.02em}
+  .brand img{width:34px;height:34px;border-radius:9px}
+  .brand b{color:var(--blue);font-weight:750}
+  main{padding-block:8px 56px}
+  h1{font-size:clamp(2rem,5vw,2.9rem);line-height:1.06;letter-spacing:-.04em;margin:18px 0 10px}
+  h2{font-size:clamp(1.3rem,2.6vw,1.75rem);letter-spacing:-.025em;line-height:1.15;margin:44px 0 12px}
+  h3{font-size:1.05rem;margin:26px 0 8px}
+  p{margin:0 0 14px;color:var(--ink-2);text-wrap:pretty}
+  .chapo{font-size:clamp(1.05rem,2vw,1.2rem);color:var(--ink-2)}
+  .maj{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-deep)}
+  .card{background:var(--surface);border-radius:var(--r-l);padding:clamp(18px,3vw,26px);box-shadow:var(--shadow-soft);margin:18px 0}
+  .tbl{width:100%;overflow-x:auto}
+  table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;min-width:520px}
+  caption{text-align:left;font-weight:700;color:var(--ink);padding-bottom:10px}
+  th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:right;font-size:15.5px}
+  th:first-child,td:first-child{text-align:left}
+  thead th{color:var(--muted);font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
+  tbody tr:last-child td{border-bottom:0}
+  td.n{font-family:var(--mono)}
+  .note{background:var(--surface-2);border-radius:var(--r-m);padding:16px 18px;color:var(--ink-2);font-size:15.5px;margin:16px 0}
+  .calc{display:grid;gap:14px}
+  .calc__row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  label{display:grid;gap:6px;font-size:14px;font-weight:650;color:var(--ink)}
+  select,input{font:inherit;font-size:16px;padding:11px 12px;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);width:100%}
+  .check{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:600}
+  .check input{width:auto}
+  .out{background:linear-gradient(120deg,#E6F0FF,#E3F7FD);border-radius:var(--r-m);padding:18px 20px;display:grid;gap:4px}
+  .out b{font-size:clamp(1.8rem,4vw,2.4rem);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+  .out small{color:var(--ink-2);font-size:14px}
+  .cta{display:block;background:var(--blue);color:#fff;text-decoration:none;font-weight:700;padding:16px 22px;border-radius:999px;text-align:center;margin:10px 0}
+  .cta:hover{background:var(--blue-deep)}
+  .src{font-size:14px;color:var(--muted)}
+  footer{padding-block:0 48px;color:var(--muted);font-size:14px}
+  @media (max-width:560px){.calc__row{grid-template-columns:1fr}}
+  .aussi{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+  .aussi li a{display:block;background:var(--surface);border-radius:var(--r-m);padding:14px 18px;text-decoration:none;color:var(--ink);font-weight:650;box-shadow:var(--shadow-soft)}
+  .aussi li a:hover{color:var(--blue-deep)}
+  .etapes{list-style:none;counter-reset:e;margin:0;padding:0;display:grid;gap:14px}
+  .etapes li{counter-increment:e;display:grid;grid-template-columns:32px 1fr;gap:14px;align-items:start}
+  .etapes li::before{content:counter(e);width:32px;height:32px;border-radius:10px;background:var(--sky);color:var(--blue-deep);font-weight:750;display:grid;place-items:center;font-size:15px}
+  .etapes b{display:block;color:var(--ink)}
+  .etapes p{margin:4px 0 0}
+  ul.puces{padding-left:20px;color:var(--ink-2)}
+  ul.puces li{margin-bottom:8px}
+  figure.shot{margin:22px 0;display:grid;gap:10px}
+  figure.shot img{display:block;width:100%;height:auto;border-radius:var(--r-l);box-shadow:var(--shadow-soft);background:var(--surface)}
+  figure.shot figcaption{font-size:14px;color:var(--muted);text-wrap:pretty}
+  figure.shot--phone{max-width:300px}
+  figure.shot--duo{max-width:100%}
+  figure.shot--right{margin-inline:auto}
+  .duo-shots{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start;margin:22px 0}
+  .duo-shots figure.shot{margin:0}
+  .duo-shots figure.shot--phone{max-width:100%}
+  @media (max-width:620px){.duo-shots{grid-template-columns:1fr}.duo-shots figure.shot--phone{max-width:300px;margin-inline:auto}}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <a class="brand" href="./"><img src="assets/kmpro-icon.webp" alt="" width="34" height="34"><span>Km<b>Pro</b></span></a>
+</header>
+
+<main class="wrap">
+<p class="maj">Année 2025</p>
+  <h1>Barème kilométrique 2025</h1>
+  <p class="chapo">Le barème 2025 est celui qui s’applique aux kilomètres parcourus entre le 1<sup>er</sup> janvier et le 31 décembre 2025 — donc à la déclaration faite au printemps 2026. Bonne nouvelle pour la mémoire : le barème 2026 reprend exactement les mêmes valeurs.</p>
+
+  <h2>Quel barème pour quelle déclaration ?</h2>
+  <p>C’est la confusion la plus fréquente. Le barème à utiliser n’est pas celui de l’année où vous déclarez, mais celui de l’année où vous avez roulé.</p>
+  <div class="card"><div class="tbl"><table>
+    <caption>Repère</caption>
+    <thead><tr><th>Kilomètres parcourus en</th><th>Barème à appliquer</th><th>Déclaration</th></tr></thead>
+    <tbody>
+      <tr><td>2025</td><td>Barème 2025</td><td>Printemps 2026</td></tr>
+      <tr><td>2026</td><td><a href="bareme-kilometrique-2026.html">Barème 2026</a></td><td>Printemps 2027</td></tr>
+    </tbody>
+  </table></div></div>
+
+  <h2>Le tableau complet 2025</h2>
+  <p>Les montants dépendent de la puissance fiscale du véhicule (case P.6 de la carte grise) et du total de kilomètres professionnels parcourus dans l’année.</p>
+  <div class="card"><div class="tbl"><table>
+    <caption>Véhicules thermiques et hybrides · <i>d</i> = distance parcourue dans l’année</caption>
+    <thead><tr><th>Puissance</th><th>Jusqu’à 5 000 km</th><th>De 5 001 à 20 000 km</th><th>Au-delà de 20 000 km</th></tr></thead>
+    <tbody>
+      <tr><td>3 CV et moins</td><td class="n">d × 0,529</td><td class="n">(d × 0,316) + 1 065</td><td class="n">d × 0,370</td></tr>
+      <tr><td>4 CV</td><td class="n">d × 0,606</td><td class="n">(d × 0,340) + 1 330</td><td class="n">d × 0,407</td></tr>
+      <tr><td>5 CV</td><td class="n">d × 0,636</td><td class="n">(d × 0,357) + 1 395</td><td class="n">d × 0,427</td></tr>
+      <tr><td>6 CV</td><td class="n">d × 0,665</td><td class="n">(d × 0,374) + 1 457</td><td class="n">d × 0,447</td></tr>
+      <tr><td>7 CV et plus</td><td class="n">d × 0,697</td><td class="n">(d × 0,394) + 1 515</td><td class="n">d × 0,470</td></tr>
+    </tbody>
+  </table></div></div>
+  <div class="note">Pour un véhicule <b>100 % électrique</b>, le montant obtenu est majoré de 20 %. Les hybrides, même rechargeables, restent au barème ordinaire.</div>
+
+  <h2>Trois exemples pour 2025</h2>
+  <div class="card"><div class="tbl"><table>
+    <thead><tr><th>Situation</th><th>Calcul</th><th>Montant</th></tr></thead>
+    <tbody>
+      <tr><td>4 200 km, 4 CV</td><td class="n">4 200 × 0,606</td><td class="n">2 545,20 €</td></tr>
+      <tr><td>9 000 km, 6 CV</td><td class="n">(9 000 × 0,374) + 1 457</td><td class="n">4 823 €</td></tr>
+      <tr><td>22 000 km, 7 CV</td><td class="n">22 000 × 0,470</td><td class="n">10 340 €</td></tr>
+    </tbody>
+  </table></div></div>
+  <p>Le simulateur de la <a href="bareme-kilometrique-2026.html#simulateur">page 2026</a> donne les mêmes résultats pour 2025, puisque les valeurs sont identiques.</p>
+
+  <h2>Vous n’avez pas suivi vos kilomètres de 2025 ?</h2>
+  <p>C’est le cas le plus courant, et le plus coûteux. Reconstituer une année passée oblige à croiser un agenda, des adresses et des souvenirs — et le résultat reste fragile en cas de contrôle, parce qu’il a été établi après coup.</p>
+  <p>Si vos rendez-vous professionnels sont dans votre agenda, tout n’est pas perdu : ils portent une date et souvent un lieu. KmPro sait analyser un calendrier sur un mois ou sur une année entière, proposer les déplacements correspondants et calculer les distances — vous relisez, vous validez.</p>
+
+  <figure class="shot"><img src="assets/demo-calendrier-mac.webp" width="941" height="626" loading="lazy" alt="KmPro sur Mac : écran d’import du calendrier, avec les agendas à connecter"><figcaption>Une année d’agenda peut se transformer en trajets datés, distance comprise.</figcaption></figure>
+
+  <p>Et pour l’année en cours, la vraie réponse est ailleurs : noter les trajets au fil des mois, pour n’avoir plus rien à reconstituer l’an prochain.</p>
+  <a class="cta" href="https://apps.apple.com/app/id6802150703" target="_blank" rel="noopener">Découvrir KmPro sur iPhone et Mac</a>
+  <p class="src">Source : <a href="https://www.urssaf.fr/accueil/outils-documentation/taux-baremes/indemnites-kilometriques.html" rel="noopener" target="_blank">barème des indemnités kilométriques publié par l’URSSAF</a>. Informations données à titre indicatif ; elles ne remplacent pas l’avis d’un professionnel de la comptabilité.</p>
+
+<h2>À lire aussi</h2>
+<ul class="aussi"><li><a href="bareme-fiscal-voiture.html">Trouver le barème fiscal de sa voiture : la puissance fiscale</a></li><li><a href="bareme-kilometrique-2026.html">Barème kilométrique 2026 : tableau officiel et simulateur</a></li><li><a href="calculer-frais-kilometriques.html">Calculer ses frais kilométriques en France : méthode et exemples</a></li><li><a href="comptables.html">Comptables : proposez KmPro à vos clients</a></li><li><a href="frais-reels-vehicule-personnel.html">Déclarer ses frais kilométriques avec son véhicule personnel</a></li><li><a href="indemnites-kilometriques-2026.html">Indemnités kilométriques 2026 : ce qui change</a></li><li><a href="modele-excel-frais-kilometriques.html">Modèle Excel de frais kilométriques : ce qu’il doit contenir</a></li><li><a href="note-de-frais-kilometrique.html">Note de frais kilométrique : ce qu’elle doit contenir</a></li></ul>
+</main>
+
+<footer class="wrap">
+  <p>© 2026 KmPro · <a href="./">Accueil</a> · <a href="mentions-legales.html">Mentions légales</a></p>
+</footer>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Barème kilométrique 2025", "description": "Le barème kilométrique 2025 pour les voitures, par puissance fiscale et tranche de kilométrage, et à quelle déclaration il s’applique.", "inLanguage": "fr-FR", "datePublished": "2026-09-29", "dateModified": "2026-09-29", "author": {"@type": "Organization", "name": "KmPro"}, "publisher": {"@type": "Organization", "name": "KmPro", "url": "https://kmpro.app/"}, "mainEntityOfPage": "https://kmpro.app/bareme-kilometrique-2025.html"}</script>
+</body>
+</html>
