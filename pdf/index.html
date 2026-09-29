@@ -90,7 +90,7 @@
       </div>
       <div class="duo">
         <a class="btn btn--ghost" href="https://kmpro.app/">Voir le site</a>
-        <a class="btn btn--ghost" href="../assets/plaquette/KmPro-plaquette.pdf" download>Télécharger le PDF</a>
+        <a class="btn btn--ghost" id="dl" href="../assets/plaquette/KmPro-plaquette.pdf" download="KmPro-plaquette.pdf" type="application/pdf">Télécharger le PDF</a>
       </div>
     </div>
     <p class="sub">Une question ? <a href="mailto:contact@kmpro.app">contact@kmpro.app</a></p>
@@ -143,6 +143,30 @@
     }
     var ouvert = menu.classList.toggle('on');
     b.setAttribute('aria-expanded', ouvert ? 'true' : 'false');
+  });
+
+  // Téléchargement : on récupère le fichier puis on le remet au système, pour qu'il
+  // soit enregistré (Fichiers sur iPhone, Téléchargements sur Mac) au lieu d'être
+  // simplement affiché dans le navigateur. Si quoi que ce soit échoue, le lien
+  // direct reprend la main.
+  var dl = document.getElementById('dl');
+  dl.addEventListener('click', function(e){
+    if (!window.fetch || !window.URL || !URL.createObjectURL) return;
+    e.preventDefault();
+    flash('Téléchargement…');
+    fetch(dl.href).then(function(r){
+      if (!r.ok) throw new Error('indisponible');
+      return r.blob();
+    }).then(function(blob){
+      var url = URL.createObjectURL(new Blob([blob], { type: 'application/pdf' }));
+      var a = document.createElement('a');
+      a.href = url;
+      a.download = 'KmPro-plaquette.pdf';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(function(){ URL.revokeObjectURL(url); }, 8000);
+    }).catch(function(){ window.location.href = dl.href; });
   });
 
   document.getElementById('m-copie').addEventListener('click', function(){ copier(); ferme(); });
