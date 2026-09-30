@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Politique de confidentialité — KmPro</title>
+<meta name="description" content="Ce que l’application KmPro manipule comme données, où elles sont stockées, et ce qui n’est jamais transmis.">
+<link rel="canonical" href="https://kmpro.app/confidentialite.html">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<style>
+  :root{--ground:#F4F7FB;--surface:#FFFFFF;--ink:#0B1A2E;--ink-2:#34445B;--muted:#627289;--line:#DAE3EE;--blue:#1F6BEB;--blue-deep:#1552C9;color-scheme:light}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--ground);color:var(--ink);font:17px/1.6 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:var(--blue-deep)}
+  :focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+  .wrap{max-width:760px;margin-inline:auto;padding-inline:clamp(16px,4vw,32px)}
+  header{padding-block:22px}
+  .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:750;font-size:19px;letter-spacing:-.02em}
+  .brand img{width:34px;height:34px;border-radius:9px}
+  .brand b{color:var(--blue);font-weight:750}
+  main{padding-block:12px 64px}
+  h1{font-size:clamp(2rem,5vw,2.8rem);line-height:1.08;letter-spacing:-.04em;margin:18px 0 8px}
+  .updated{color:var(--muted);font-size:15px;margin:0 0 28px}
+  section{background:var(--surface);border-radius:20px;padding:clamp(20px,4vw,30px);margin-bottom:16px}
+  h2{font-size:1.15rem;letter-spacing:-.01em;margin:0 0 12px}
+  p{margin:0 0 10px;color:var(--ink-2)}
+  p:last-child{margin-bottom:0}
+  dl{display:grid;grid-template-columns:minmax(0,200px) minmax(0,1fr);gap:8px 20px;margin:0}
+  dt{color:var(--muted);font-size:15px}
+  dd{margin:0;color:var(--ink);font-variant-numeric:tabular-nums}
+  @media (max-width:560px){dl{grid-template-columns:1fr;gap:2px}dd{margin-bottom:10px}}
+  footer{padding-block:0 48px;color:var(--muted);font-size:14px}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <a class="brand" href="./"><img src="assets/kmpro-icon.webp" alt="" width="34" height="34"><span>Km<b>Pro</b></span></a>
+</header>
+
+<main class="wrap">
+<h1>Politique de confidentialité de KmPro</h1>
+<p class="updated">Dernière mise à jour : 15 septembre 2026</p>
+
+<p>KmPro est une application de suivi des frais kilométriques professionnels, disponible sur iPhone et sur Mac. Cette page explique quelles données l'application manipule, où elles sont stockées, et ce qui n'est jamais transmis.</p>
+
+<h2>En résumé</h2>
+<p><strong>KmPro ne collecte aucune donnée personnelle.</strong> L'éditeur n'a accès ni à vos trajets, ni à vos adresses, ni à votre calendrier, ni à la moindre statistique d'usage. Aucune donnée n'est transmise à un serveur de l'éditeur, parce qu'il n'en existe aucun. L'application ne contient ni publicité, ni traceur, ni outil de mesure d'audience, ni bibliothèque tierce d'analyse.</p>
+
+<h2>Où vivent vos données</h2>
+<table>
+  <thead>
+    <tr><th>Donnée</th><th>Emplacement</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Trajets, véhicules, réglages, favoris</td>
+      <td>Sur votre appareil, et dans <strong>votre</strong> espace iCloud privé, afin d'être synchronisés entre votre iPhone et votre Mac. Cet espace appartient à votre compte Apple : l'éditeur ne peut pas y accéder.</td>
+    </tr>
+    <tr>
+      <td>Sauvegardes (fichiers JSON)</td>
+      <td>Dans votre iCloud Drive, ou dans le dossier de votre appareil que vous avez désigné. Ces fichiers vous appartiennent et restent lisibles même si vous désinstallez l'application.</td>
+    </tr>
+    <tr>
+      <td>Exports Excel et PDF</td>
+      <td>Créés à la demande, sur votre appareil. Vous seul décidez à qui les envoyer.</td>
+    </tr>
+    <tr>
+      <td>Événements de calendrier</td>
+      <td>Lus sur votre appareil, jamais copiés ailleurs. Voir ci-dessous.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Accès au calendrier</h2>
+<p>Si vous l'autorisez, KmPro lit les événements de vos calendriers pour vous proposer de les transformer en trajets. Cette lecture se fait <strong>entièrement sur votre appareil</strong>. Le contenu de vos événements n'est jamais transmis, ni à l'éditeur ni à un tiers.</p>
+<p>Pour ne pas vous proposer deux fois le même rendez-vous, l'application conserve une empreinte technique de chaque événement déjà traité. Cette empreinte ne permet pas de reconstituer le contenu de l'événement, et elle reste dans votre espace iCloud privé.</p>
+<p>Vous pouvez retirer cette autorisation à tout moment dans les réglages de votre appareil. L'application continue alors de fonctionner, sans la détection automatique.</p>
+
+<h2>Localisation et adresses</h2>
+<p>KmPro utilise les services de cartographie d'Apple pour rechercher des adresses et calculer les distances entre deux points. Ces requêtes sont traitées par Apple, selon la politique de confidentialité d'Apple. KmPro n'enregistre pas votre position dans le temps et ne vous suit pas.</p>
+<p>L'autorisation de localisation est facultative : elle sert uniquement à proposer des adresses proches de vous lors de la saisie. Sans elle, l'application fonctionne normalement.</p>
+
+<h2>Abonnement et paiement</h2>
+<p>L'abonnement KmPro est géré entièrement par Apple. Les informations de paiement sont saisies dans l'App Store et <strong>ne transitent jamais par l'application</strong> : l'éditeur ne voit ni votre numéro de carte, ni votre adresse de facturation, ni votre identité. L'application sait seulement si un abonnement est actif sur votre compte.</p>
+<p>L'essai gratuit ne demande aucun moyen de paiement et ne se transforme pas en abonnement : à son terme, la saisie de nouveaux trajets se ferme, et rien n'est prélevé.</p>
+
+<h2>Ce que vous pouvez faire de vos données</h2>
+<ul>
+  <li><strong>Les exporter</strong> à tout moment, en Excel ou en PDF, ou récupérer vos sauvegardes JSON directement dans l'application Fichiers ou dans le Finder.</li>
+  <li><strong>Les supprimer</strong> en désinstallant l'application et en supprimant ses données dans les réglages iCloud de votre appareil. Vos fichiers de sauvegarde, eux, restent là où vous les avez rangés jusqu'à ce que vous les effaciez vous-même.</li>
+</ul>
+<p>Puisque l'éditeur ne détient aucune de vos données, il n'y a rien à lui demander d'effacer. Une demande de suppression s'adresse à votre propre espace iCloud.</p>
+
+<h2>Enfants</h2>
+<p>KmPro s'adresse à des professionnels et n'est pas destinée aux enfants. Aucune donnée n'est collectée, quel que soit l'âge de l'utilisateur.</p>
+
+<h2>Site web kmpro.app</h2>
+<p>Le site de présentation <a href="https://kmpro.app">kmpro.app</a> utilise Cloudflare Web Analytics pour compter ses visites de façon anonyme : pages vues, site d'origine, type d'appareil et pays. Cet outil ne dépose aucun cookie, n'utilise pas le stockage de votre navigateur et ne suit pas les visiteurs d'un site à l'autre ; il ne sert à identifier personne. Les données techniques nécessaires à cette mesure sont traitées par Cloudflare, selon sa propre politique de confidentialité.</p>
+<p>Cette mesure concerne uniquement le site web. L'application KmPro, elle, ne contient aucun outil de mesure d'audience.</p>
+
+<h2>Modifications</h2>
+<p>Toute évolution de cette politique sera publiée sur cette page, avec une nouvelle date de mise à jour. Les changements substantiels seront également signalés dans les notes de version de l'application.</p>
+
+<h2>Nous contacter</h2>
+<p>Pour toute question sur cette politique ou sur le traitement de vos données :<br>
+<a href="mailto:contact@kmpro.app">contact@kmpro.app</a></p>
+
+<p style="margin-top:2rem;font-size:.9rem;">
+  <a href="./">Assistance KmPro</a>
+</p>
+</main>
+
+<footer class="wrap">
+  <p>© 2026 KmPro · <a href="./">Retour à l’accueil</a></p>
+</footer>
+</body>
+</html>
