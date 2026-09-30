@@ -29,10 +29,8 @@
   .pages{display:grid;gap:0}
   .pages figure{position:relative;margin:0;line-height:0}
   .pages img{display:block;width:100%;height:auto;background:#0B1A2E}
-  .zone{position:absolute;display:block;border-radius:10px;transition:background .15s ease,box-shadow .15s ease}
-  .zone:hover{background:rgba(255,255,255,.14);box-shadow:0 0 0 3px rgba(31,107,235,.55)}
-  .zone:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
-  @media (prefers-reduced-motion:reduce){.zone{transition:none}}
+  .zone{position:absolute;display:block}
+  .zone:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:10px}
   @media (min-width:760px){
     .pages{gap:22px;max-width:820px;margin-inline:auto;padding:26px clamp(16px,3vw,28px) 0}
     .pages img{border-radius:var(--r-l);box-shadow:var(--shadow)}
