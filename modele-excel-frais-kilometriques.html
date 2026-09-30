@@ -94,6 +94,14 @@
   .switch input{width:auto;flex:none}
   .switch small{display:block;color:var(--muted);font-weight:500;font-size:13px}
   @media (max-width:640px){.sim{grid-template-columns:1fr}}
+  .telechargement{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(16px,3vw,28px);align-items:center;background:linear-gradient(120deg,#E6F0FF,#E3F7FD);border-radius:var(--r-l);padding:clamp(20px,3vw,28px);margin:22px 0 10px}
+  .telechargement__k{font-size:12.5px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--blue-deep);margin:0 0 6px}
+  .telechargement__t{font-size:clamp(1.15rem,2.4vw,1.45rem);font-weight:750;letter-spacing:-.025em;color:var(--ink);margin:0 0 6px}
+  .telechargement__d{margin:0;font-size:15.5px;color:var(--ink-2)}
+  .btn-dl{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--blue);color:#fff;text-decoration:none;font-weight:700;font-size:16px;padding:15px 22px;border-radius:999px;white-space:nowrap;box-shadow:0 10px 24px rgba(31,107,235,.28)}
+  .btn-dl:hover{background:var(--blue-deep)}
+  .btn-dl svg{width:19px;height:19px;flex:none}
+  @media (max-width:700px){.telechargement{grid-template-columns:1fr}.btn-dl{width:100%}}
 </style>
 </head>
 <body>
@@ -106,6 +114,19 @@
 <p class="maj">Tableur</p>
   <h1>Modèle Excel de frais kilométriques</h1>
   <p class="chapo">Beaucoup de gens suivent leurs kilomètres dans un tableau Excel. C’est une bonne idée de départ — à condition de savoir ce que le tableau doit contenir, et où il montre ses limites.</p>
+
+  <div class="telechargement">
+    <div>
+      <p class="telechargement__k">Modèle gratuit</p>
+      <p class="telechargement__t">Le tableau, prêt à remplir</p>
+      <p class="telechargement__d">Trois feuilles : vos trajets, votre véhicule, le récapitulatif. Le barème 2026 est intégré, les formules sont écrites — vous n’avez qu’à saisir vos déplacements.</p>
+    </div>
+    <a class="btn-dl" href="assets/modele/KmPro-modele-frais-kilometriques-2026.xlsx" download>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m8 11 4 4 4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      Télécharger le modèle Excel
+    </a>
+  </div>
+  <p class="src" style="margin-top:-6px">Fichier .xlsx, 20 Ko. Aucune inscription, aucune adresse e-mail demandée.</p>
 
   <h2>Les colonnes indispensables</h2>
   <p>Un tableau qui tient en cas de contrôle comporte au minimum :</p>
@@ -151,7 +172,7 @@
   <figure class="shot"><img src="assets/demo-mac-export.webp" width="941" height="759" loading="lazy" alt="Fenêtre d’export de KmPro sur Mac : choix entre Excel et PDF, par mois ou par année (données de démonstration)"><figcaption>Le tableau Excel est produit par l’application : vous récupérez le fichier, pas la corvée.</figcaption></figure>
 
   <p>Vous retrouvez donc exactement ce que vous auriez construit vous-même — sans les heures de saisie, sans les distances à chercher, et sans le risque de formule cassée. Un PDF est également disponible pour joindre à une note de frais.</p>
-  <a class="cta" href="https://apps.apple.com/app/id6802150703" target="_blank" rel="noopener">Obtenir ses fichiers Excel avec KmPro</a>
+  <a class="cta" href="https://apps.apple.com/app/id6802150703" target="_blank" rel="noopener">Obtenir ses fichiers Excel automatiquement</a>
   <p class="src">Les formules citées reprennent le barème kilométrique en vigueur pour les voitures. Informations données à titre indicatif ; vérifiez le barème de l’année concernée avant de les appliquer.</p>
 
 <h2>À lire aussi</h2>

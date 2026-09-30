@@ -94,6 +94,14 @@
   .switch input{width:auto;flex:none}
   .switch small{display:block;color:var(--muted);font-weight:500;font-size:13px}
   @media (max-width:640px){.sim{grid-template-columns:1fr}}
+  .telechargement{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(16px,3vw,28px);align-items:center;background:linear-gradient(120deg,#E6F0FF,#E3F7FD);border-radius:var(--r-l);padding:clamp(20px,3vw,28px);margin:22px 0 10px}
+  .telechargement__k{font-size:12.5px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--blue-deep);margin:0 0 6px}
+  .telechargement__t{font-size:clamp(1.15rem,2.4vw,1.45rem);font-weight:750;letter-spacing:-.025em;color:var(--ink);margin:0 0 6px}
+  .telechargement__d{margin:0;font-size:15.5px;color:var(--ink-2)}
+  .btn-dl{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--blue);color:#fff;text-decoration:none;font-weight:700;font-size:16px;padding:15px 22px;border-radius:999px;white-space:nowrap;box-shadow:0 10px 24px rgba(31,107,235,.28)}
+  .btn-dl:hover{background:var(--blue-deep)}
+  .btn-dl svg{width:19px;height:19px;flex:none}
+  @media (max-width:700px){.telechargement{grid-template-columns:1fr}.btn-dl{width:100%}}
 </style>
 </head>
 <body>
