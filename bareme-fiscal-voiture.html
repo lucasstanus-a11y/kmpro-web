@@ -62,10 +62,10 @@
   .aussi li a{display:block;background:var(--surface);border-radius:var(--r-m);padding:14px 18px;text-decoration:none;color:var(--ink);font-weight:650;box-shadow:var(--shadow-soft)}
   .aussi li a:hover{color:var(--blue-deep)}
   .etapes{list-style:none;counter-reset:e;margin:0;padding:0;display:grid;gap:14px}
-  .etapes li{counter-increment:e;display:grid;grid-template-columns:32px 1fr;gap:14px;align-items:start}
-  .etapes li::before{content:counter(e);width:32px;height:32px;border-radius:10px;background:var(--sky);color:var(--blue-deep);font-weight:750;display:grid;place-items:center;font-size:15px}
-  .etapes b{display:block;color:var(--ink)}
-  .etapes p{margin:4px 0 0}
+  .etapes li{counter-increment:e;display:grid;grid-template-columns:32px minmax(0,1fr);gap:4px 14px;align-items:start}
+  .etapes li::before{content:counter(e);grid-column:1;grid-row:1;width:32px;height:32px;border-radius:10px;background:var(--sky);color:var(--blue-deep);font-weight:750;display:grid;place-items:center;font-size:15px}
+  .etapes b{grid-column:2;color:var(--ink);min-height:32px;display:flex;align-items:center}
+  .etapes p{grid-column:2;margin:0}
   ul.puces{padding-left:20px;color:var(--ink-2)}
   ul.puces li{margin-bottom:8px}
   figure.shot{margin:22px 0;display:grid;gap:10px}
