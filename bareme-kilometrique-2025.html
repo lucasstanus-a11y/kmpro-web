@@ -81,6 +81,19 @@
   .fil{font-size:14px;color:var(--muted);padding-top:6px}
   .fil a{color:var(--muted)}
   .fil a:hover{color:var(--blue-deep)}
+  .sim{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2.5vw,22px);background:var(--surface);border-radius:var(--r-l);padding:clamp(18px,3vw,26px);box-shadow:var(--shadow-soft);margin:20px 0 14px;align-items:start}
+  .sim__in{display:grid;gap:14px;align-content:start}
+  .sim__out{background:linear-gradient(120deg,#E6F0FF,#E3F7FD);border-radius:var(--r-m);padding:clamp(16px,2.5vw,22px);display:grid;gap:6px;align-content:start}
+  .sim__k{font-size:12.5px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--blue-deep);margin:0}
+  .sim__amount{font-size:clamp(2rem,5vw,2.9rem);font-weight:800;letter-spacing:-.04em;line-height:1.05;margin:0;color:var(--ink);font-variant-numeric:tabular-nums}
+  .sim__facts{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:7px;font-size:14.5px;color:var(--ink-2)}
+  .sim__facts li{display:grid;grid-template-columns:20px minmax(0,1fr);gap:8px;align-items:start;text-wrap:pretty}
+  .sim__facts li::before{content:"";width:16px;height:16px;margin-top:2px;border-radius:50%;background:var(--green);box-shadow:inset 0 0 0 2px #fff,inset 0 0 0 3px var(--green)}
+  .sim__facts b{color:var(--ink);font-variant-numeric:tabular-nums}
+  .switch{display:flex;align-items:center;gap:12px;background:var(--surface-2);border-radius:var(--r-m);padding:12px 14px;font-weight:600;cursor:pointer}
+  .switch input{width:auto;flex:none}
+  .switch small{display:block;color:var(--muted);font-weight:500;font-size:13px}
+  @media (max-width:640px){.sim{grid-template-columns:1fr}}
 </style>
 </head>
 <body>

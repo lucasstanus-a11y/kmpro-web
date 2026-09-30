@@ -81,6 +81,19 @@
   .fil{font-size:14px;color:var(--muted);padding-top:6px}
   .fil a{color:var(--muted)}
   .fil a:hover{color:var(--blue-deep)}
+  .sim{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2.5vw,22px);background:var(--surface);border-radius:var(--r-l);padding:clamp(18px,3vw,26px);box-shadow:var(--shadow-soft);margin:20px 0 14px;align-items:start}
+  .sim__in{display:grid;gap:14px;align-content:start}
+  .sim__out{background:linear-gradient(120deg,#E6F0FF,#E3F7FD);border-radius:var(--r-m);padding:clamp(16px,2.5vw,22px);display:grid;gap:6px;align-content:start}
+  .sim__k{font-size:12.5px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--blue-deep);margin:0}
+  .sim__amount{font-size:clamp(2rem,5vw,2.9rem);font-weight:800;letter-spacing:-.04em;line-height:1.05;margin:0;color:var(--ink);font-variant-numeric:tabular-nums}
+  .sim__facts{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:7px;font-size:14.5px;color:var(--ink-2)}
+  .sim__facts li{display:grid;grid-template-columns:20px minmax(0,1fr);gap:8px;align-items:start;text-wrap:pretty}
+  .sim__facts li::before{content:"";width:16px;height:16px;margin-top:2px;border-radius:50%;background:var(--green);box-shadow:inset 0 0 0 2px #fff,inset 0 0 0 3px var(--green)}
+  .sim__facts b{color:var(--ink);font-variant-numeric:tabular-nums}
+  .switch{display:flex;align-items:center;gap:12px;background:var(--surface-2);border-radius:var(--r-m);padding:12px 14px;font-weight:600;cursor:pointer}
+  .switch input{width:auto;flex:none}
+  .switch small{display:block;color:var(--muted);font-weight:500;font-size:13px}
+  @media (max-width:640px){.sim{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -145,29 +158,36 @@
 
   <h2 id="simulateur">Simulateur de frais kilométriques 2026</h2>
   <p>Ce simulateur applique le barème fiscal ci-dessus : indiquez la puissance fiscale de votre véhicule et vos kilomètres professionnels de l’année, le montant se calcule immédiatement.</p>
-  <div class="card">
-    <form class="calc" id="calc" novalidate>
-      <div class="calc__row">
-        <label>Puissance fiscale
-          <select id="cv">
-            <option value="0">3 CV et moins</option>
-            <option value="1">4 CV</option>
-            <option value="2" selected>5 CV</option>
-            <option value="3">6 CV</option>
-            <option value="4">7 CV et plus</option>
-          </select>
-        </label>
-        <label>Kilomètres professionnels dans l’année
-          <input id="km" type="number" inputmode="numeric" min="0" step="100" value="8000">
-        </label>
-      </div>
-      <label class="check"><input id="elec" type="checkbox"> Véhicule 100 % électrique</label>
+  <div class="sim">
+    <form class="sim__in" id="calc" novalidate>
+      <label>Puissance fiscale du véhicule
+        <select id="cv">
+          <option value="0">3 CV et moins</option>
+          <option value="1">4 CV</option>
+          <option value="2" selected>5 CV</option>
+          <option value="3">6 CV</option>
+          <option value="4">7 CV et plus</option>
+        </select>
+      </label>
+      <label>Kilomètres professionnels dans l’année
+        <input id="km" type="number" inputmode="numeric" min="0" step="500" value="10000">
+      </label>
+      <label class="switch">
+        <input id="elec" type="checkbox">
+        <span><b>Véhicule 100 % électrique</b><small>Majoration de 20 %</small></span>
+      </label>
     </form>
-    <div class="out" role="status" aria-live="polite">
-      <b id="res">—</b>
-      <small id="det"></small>
+    <div class="sim__out" role="status" aria-live="polite">
+      <p class="sim__k">Estimation pour 2026</p>
+      <p class="sim__amount" id="res">—</p>
+      <ul class="sim__facts">
+        <li id="f-tranche"></li>
+        <li id="f-calcul"></li>
+      </ul>
     </div>
   </div>
+  <a class="cta" id="sim-cta" href="https://apps.apple.com/app/id6802150703" target="_blank" rel="noopener">Suivre ces kilomètres avec KmPro</a>
+  <p class="src" style="margin-top:-4px">Estimation calculée avec le barème ci-dessus, à titre indicatif.</p>
 
   <h2>Qui peut utiliser ce barème ?</h2>
   <p>Il s’applique aux personnes qui utilisent leur véhicule personnel pour leur activité professionnelle : indépendants et professions libérales au régime réel, salariés qui optent pour les frais réels, dirigeants remboursés par leur société, et salariés indemnisés par leur employeur.</p>
@@ -179,21 +199,38 @@
   <a class="cta" href="https://apps.apple.com/app/id6802150703" target="_blank" rel="noopener">Découvrir KmPro sur iPhone et Mac</a>
   <p class="src">Source du barème : <a href="https://www.urssaf.fr/accueil/outils-documentation/taux-baremes/indemnites-kilometriques.html" rel="noopener" target="_blank">barème des indemnités kilométriques publié par l’URSSAF</a>. Page mise à jour le 27 septembre 2026. Ces informations sont données à titre indicatif et ne remplacent pas l’avis d’un professionnel de la comptabilité.</p>
 
-<script>(function(){
+<script>
+(function(){
   var T1=[0.529,0.606,0.636,0.665,0.697], T1E=[0.635,0.727,0.763,0.798,0.836];
   var T2=[[0.316,1065],[0.340,1330],[0.357,1395],[0.374,1457],[0.394,1515]];
   var T2E=[[0.379,1278],[0.408,1596],[0.428,1674],[0.449,1748],[0.473,1818]];
   var T3=[0.370,0.407,0.427,0.447,0.470], T3E=[0.444,0.488,0.512,0.536,0.564];
   var cv=document.getElementById('cv'), km=document.getElementById('km'), el=document.getElementById('elec');
-  var res=document.getElementById('res'), det=document.getElementById('det');
-  var eur=new Intl.NumberFormat('fr-FR',{style:'currency',currency:'EUR',maximumFractionDigits:2});
+  var res=document.getElementById('res'), tr=document.getElementById('f-tranche'), ca=document.getElementById('f-calcul');
+  var cta=document.getElementById('sim-cta');
+  var eur=new Intl.NumberFormat('fr-FR',{style:'currency',currency:'EUR',maximumFractionDigits:0});
+  var eur2=new Intl.NumberFormat('fr-FR',{style:'currency',currency:'EUR',maximumFractionDigits:2});
+  function nb(x){ return x.toLocaleString('fr-FR'); }
+  function taux(t){ return t.toFixed(3).replace('.',','); }
   function calc(){
-    var i=+cv.value, d=Math.max(0, Math.round(+km.value||0)), e=el.checked, m, txt;
-    if(d<=5000){ var t=(e?T1E:T1)[i]; m=d*t; txt=d.toLocaleString('fr-FR')+' km × '+t.toFixed(3).replace('.',',')+' €'; }
-    else if(d<=20000){ var f=(e?T2E:T2)[i]; m=d*f[0]+f[1]; txt='('+d.toLocaleString('fr-FR')+' × '+f[0].toFixed(3).replace('.',',')+') + '+f[1].toLocaleString('fr-FR')+' €'; }
-    else { var t3=(e?T3E:T3)[i]; m=d*t3; txt=d.toLocaleString('fr-FR')+' km × '+t3.toFixed(3).replace('.',',')+' €'; }
-    res.textContent=eur.format(m);
-    det.textContent=txt+(e?' · barème électrique (+20 %)':'');
+    var i=+cv.value, d=Math.max(0, Math.round(+km.value||0)), e=el.checked, m, tranche, detail;
+    if(d<=5000){
+      var t=(e?T1E:T1)[i]; m=d*t;
+      tranche='Jusqu’à 5 000 km';
+      detail=nb(d)+' km × '+taux(t)+' €';
+    } else if(d<=20000){
+      var f=(e?T2E:T2)[i]; m=d*f[0]+f[1];
+      tranche='De 5 001 à 20 000 km';
+      detail='('+nb(d)+' × '+taux(f[0])+') + '+nb(f[1])+' €';
+    } else {
+      var t3=(e?T3E:T3)[i]; m=d*t3;
+      tranche='Au-delà de 20 000 km';
+      detail=nb(d)+' km × '+taux(t3)+' €';
+    }
+    res.textContent=eur2.format(m);
+    tr.innerHTML='<span>Barème applicable : <b>'+tranche+'</b>'+(e?' · barème électrique' : '')+'</span>';
+    ca.innerHTML='<span>Calcul : <b>'+detail+'</b></span>';
+    cta.textContent = d>0 ? 'Suivre mes '+eur.format(m)+' de frais avec KmPro' : 'Suivre ses kilomètres avec KmPro';
   }
   ['change','input'].forEach(function(ev){ cv.addEventListener(ev,calc); km.addEventListener(ev,calc); el.addEventListener(ev,calc); });
   calc();
