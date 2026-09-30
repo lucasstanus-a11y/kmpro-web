@@ -27,7 +27,12 @@
   /* Les pages de la plaquette, l'une après l'autre. Sur iPhone elles occupent
      toute la largeur : on entre directement dans le document. */
   .pages{display:grid;gap:0}
+  .pages figure{position:relative;margin:0;line-height:0}
   .pages img{display:block;width:100%;height:auto;background:#0B1A2E}
+  .zone{position:absolute;display:block;border-radius:10px;transition:background .15s ease,box-shadow .15s ease}
+  .zone:hover{background:rgba(255,255,255,.14);box-shadow:0 0 0 3px rgba(31,107,235,.55)}
+  .zone:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+  @media (prefers-reduced-motion:reduce){.zone{transition:none}}
   @media (min-width:760px){
     .pages{gap:22px;max-width:820px;margin-inline:auto;padding:26px clamp(16px,3vw,28px) 0}
     .pages img{border-radius:var(--r-l);box-shadow:var(--shadow)}
@@ -64,11 +69,30 @@
 
 <main>
   <div class="pages">
-    <img src="../assets/plaquette/p1.webp" width="1200" height="1698" alt="Plaquette KmPro, page 1 : vos kilomètres professionnels, déjà calculés. 29,99 € par an, sans renouvellement automatique, 14 jours d’essai sans paiement ni carte bancaire." fetchpriority="high">
-    <img src="../assets/plaquette/p2.webp" width="1200" height="1698" loading="lazy" alt="Plaquette KmPro, page 2 : vos trajets importés et détectés automatiquement depuis votre agenda.">
-    <img src="../assets/plaquette/p3.webp" width="1200" height="1698" loading="lazy" alt="Plaquette KmPro, page 3 : des frais kilométriques au plus juste, avec plusieurs itinéraires proposés, les trajets à étapes et les déplacements récurrents.">
-    <img src="../assets/plaquette/p4.webp" width="1200" height="1698" loading="lazy" alt="Plaquette KmPro, page 4 : prêt pour votre comptable, avec les exports Excel et PDF mois par mois.">
-    <img src="../assets/plaquette/p5.webp" width="1200" height="1698" loading="lazy" alt="Plaquette KmPro, page 5 : 29,99 € par an, seulement si vous êtes satisfait de la période d’essai.">
+    <figure class="page">
+      <img src="../assets/plaquette/p1.webp" width="1200" height="1698" fetchpriority="high" alt="Plaquette KmPro, page 1 : vos kilomètres professionnels, déjà calculés. 29,99 € par an, sans renouvellement automatique, 14 jours d’essai sans paiement ni carte bancaire.">
+      <a class="zone" href="https://apps.apple.com/app/id6802150703" target="_blank" rel="noopener" aria-label="Télécharger KmPro sur l’App Store" style="left:66.433%;top:87.835%;width:24.077%;height:5.434%"></a>
+    </figure>
+    <figure class="page">
+      <img src="../assets/plaquette/p2.webp" width="1200" height="1698" loading="lazy" alt="Plaquette KmPro, page 2 : vos trajets importés et détectés automatiquement depuis votre agenda.">
+      <a class="zone" href="https://kmpro.app/" aria-label="Aller sur kmpro.app" style="left:5.673%;top:91.487%;width:14.119%;height:1.425%"></a>
+      <a class="zone" href="https://apps.apple.com/app/id6802150703" target="_blank" rel="noopener" aria-label="Télécharger KmPro sur l’App Store" style="left:77.778%;top:90.24%;width:16.514%;height:4.009%"></a>
+    </figure>
+    <figure class="page">
+      <img src="../assets/plaquette/p3.webp" width="1200" height="1698" loading="lazy" alt="Plaquette KmPro, page 3 : des frais kilométriques au plus juste, avec plusieurs itinéraires proposés, les trajets à étapes et les déplacements récurrents.">
+      <a class="zone" href="https://kmpro.app/" aria-label="Aller sur kmpro.app" style="left:5.673%;top:91.487%;width:14.119%;height:1.425%"></a>
+      <a class="zone" href="https://apps.apple.com/app/id6802150703" target="_blank" rel="noopener" aria-label="Télécharger KmPro sur l’App Store" style="left:77.778%;top:90.24%;width:16.514%;height:4.009%"></a>
+    </figure>
+    <figure class="page">
+      <img src="../assets/plaquette/p4.webp" width="1200" height="1698" loading="lazy" alt="Plaquette KmPro, page 4 : prêt pour votre comptable, avec les exports Excel et PDF mois par mois.">
+      <a class="zone" href="https://kmpro.app/" aria-label="Aller sur kmpro.app" style="left:5.673%;top:91.487%;width:14.119%;height:1.425%"></a>
+      <a class="zone" href="https://apps.apple.com/app/id6802150703" target="_blank" rel="noopener" aria-label="Télécharger KmPro sur l’App Store" style="left:77.778%;top:90.24%;width:16.514%;height:4.009%"></a>
+    </figure>
+    <figure class="page">
+      <img src="../assets/plaquette/p5.webp" width="1200" height="1698" loading="lazy" alt="Plaquette KmPro, page 5 : 29,99 € par an, seulement si vous êtes satisfait de la période d’essai.">
+      <a class="zone" href="https://apps.apple.com/app/id6802150703" target="_blank" rel="noopener" aria-label="Télécharger KmPro sur l’App Store" style="left:37.944%;top:93.269%;width:24.077%;height:1.782%"></a>
+      <a class="zone" href="https://apps.apple.com/app/id6802150703" target="_blank" rel="noopener" aria-label="Télécharger KmPro sur l’App Store" style="left:37.944%;top:89.26%;width:24.077%;height:5.434%"></a>
+    </figure>
   </div>
 
   <section class="fin">
