@@ -105,11 +105,44 @@
 <nav class="fil" aria-label="Fil d’Ariane"><a href="./">Accueil</a> <span aria-hidden="true">›</span> <span>Barème kilométrique 2026</span></nav>
 <p class="maj">Barème fiscal</p>
   <h1>Barème kilométrique 2026</h1>
-  <p class="chapo">Le barème kilométrique sert à calculer les indemnités kilométriques d’un véhicule personnel utilisé pour le travail. Pour 2026, il est reconduit à l’identique de 2025 : les montants ci-dessous sont ceux à appliquer. <a href="#simulateur">Aller directement au simulateur</a>.</p>
+  <p class="chapo">Le barème kilométrique sert à calculer les indemnités kilométriques d’un véhicule personnel utilisé pour le travail. Pour 2026, il est reconduit à l’identique de 2025 : les montants ci-dessous sont ceux à appliquer.</p>
 
   <div class="note">Cette page concerne les <b>voitures</b>. Le montant dépend de deux choses : la <b>puissance fiscale</b> du véhicule (case P.6 de la carte grise) et le <b>nombre de kilomètres parcourus dans l’année</b> à titre professionnel.</div>
 
   <figure class="shot shot--phone"><img src="assets/demo-iphone-trajet.webp" width="760" height="1030" loading="lazy" alt="Écran Nouveau trajet de KmPro sur iPhone : itinéraires proposés, option aller-retour et véhicule sélectionné (données de démonstration)"><figcaption>Dans KmPro, le taux du barème est appliqué au trajet dès que la distance est calculée.</figcaption></figure>
+
+  <h2 id="simulateur">Simulateur de frais kilométriques 2026</h2>
+  <p>Indiquez la puissance fiscale de votre véhicule et vos kilomètres professionnels de l’année, le montant se calcule immédiatement.</p>
+  <div class="sim">
+    <form class="sim__in" id="calc" novalidate>
+      <label>Puissance fiscale du véhicule
+        <select id="cv">
+          <option value="0">3 CV et moins</option>
+          <option value="1">4 CV</option>
+          <option value="2" selected>5 CV</option>
+          <option value="3">6 CV</option>
+          <option value="4">7 CV et plus</option>
+        </select>
+      </label>
+      <label>Kilomètres professionnels dans l’année
+        <input id="km" type="number" inputmode="numeric" min="0" step="500" value="10000">
+      </label>
+      <label class="switch">
+        <input id="elec" type="checkbox">
+        <span><b>Véhicule 100 % électrique</b><small>Majoration de 20 %</small></span>
+      </label>
+    </form>
+    <div class="sim__out" role="status" aria-live="polite">
+      <p class="sim__k">Estimation pour 2026</p>
+      <p class="sim__amount" id="res">—</p>
+      <ul class="sim__facts">
+        <li id="f-tranche"></li>
+        <li id="f-calcul"></li>
+      </ul>
+    </div>
+  </div>
+  <a class="cta" id="sim-cta" href="https://apps.apple.com/app/id6802150703" target="_blank" rel="noopener">Suivre ces kilomètres avec KmPro</a>
+  <p class="src" style="margin-top:-4px">Estimation calculée avec le barème officiel détaillé ci-dessous, à titre indicatif.</p>
 
   <h2>Tranche 1 — jusqu’à 5 000 km par an</h2>
   <div class="card"><div class="tbl"><table>
@@ -155,39 +188,6 @@
 
   <h2>Véhicules électriques : majoration de 20 %</h2>
   <p>Pour un véhicule 100 % électrique, le montant obtenu est majoré de 20 %. Les colonnes « 100 % électrique » des tableaux ci-dessus appliquent déjà cette majoration.</p>
-
-  <h2 id="simulateur">Simulateur de frais kilométriques 2026</h2>
-  <p>Ce simulateur applique le barème fiscal ci-dessus : indiquez la puissance fiscale de votre véhicule et vos kilomètres professionnels de l’année, le montant se calcule immédiatement.</p>
-  <div class="sim">
-    <form class="sim__in" id="calc" novalidate>
-      <label>Puissance fiscale du véhicule
-        <select id="cv">
-          <option value="0">3 CV et moins</option>
-          <option value="1">4 CV</option>
-          <option value="2" selected>5 CV</option>
-          <option value="3">6 CV</option>
-          <option value="4">7 CV et plus</option>
-        </select>
-      </label>
-      <label>Kilomètres professionnels dans l’année
-        <input id="km" type="number" inputmode="numeric" min="0" step="500" value="10000">
-      </label>
-      <label class="switch">
-        <input id="elec" type="checkbox">
-        <span><b>Véhicule 100 % électrique</b><small>Majoration de 20 %</small></span>
-      </label>
-    </form>
-    <div class="sim__out" role="status" aria-live="polite">
-      <p class="sim__k">Estimation pour 2026</p>
-      <p class="sim__amount" id="res">—</p>
-      <ul class="sim__facts">
-        <li id="f-tranche"></li>
-        <li id="f-calcul"></li>
-      </ul>
-    </div>
-  </div>
-  <a class="cta" id="sim-cta" href="https://apps.apple.com/app/id6802150703" target="_blank" rel="noopener">Suivre ces kilomètres avec KmPro</a>
-  <p class="src" style="margin-top:-4px">Estimation calculée avec le barème ci-dessus, à titre indicatif.</p>
 
   <h2>Qui peut utiliser ce barème ?</h2>
   <p>Il s’applique aux personnes qui utilisent leur véhicule personnel pour leur activité professionnelle : indépendants et professions libérales au régime réel, salariés qui optent pour les frais réels, dirigeants remboursés par leur société, et salariés indemnisés par leur employeur.</p>

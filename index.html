@@ -514,6 +514,18 @@ kbd{font-family:var(--font);font-size:13px;min-width:28px;text-align:center;back
 @media (max-width:520px){.no-list{grid-template-columns:1fr}}
 
 /* ——— Tarif ——— */
+.note-app{display:flex;align-items:baseline;flex-wrap:wrap;gap:10px 14px;margin-bottom:clamp(18px,2.5vw,26px)}
+.note-app__val{font-size:clamp(2.2rem,5vw,3rem);font-weight:800;letter-spacing:-.04em;line-height:1;color:var(--ink);font-variant-numeric:tabular-nums}
+.note-app__etoiles{font-size:clamp(1.1rem,2vw,1.35rem);color:#F5A623;letter-spacing:.08em}
+.note-app__src{color:var(--muted);font-size:15px}
+.avis-grille{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,20px)}
+.avis{margin:0;background:var(--surface);border-radius:var(--r-l);padding:clamp(20px,2.6vw,26px);box-shadow:var(--shadow-soft);display:grid;gap:12px;align-content:start}
+.avis__etoiles{color:#F5A623;font-size:15px;letter-spacing:.1em}
+.avis blockquote{margin:0;display:grid;gap:8px}
+.avis blockquote b{font-size:1.06rem;letter-spacing:-.015em;color:var(--ink)}
+.avis blockquote p{margin:0;color:var(--ink-2);font-size:15.5px;text-wrap:pretty}
+.avis figcaption{color:var(--muted);font-size:13.5px}
+@media (max-width:900px){.avis-grille{grid-template-columns:1fr}}
 .pricing{display:grid;grid-template-columns:1fr minmax(0,440px);gap:clamp(32px,6vw,72px);align-items:center}
 .pricing__copy{display:grid;gap:14px;align-content:center}
 .price{background:var(--surface);border-radius:var(--r-xl);box-shadow:var(--shadow);padding:clamp(26px,4vw,40px);display:grid;gap:18px;position:relative}
@@ -1019,6 +1031,17 @@ kbd{font-family:var(--font);font-size:13px;min-width:28px;text-align:center;back
   </div>
 </section>
 
+<!-- AVIS APP STORE -->
+<section class="sec" id="avis" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec__head" style="margin-bottom:clamp(18px,2.5vw,28px)">
+      <p class="borne">Ils l’utilisent</p>
+      <h2>Ce qu’en disent les premiers utilisateurs.</h2>
+    </div>
+    <div class="note-app"><span class="note-app__val">5,0</span><span class="note-app__etoiles" role="img" aria-label="Noté 5,0 sur 5">★★★★★</span><span class="note-app__src">sur l’App Store · 4 notes</span></div><div class="avis-grille"><figure class="avis"><div class="avis__etoiles" role="img" aria-label="5 étoiles sur 5">★★★★★</div><blockquote><b>Un indispensable !</b><p>Enfin une application vraiment utile ! Tellement pratique pour les trajets pro, ça simplifie vraiment notre quotidien.</p></blockquote><figcaption>Filet-Mignon · 27 septembre 2026</figcaption></figure><figure class="avis"><div class="avis__etoiles" role="img" aria-label="5 étoiles sur 5">★★★★★</div><blockquote><b>Fonctionne à merveille</b><p>Fonctionnement nickel et très intuitif. L’application va automatiquement chercher les trajets dans le calendrier et rentre tout tout seul. C’est super pratique, je recommande.</p></blockquote><figcaption>Jordan rasoldier · 26 septembre 2026</figcaption></figure><figure class="avis"><div class="avis__etoiles" role="img" aria-label="5 étoiles sur 5">★★★★★</div><blockquote><b>L’appli qu’il me fallait !</b><p>Enfin une application pour gérer mes frais kilométriques ! Gain de temps de fou pour ma compta. Et prix plus que raisonnable, merci !</p></blockquote><figcaption>Marix628 · 25 septembre 2026</figcaption></figure></div>
+  </div>
+</section>
+
 <!-- TARIF -->
 <section class="sec" id="tarif" style="padding-top:0">
   <div class="wrap">
@@ -1168,7 +1191,7 @@ kbd{font-family:var(--font);font-size:13px;min-width:28px;text-align:center;back
   </div>
 </footer>
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "KmPro", "applicationCategory": "BusinessApplication", "operatingSystem": "iOS, macOS", "description": "Calculez vos indemnités kilométriques au barème fiscal 2026, suivez vos trajets professionnels et exportez en Excel ou PDF. Application iPhone et Mac.", "inLanguage": "fr", "offers": {"@type": "Offer", "price": "29.99", "priceCurrency": "EUR", "description": "Abonnement annuel iPhone + Mac, 14 jours d’essai de l’abonnement"}, "author": {"@type": "Person", "name": "Lucas Stanus"}, "downloadUrl": "https://apps.apple.com/app/id6802150703", "url": "https://kmpro.app/", "softwareVersion": "1.1", "screenshot": "https://kmpro.app/assets/demo-mac-annee.webp"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "KmPro", "applicationCategory": "BusinessApplication", "operatingSystem": "iOS, macOS", "description": "Calculez vos indemnités kilométriques au barème fiscal 2026, suivez vos trajets professionnels et exportez en Excel ou PDF. Application iPhone et Mac.", "inLanguage": "fr", "offers": {"@type": "Offer", "price": "29.99", "priceCurrency": "EUR", "description": "Abonnement annuel iPhone + Mac, 14 jours d’essai de l’abonnement"}, "author": {"@type": "Person", "name": "Lucas Stanus"}, "downloadUrl": "https://apps.apple.com/app/id6802150703", "url": "https://kmpro.app/", "softwareVersion": "1.1", "screenshot": "https://kmpro.app/assets/demo-mac-annee.webp", "aggregateRating": {"@type": "AggregateRating", "ratingValue": "5.0", "ratingCount": 4, "bestRating": "5", "worstRating": "1"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "KmPro", "url": "https://kmpro.app/", "logo": "https://kmpro.app/assets/favicon.png", "email": "contact@kmpro.app", "founder": {"@type": "Person", "name": "Lucas Stanus"}, "sameAs": ["https://apps.apple.com/app/id6802150703"]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "KmPro est-il disponible dans mon pays ?", "acceptedAnswer": {"@type": "Answer", "text": "KmPro se télécharge dans tous les pays de l’App Store. Les calculs sont aujourd’hui adaptés à la France (barème kilométrique fiscal). La Suisse (taux de référence fédéral) arrive dans une prochaine mise à jour, et d’autres pays sont à l’étude."}}, {"@type": "Question", "name": "Frais km, frais kilométriques, indemnités kilométriques : quelle différence ?", "acceptedAnswer": {"@type": "Answer", "text": "« Frais km » est l’abréviation courante de frais kilométriques : ce sont les mêmes. On parle d’indemnités kilométriques lorsque ces frais sont remboursés ou déduits en appliquant le barème fiscal, et de note de frais kilométrique pour le document qui les récapitule. KmPro couvre les trois : le suivi des trajets, le calcul au barème et le document à transmettre."}}, {"@type": "Question", "name": "KmPro fonctionne-t-il sur iPhone et Mac ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Un seul abonnement couvre les deux."}}, {"@type": "Question", "name": "Y a-t-il un essai ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui : 14 jours d’essai de l’abonnement, sans paiement ni carte bancaire. Pendant l’essai, la saisie et l’analyse du calendrier portent sur le mois en cours. Aucun abonnement ne démarre automatiquement ensuite."}}, {"@type": "Question", "name": "Puis-je utiliser KmPro sans iCloud ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Seule la synchronisation entre appareils est alors indisponible."}}, {"@type": "Question", "name": "KmPro collecte-t-il mes déplacements ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. L’éditeur ne collecte aucune donnée. Vos données restent dans votre iCloud privé."}}, {"@type": "Question", "name": "Mon calendrier est-il envoyé sur un serveur ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. L’analyse est faite sur l’appareil."}}, {"@type": "Question", "name": "Puis-je exporter mes trajets ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, en Excel et PDF, par mois ou par année. Les exports sont ouverts à tous, abonné ou non."}}, {"@type": "Question", "name": "Si j’arrête mon abonnement, je perds mes données ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. Trajets, sauvegardes et exports Excel et PDF restent accessibles. Seule la saisie de nouveaux trajets se ferme."}}]}</script>
 <script>
