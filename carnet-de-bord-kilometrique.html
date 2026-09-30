@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="fr-FR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carnet de bord kilométrique : le tenir sans le remplir à la main</title>
+<meta name="description" content="Ce que doit contenir un carnet de bord kilométrique, pourquoi le cahier papier finit par coûter cher, et comment tenir le relevé de ses trajets professionnels automatiquement.">
+<link rel="canonical" href="https://kmpro.app/carnet-de-bord-kilometrique.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="KmPro">
+<meta property="og:title" content="Carnet de bord kilométrique : le tenir sans le remplir à la main">
+<meta property="og:description" content="Ce que doit contenir un carnet de bord kilométrique, pourquoi le cahier papier finit par coûter cher, et comment tenir le relevé de ses trajets professionnels automatiquement.">
+<meta property="og:url" content="https://kmpro.app/carnet-de-bord-kilometrique.html">
+<meta property="og:image" content="https://kmpro.app/assets/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<style>
+:root{--ground:#F4F7FB;--surface:#FFFFFF;--surface-2:#EEF3F9;--ink:#0B1A2E;--ink-2:#34445B;--muted:#627289;--line:#DAE3EE;--blue:#1F6BEB;--blue-deep:#1552C9;--sky:#DCE9FF;--green:#1E7F4F;--r-m:16px;--r-l:20px;--shadow-soft:0 12px 32px rgba(11,26,46,.08);--mono:ui-monospace,SFMono-Regular,Menlo,monospace;color-scheme:light}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--ground);color:var(--ink);font:17px/1.62 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:var(--blue-deep)}
+  :focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+  .wrap{max-width:860px;margin-inline:auto;padding-inline:clamp(16px,4vw,32px)}
+  header{padding-block:22px}
+  .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:750;font-size:19px;letter-spacing:-.02em}
+  .brand img{width:34px;height:34px;border-radius:9px}
+  .brand b{color:var(--blue);font-weight:750}
+  main{padding-block:8px 56px}
+  h1{font-size:clamp(2rem,5vw,2.9rem);line-height:1.06;letter-spacing:-.04em;margin:18px 0 10px}
+  h2{font-size:clamp(1.3rem,2.6vw,1.75rem);letter-spacing:-.025em;line-height:1.15;margin:44px 0 12px}
+  h3{font-size:1.05rem;margin:26px 0 8px}
+  p{margin:0 0 14px;color:var(--ink-2);text-wrap:pretty}
+  .chapo{font-size:clamp(1.05rem,2vw,1.2rem);color:var(--ink-2)}
+  .maj{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-deep)}
+  .card{background:var(--surface);border-radius:var(--r-l);padding:clamp(18px,3vw,26px);box-shadow:var(--shadow-soft);margin:18px 0}
+  .tbl{width:100%;overflow-x:auto}
+  table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;min-width:520px}
+  caption{text-align:left;font-weight:700;color:var(--ink);padding-bottom:10px}
+  th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:right;font-size:15.5px}
+  th:first-child,td:first-child{text-align:left}
+  thead th{color:var(--muted);font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
+  tbody tr:last-child td{border-bottom:0}
+  td.n{font-family:var(--mono)}
+  .note{background:var(--surface-2);border-radius:var(--r-m);padding:16px 18px;color:var(--ink-2);font-size:15.5px;margin:16px 0}
+  .calc{display:grid;gap:14px}
+  .calc__row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  label{display:grid;gap:6px;font-size:14px;font-weight:650;color:var(--ink)}
+  select,input{font:inherit;font-size:16px;padding:11px 12px;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);width:100%}
+  .check{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:600}
+  .check input{width:auto}
+  .out{background:linear-gradient(120deg,#E6F0FF,#E3F7FD);border-radius:var(--r-m);padding:18px 20px;display:grid;gap:4px}
+  .out b{font-size:clamp(1.8rem,4vw,2.4rem);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+  .out small{color:var(--ink-2);font-size:14px}
+  .cta{display:block;background:var(--blue);color:#fff;text-decoration:none;font-weight:700;padding:16px 22px;border-radius:999px;text-align:center;margin:10px 0}
+  .cta:hover{background:var(--blue-deep)}
+  .src{font-size:14px;color:var(--muted)}
+  footer{padding-block:0 48px;color:var(--muted);font-size:14px}
+  @media (max-width:560px){.calc__row{grid-template-columns:1fr}}
+  .aussi{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+  .aussi li a{display:block;background:var(--surface);border-radius:var(--r-m);padding:14px 18px;text-decoration:none;color:var(--ink);font-weight:650;box-shadow:var(--shadow-soft)}
+  .aussi li a:hover{color:var(--blue-deep)}
+  .etapes{list-style:none;counter-reset:e;margin:0;padding:0;display:grid;gap:14px}
+  .etapes li{counter-increment:e;display:grid;grid-template-columns:32px 1fr;gap:14px;align-items:start}
+  .etapes li::before{content:counter(e);width:32px;height:32px;border-radius:10px;background:var(--sky);color:var(--blue-deep);font-weight:750;display:grid;place-items:center;font-size:15px}
+  .etapes b{display:block;color:var(--ink)}
+  .etapes p{margin:4px 0 0}
+  ul.puces{padding-left:20px;color:var(--ink-2)}
+  ul.puces li{margin-bottom:8px}
+  figure.shot{margin:22px 0;display:grid;gap:10px}
+  figure.shot img{display:block;width:100%;height:auto;border-radius:var(--r-l);box-shadow:var(--shadow-soft);background:var(--surface)}
+  figure.shot figcaption{font-size:14px;color:var(--muted);text-wrap:pretty}
+  figure.shot--phone{max-width:300px}
+  figure.shot--duo{max-width:100%}
+  figure.shot--right{margin-inline:auto}
+  .duo-shots{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start;margin:22px 0}
+  .duo-shots figure.shot{margin:0}
+  .duo-shots figure.shot--phone{max-width:100%}
+  @media (max-width:620px){.duo-shots{grid-template-columns:1fr}.duo-shots figure.shot--phone{max-width:300px;margin-inline:auto}}
+  .fil{font-size:14px;color:var(--muted);padding-top:6px}
+  .fil a{color:var(--muted)}
+  .fil a:hover{color:var(--blue-deep)}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <a class="brand" href="./"><img src="assets/kmpro-icon.webp" alt="" width="34" height="34"><span>Km<b>Pro</b></span></a>
+</header>
+
+<main class="wrap">
+<nav class="fil" aria-label="Fil d’Ariane"><a href="./">Accueil</a> <span aria-hidden="true">›</span> <span>Carnet de bord kilométrique</span></nav>
+<p class="maj">Justificatif</p>
+  <h1>Le carnet de bord kilométrique</h1>
+  <p class="chapo">Le cahier posé dans la boîte à gants a fait son temps. Ce qu’on attend de lui — un relevé daté des déplacements professionnels — reste indispensable ; la façon de le tenir, beaucoup moins.</p>
+
+  <h2>À quoi il sert vraiment</h2>
+  <p>Déduire des frais kilométriques suppose de pouvoir établir que les kilomètres ont bien été parcourus pour le travail. Le montant, lui, se calcule facilement : il suffit d’appliquer le <a href="bareme-kilometrique-2026.html">barème kilométrique</a>. Ce qui manque en cas de contrôle, ce n’est jamais le calcul — c’est la preuve des trajets.</p>
+  <p>Le carnet de bord est cette preuve. Un total annoncé sans relevé ne vaut rien ; une liste datée, avec les motifs, se défend.</p>
+
+  <h2>Ce qu’une ligne doit contenir</h2>
+  <div class="card"><div class="tbl"><table>
+    <caption>Le minimum pour qu’un trajet tienne</caption>
+    <thead><tr><th>Information</th><th>Pourquoi elle compte</th></tr></thead>
+    <tbody>
+      <tr><td>Date</td><td>Rattache le trajet à l’année concernée</td></tr>
+      <tr><td>Départ et destination</td><td>Rend la distance vérifiable</td></tr>
+      <tr><td>Motif professionnel</td><td>Client, chantier, intervention : c’est ce qui justifie la déduction</td></tr>
+      <tr><td>Kilomètres parcourus</td><td>Base du calcul</td></tr>
+      <tr><td>Véhicule utilisé</td><td>Sa <a href="bareme-fiscal-voiture.html">puissance fiscale</a> détermine le montant</td></tr>
+    </tbody>
+  </table></div></div>
+  <p>Un total par mois et un total annuel complètent le relevé : ce sont eux que reprend la comptabilité.</p>
+
+  <h2>Les trois défauts du carnet papier</h2>
+  <ul class="puces">
+    <li><b>On oublie de le remplir.</b> Le trajet se note le soir, ou le lendemain, ou jamais. Sur une année, ce sont des centaines de kilomètres perdus — et donc de l’argent.</li>
+    <li><b>Les distances sont approximatives.</b> « Environ 40 km » n’est pas une distance vérifiable, et c’est souvent sous-estimé.</li>
+    <li><b>Il se perd.</b> Or il faut pouvoir le produire plusieurs années après, bien après avoir changé de voiture.</li>
+  </ul>
+
+  <h2>Le carnet de bord numérique</h2>
+  <p>Un carnet tenu dans une application règle les trois points d’un coup : la saisie se fait sur le téléphone au moment du déplacement, la distance est calculée avec les cartes d’Apple, et le relevé complet s’exporte en PDF ou en Excel quand on vous le demande.</p>
+
+  <figure class="shot"><img src="assets/demo-mac-export.webp" width="941" height="759" loading="lazy" alt="Fenêtre d’export de KmPro sur Mac : choix entre Excel et PDF, par mois ou par année (données de démonstration)"><figcaption>Le carnet se transmet en un fichier, pas en photocopies de cahier.</figcaption></figure>
+
+  <h2>Ne rien avoir à remplir du tout</h2>
+  <p>C’est l’étape suivante, et c’est ce que fait KmPro : vos déplacements professionnels sont souvent déjà inscrits dans votre agenda. L’application lit vos calendriers — iCloud, Google, Outlook — vous propose les trajets correspondants avec la date et l’adresse déjà remplies, calcule les distances et applique le barème de votre véhicule. Vous relisez, vous validez.</p>
+  <ul class="puces">
+    <li>Un mois entier, ou une année complète, en une seule analyse.</li>
+    <li>Les trajets qui reviennent chaque semaine se créent une fois pour toute une période.</li>
+    <li>Le contenu de votre calendrier reste sur votre appareil : rien n’est envoyé sur un serveur.</li>
+  </ul>
+  <p>Le carnet de bord cesse alors d’être une corvée du dimanche soir : il se remplit tout seul, et il est prêt quand vous en avez besoin.</p>
+  <a class="cta" href="https://apps.apple.com/app/id6802150703" target="_blank" rel="noopener">Tenir son carnet de bord avec KmPro</a>
+  <p class="src">Informations données à titre indicatif. Les exigences de justification dépendent de votre statut et de votre situation : votre comptable reste la bonne référence.</p>
+
+<h2>À lire aussi</h2>
+<ul class="aussi"><li><a href="bareme-fiscal-voiture.html">Trouver le barème fiscal de sa voiture : la puissance fiscale</a></li><li><a href="bareme-kilometrique-2025.html">Barème kilométrique 2025 : le tableau à appliquer</a></li><li><a href="bareme-kilometrique-2026.html">Barème kilométrique 2026 : tableau officiel et simulateur</a></li><li><a href="calculer-frais-kilometriques.html">Calculer ses frais kilométriques en France : méthode et exemples</a></li><li><a href="comptables.html">Comptables : proposez KmPro à vos clients</a></li><li><a href="frais-reels-vehicule-personnel.html">Déclarer ses frais kilométriques avec son véhicule personnel</a></li><li><a href="indemnites-kilometriques-2026.html">Indemnités kilométriques 2026 : ce qui change</a></li><li><a href="modele-excel-frais-kilometriques.html">Modèle Excel de frais kilométriques : ce qu’il doit contenir</a></li><li><a href="note-de-frais-kilometrique.html">Note de frais kilométrique : ce qu’elle doit contenir</a></li></ul>
+</main>
+
+<footer class="wrap">
+  <p>© 2026 KmPro · <a href="./">Accueil</a> · <a href="mentions-legales.html">Mentions légales</a></p>
+</footer>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Carnet de bord kilométrique", "description": "Ce que doit contenir un carnet de bord kilométrique, pourquoi le cahier papier finit par coûter cher, et comment tenir le relevé de ses trajets professionnels automatiquement.", "inLanguage": "fr-FR", "datePublished": "2026-09-30", "dateModified": "2026-09-30", "author": {"@type": "Organization", "name": "KmPro"}, "publisher": {"@type": "Organization", "name": "KmPro", "url": "https://kmpro.app/"}, "mainEntityOfPage": "https://kmpro.app/carnet-de-bord-kilometrique.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://kmpro.app/"}, {"@type": "ListItem", "position": 2, "name": "Carnet de bord kilométrique", "item": "https://kmpro.app/carnet-de-bord-kilometrique.html"}]}</script>
+</body>
+</html>
